@@ -49,7 +49,7 @@
       if (!r.ok) throw new Error(r.status);
       estado.resumo = await r.json();
     } catch (e) {
-      $("#corpo").innerHTML = `<tr><td colspan="10" class="vazio">Os dados ainda não foram gerados. Rode o robô de atualização uma vez (aba Actions do GitHub).</td></tr>`;
+      $("#corpo").innerHTML = `<tr><td colspan="11" class="vazio">Os dados ainda não foram gerados. Rode o robô de atualização uma vez (aba Actions do GitHub).</td></tr>`;
       $("#carimbo").textContent = "";
       return;
     }
@@ -96,6 +96,7 @@
     switch (col) {
       case "nome": return f.nome.toLowerCase();
       case "pct12": return pctCDI(f, "m12");
+      case "pctano": return pctCDI(f, "ano");
       case "vol12": return f.vol12;
       case "pl": return f.pl;
       default: return ret(f, col);
@@ -103,12 +104,18 @@
   };
 
   function linhaCDI(lista) {
-    const ref = [...lista].sort((a, b) => (b.ultima_data > a.ultima_data ? 1 : -1)).find((f) => f.cdi && f.cdi.m12 != null) || lista.find((f) => f.cdi);
-    if (!ref) return "";
-    const c = ref.cdi, cel = (v, n) => `<td class="${cls(v)}">${pct(v, n)}</td>`;
-    return `<tr class="ref"><td class="txt fixa"><div class="cel-fundo"><span class="ck-vazio"></span><div><span class="nome-fundo">CDI</span><span class="meta-fundo">referência · até ${dataBR(ref.ultima_data)}</span></div></div></td>
+    const R = estado.resumo;
+    let c, ate;
+    if (R.cdi_ref) { c = R.cdi_ref.ret; ate = R.cdi_ref.data; }
+    else { // versão antiga dos dados: usa o fundo com mais histórico
+      const ref = [...lista].sort((a, b) => (a.inicio_historico > b.inicio_historico ? 1 : -1)).find((f) => f.cdi);
+      if (!ref) return "";
+      c = ref.cdi; ate = ref.ultima_data;
+    }
+    const cel = (v, n) => `<td class="${cls(v)}">${pct(v, n)}</td>`;
+    return `<tr class="ref"><td class="txt fixa"><div class="cel-fundo"><span class="ck-vazio"></span><div><span class="nome-fundo">CDI</span><span class="meta-fundo">referência · até ${dataBR(ate)}</span></div></div></td>
       ${cel(c.dia, 3)}${cel(c.mes)}${cel(c.ano)}${cel(c.m12)}${cel(c.m24)}${cel(c.m36)}
-      <td class="nd">100%</td><td class="nd">–</td><td class="nd">–</td></tr>`;
+      <td class="nd">100%</td><td class="nd">100%</td><td class="nd">–</td><td class="nd">–</td></tr>`;
   }
 
   function desenharTabela() {
@@ -130,7 +137,7 @@
       th.classList.toggle("asc", th.dataset.col === col && asc);
     });
     if (!lista.length) {
-      $("#corpo").innerHTML = `<tr><td colspan="10" class="vazio">Nenhum fundo encontrado.</td></tr>`;
+      $("#corpo").innerHTML = `<tr><td colspan="11" class="vazio">Nenhum fundo encontrado.</td></tr>`;
       return;
     }
     const cel = (f, v, n) => `<td class="${cls(v)}${usaGU(f) && v != null ? " gu" : ""}">${pct(v, n)}</td>`;
@@ -145,6 +152,7 @@
           <span class="meta-fundo">${meta}${f.isento_ir ? ' · <span class="tag-isento">isento IR</span>' : ""}${alerta ? ' · <span class="tag-alerta" title="Veja os alertas no detalhe">⚠ dados</span>' : ""}</span></div>
         </div></td>
         ${cel(f, ret(f, "dia"), 3)}${cel(f, ret(f, "mes"))}${cel(f, ret(f, "ano"))}${cel(f, ret(f, "m12"))}${cel(f, ret(f, "m24"))}${cel(f, ret(f, "m36"))}
+        <td class="${usaGU(f) && pctCDI(f, "ano") != null ? "gu" : ""}">${pctCDI(f, "ano") == null ? '<span class="nd">–</span>' : pct(pctCDI(f, "ano"), 0)}</td>
         <td class="${usaGU(f) && pctCDI(f, "m12") != null ? "gu" : ""}">${pctCDI(f, "m12") == null ? '<span class="nd">–</span>' : pct(pctCDI(f, "m12"), 0)}</td>
         <td>${pct(f.vol12)}</td>
         <td>${dinheiro(f.pl)}</td>
@@ -200,7 +208,7 @@
   function desenharGestao() {
     const R = estado.resumo, repo = R.repo, br = R.branch || "main";
     const link = (href, txt, prim) => `<a class="botao${prim ? " primario" : ""}" href="${href}" target="_blank" rel="noopener"${repo ? "" : ' aria-disabled="true"'}>${txt}</a>`;
-    $("#acoes-gestao").innerHTML = link(`https://github.com/${repo}/edit/${br}/fundos.yaml`, "Editar lista de fundos", true) + link(`https://github.com/${repo}/actions`, "Ver atualizações");
+    if ($("#acoes-gestao")) $("#acoes-gestao").innerHTML = link(`https://github.com/${repo}/edit/${br}/fundos.yaml`, "Editar lista de fundos", true) + link(`https://github.com/${repo}/actions`, "Ver atualizações");
     $("#avisos").innerHTML = R.avisos?.length
       ? `<div class="alerta"><strong>Pontos de atenção na última atualização</strong><ul>${R.avisos.map((a) => `<li>${esc(a)}</li>`).join("")}</ul></div>` : "";
     const rot = { ok: "Atualizado", defasado: "Defasado", nao_encontrado: "Não encontrado", sem_dados_recentes: "Sem dados recentes" };

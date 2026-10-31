@@ -225,3 +225,5 @@ td.gu::after { content: "GU"; font-family: var(--sans); font-style: normal; font
 }
 .kpi .v { white-space: nowrap; font-size: 17px; }
 .nome-fundo { max-width: 290px; }
+.tabela th, .tabela td { padding: 10px 9px; }
+.nome-fundo { min-width: 180px; max-width: 250px; }
