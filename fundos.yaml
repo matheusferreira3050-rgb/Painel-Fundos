@@ -8,7 +8,17 @@ configuracao:
   titulo: "Crédito Privado — Espelho e Itaú Asset"
   subtitulo: "Rentabilidade com base nos informes diários da CVM"
   anos_historico: 5
-  dias_alerta_defasagem: 7
+  dias_alerta_defasagem: 7  # avisa se a última cota tiver mais de N dias corridos
+  aliquota_grossup: 0.15    # IR usado no gross-up dos fundos isentos (15% = acima de 2 anos)
+
+# Campos de cada fundo:
+#   cnpj, nome, categoria, distribuicao   → obrigatórios/recomendados
+#   isento_ir: true                        → fundo isento de IR para PF (habilita o gross-up)
+#   subclasse: "CODIGO"                    → só se a CVM listar mais de uma subclasse (veja a aba Fundos)
+#   ativo: false                           → esconde do site sem apagar o histórico
+#   Opcionais (aparecem no detalhe do fundo e prevalecem sobre o cadastro da CVM):
+#   taxa_adm: "0,80% a.a."   taxa_perf: "20% do que exceder o CDI"
+#   resgate: "D+30"          aplicacao_minima: "R$ 1.000"   gestor: "..."   observacao: "..."
 
 fundos:
   - cnpj: "48.084.411/0001-39"   # FY 56281
@@ -33,18 +43,21 @@ fundos:
     nome: "Absolute Hidra IPCA Seleção Infra Renda Fixa (Isento IRPF)"
     categoria: "Infraestrutura / Isentos"
     distribuicao: "FoF"
+    isento_ir: true
     ativo: true
 
   - cnpj: "64.963.538/0001-84"   # FY 58915
     nome: "Absolute Hidra Pré 2 Anos Seleção Infra RF"
     categoria: "Infraestrutura / Isentos"
     distribuicao: "FoF"
+    isento_ir: false   # CONFIRMAR: se for isento (Lei 12.431), troque para true
     ativo: true
 
   - cnpj: "49.706.433/0001-56"   # FY 56450
     nome: "Absolute Hidra Seleção Infra Renda Fixa CP (Isento IRPF)"
     categoria: "Infraestrutura / Isentos"
     distribuicao: "FoF"
+    isento_ir: true
     ativo: true
 
   - cnpj: "42.860.699/0001-00"   # FY 55859
@@ -69,6 +82,7 @@ fundos:
     nome: "BTG Pactual Hedge Debêntures de Infra Subclasse I"
     categoria: "Infraestrutura / Isentos"
     distribuicao: "FoF"
+    isento_ir: false   # CONFIRMAR: se for isento (Lei 12.431), troque para true
     ativo: true
 
   - cnpj: "08.927.574/0001-11"   # FY 50246
@@ -81,12 +95,14 @@ fundos:
     nome: "Capitânia Infra CDI 30"
     categoria: "Infraestrutura / Isentos"
     distribuicao: "FoF"
+    isento_ir: false   # CONFIRMAR: se for isento (Lei 12.431), troque para true
     ativo: true
 
   - cnpj: "55.227.365/0001-45"   # FY 57409
     nome: "Drys Debêntures de Infraestrutura Seleção (Isento IRPF)"
     categoria: "Infraestrutura / Isentos"
     distribuicao: "FoF"
+    isento_ir: true
     ativo: true
 
   - cnpj: "53.390.661/0001-37"   # FY 57019
@@ -123,6 +139,7 @@ fundos:
     nome: "Icatu Vanguarda Seleção Infraestrutura Renda Fixa"
     categoria: "Infraestrutura / Isentos"
     distribuicao: "FoF"
+    isento_ir: false   # CONFIRMAR: se for isento (Lei 12.431), troque para true
     ativo: true
 
   - cnpj: "52.151.185/0001-39"   # FY 56769
@@ -135,6 +152,7 @@ fundos:
     nome: "Itaú Action Debêntures Incentivadas RF CP (Isento IRPF)"
     categoria: "Infraestrutura / Isentos"
     distribuicao: "Itaú Asset"
+    isento_ir: true
     ativo: true
 
   - cnpj: "20.335.176/0001-01"   # FY 52663
@@ -171,16 +189,19 @@ fundos:
     nome: "Itaú Debêntures IMA-B Infraestrutura RF"
     categoria: "Infraestrutura / Isentos"
     distribuicao: "Itaú Asset"
+    isento_ir: false   # CONFIRMAR: se for isento (Lei 12.431), troque para true
     ativo: true
 
   - cnpj: "42.380.161/0001-06"   # FY 55843
     nome: "Itaú Debêntures Incentivadas CDI RF CP (Isento IRPF)"
     categoria: "Infraestrutura / Isentos"
     distribuicao: "Itaú Asset"
+    isento_ir: true
     ativo: true
 
   - cnpj: "54.496.707/0001-60"   # FY 57204
     nome: "Itaú Debêntures Incentivadas Pós-Fixado Renda Fixa (Isento IRPF)"
     categoria: "Infraestrutura / Isentos"
     distribuicao: "Itaú Asset"
+    isento_ir: true
     ativo: true

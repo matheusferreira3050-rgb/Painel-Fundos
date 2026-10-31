@@ -43,6 +43,12 @@ Edite e clique em *Commit changes*. O robô roda sozinho, baixa o histórico dos
 A aba **Fundos** também mostra avisos da última atualização: CNPJ não encontrado na CVM,
 fundo com cota parada há muitos dias ou fundo com subclasses (aí você escolhe qual usar).
 
+### Campos opcionais de cada fundo
+
+- `isento_ir: true`: marca o fundo como isento de IR para PF e habilita o gross-up no site.
+- `subclasse: "CODIGO"`: escolhe a subclasse quando a CVM lista mais de uma. Os códigos aparecem nos avisos da aba Fundos.
+- `taxa_adm`, `taxa_perf`, `resgate`, `aplicacao_minima`, `gestor`, `observacao`: aparecem no detalhe do fundo e substituem o que vier do cadastro da CVM.
+
 ## Atualização diária
 
 O robô roda às 08h17 e 19h47 (Brasília). Os administradores enviam o informe à CVM com
@@ -57,7 +63,10 @@ entrar em *Actions* e reativar.
 - Dia, mês, ano, 6/12/24/36/60 meses e desde o início do histórico, sempre pela cota (já líquida de taxas, bruta de IR).
 - % CDI = retorno do fundo ÷ CDI acumulado entre as mesmas datas (CDI: SGS série 12 do Banco Central).
 - Volatilidade 12m anualizada (√252) e drawdown máximo.
-- Tabela mês a mês com % do CDI de cada mês.
+- Tabela mês a mês com % do CDI de cada mês, consistência (meses ≥ CDI nos últimos 24) e pior mês.
+- Gross-up dos isentos: retorno ÷ (1 − alíquota), com alíquota configurável em `aliquota_grossup`.
+- Qualidade dos dados: lacunas de mais de 10 dias deixam os períodos afetados em "–"; variações atípicas são sinalizadas (mercado × isoladas). Os dados da CVM nunca são alterados.
+- Comparador: marque até 5 fundos na tabela e clique em Comparar.
 
 ## Rodar no seu computador (opcional)
 
