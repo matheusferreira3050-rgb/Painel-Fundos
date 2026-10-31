@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Painel de Fundos</title>
+  <meta name="description" content="Rentabilidade de fundos de investimento com base nos informes diários da CVM.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23123b5d'/%3E%3Cpath d='M7 22l6-7 5 4 7-9' stroke='%23fff' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+</head>
+<body>
+  <header class="topo">
+    <div class="topo-int">
+      <div>
+        <h1 id="titulo">Painel de Fundos</h1>
+        <p id="subtitulo" class="sub"></p>
+      </div>
+      <div class="carimbo" id="carimbo">Carregando…</div>
+    </div>
+    <nav class="abas" role="tablist">
+      <button role="tab" class="aba ativa" data-aba="rent">Rentabilidade</button>
+      <button role="tab" class="aba" data-aba="fundos">Fundos</button>
+      <button role="tab" class="aba" data-aba="metodo">Metodologia</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===================== RENTABILIDADE ===================== -->
+    <section id="aba-rent" class="painel ativo">
+      <div class="filtros">
+        <input id="busca" type="search" placeholder="Buscar por nome ou CNPJ" autocomplete="off">
+        <div id="categorias" class="chips"></div>
+      </div>
+
+      <div class="tabela-wrap">
+        <table class="tabela" id="tabela">
+          <thead>
+            <tr>
+              <th data-col="nome" class="txt fixa">Fundo</th>
+              <th data-col="dia">Dia</th>
+              <th data-col="mes">Mês</th>
+              <th data-col="ano">Ano</th>
+              <th data-col="m12">12 m</th>
+              <th data-col="m24">24 m</th>
+              <th data-col="m36">36 m</th>
+              <th data-col="pct12">% CDI 12 m</th>
+              <th data-col="vol12">Vol. 12 m</th>
+              <th data-col="pl">PL</th>
+            </tr>
+          </thead>
+          <tbody id="corpo"></tbody>
+        </table>
+      </div>
+      <p class="nota">Toque em um fundo para ver o gráfico e a rentabilidade mês a mês. Clique no cabeçalho para ordenar.</p>
+    </section>
+
+    <!-- ===================== FUNDOS (gestão) ===================== -->
+    <section id="aba-fundos" class="painel">
+      <div class="cartao gestao">
+        <div>
+          <h2>Lista de fundos acompanhados</h2>
+          <p>A lista fica no arquivo <code>fundos.yaml</code> do repositório. Ao salvar uma alteração, o robô roda sozinho, baixa o histórico dos fundos novos e republica o site em poucos minutos.</p>
+        </div>
+        <div class="acoes" id="acoes-gestao"></div>
+      </div>
+      <div id="avisos"></div>
+      <div class="tabela-wrap">
+        <table class="tabela simples">
+          <thead><tr><th class="txt">Fundo</th><th class="txt">CNPJ</th><th class="txt">Categoria</th><th class="txt">Situação</th><th>Última cota</th><th>Histórico desde</th></tr></thead>
+          <tbody id="corpo-fundos"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===================== METODOLOGIA ===================== -->
+    <section id="aba-metodo" class="painel">
+      <div class="cartao texto">
+        <h2>Fonte dos dados</h2>
+        <p>As cotas, o patrimônio líquido e o número de cotistas vêm dos <strong>Informes Diários</strong> publicados pela CVM no Portal de Dados Abertos (dados.cvm.gov.br). O CDI vem do Banco Central (SGS, série 12). O painel é atualizado automaticamente todos os dias; como os administradores enviam o informe à CVM com defasagem, a data da última cota costuma ser de 1 a 2 dias úteis atrás.</p>
+        <h2>Como calculamos</h2>
+        <ul>
+          <li><strong>Dia:</strong> variação da cota em relação à cota anterior divulgada.</li>
+          <li><strong>Mês / Ano:</strong> variação desde a última cota do mês / ano anterior.</li>
+          <li><strong>12, 24, 36 meses:</strong> variação desde a última cota disponível na data equivalente.</li>
+          <li><strong>% CDI:</strong> retorno do fundo dividido pelo CDI acumulado no mesmo intervalo de datas.</li>
+          <li><strong>Volatilidade:</strong> desvio-padrão dos retornos diários dos últimos 12 meses, anualizado (√252).</li>
+          <li><strong>Drawdown máximo:</strong> maior queda da cota a partir de um pico anterior.</li>
+        </ul>
+        <p>Os retornos são líquidos de taxas de administração e performance (já descontadas na cota) e brutos de impostos.</p>
+        <h2>Aviso importante</h2>
+        <p class="aviso-legal">Rentabilidade obtida no passado não representa garantia de rentabilidade futura. Fundos de investimento não contam com garantia do administrador, do gestor, de qualquer mecanismo de seguro ou do Fundo Garantidor de Créditos (FGC). Leia a lâmina de informações essenciais e o regulamento antes de investir. Para avaliar a performance de um fundo, é recomendável uma análise de, no mínimo, 12 meses. Este painel tem caráter informativo e não constitui recomendação de investimento.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== DETALHE ===================== -->
+  <div class="veu" id="veu" hidden></div>
+  <aside class="detalhe" id="detalhe" hidden aria-modal="true" role="dialog">
+    <div class="det-topo">
+      <div>
+        <div class="det-cat" id="det-cat"></div>
+        <h2 id="det-nome"></h2>
+        <div class="det-cnpj" id="det-cnpj"></div>
+      </div>
+      <button class="fechar" id="fechar" aria-label="Fechar">×</button>
+    </div>
+    <div class="kpis" id="kpis"></div>
+    <div class="grafico-cab">
+      <div class="legenda"><span class="lg fundo"></span>Fundo <span class="lg cdi"></span>CDI</div>
+      <div class="periodos" id="periodos"></div>
+    </div>
+    <div class="grafico" id="grafico"></div>
+    <h3>Rentabilidade mês a mês</h3>
+    <p class="nota">Valor de cima: fundo. Valor de baixo: % do CDI no mês.</p>
+    <div class="tabela-wrap"><table class="mensal" id="mensal"></table></div>
+    <p class="aviso-legal pequeno">Rentabilidade passada não é garantia de rentabilidade futura. Fundos não contam com garantia do FGC.</p>
+  </aside>
+
+  <footer class="rodape">
+    <p>Dados: CVM (Informes Diários de Fundos) e Banco Central (CDI). Rentabilidade passada não é garantia de rentabilidade futura. Fundos de investimento não contam com garantia do administrador, do gestor, de mecanismo de seguro ou do FGC. Conteúdo informativo, não é recomendação de investimento.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

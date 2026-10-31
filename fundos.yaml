@@ -1,0 +1,38 @@
+# =====================================================================
+#  LISTA DE FUNDOS DO PAINEL
+#  Edite este arquivo para incluir/remover fundos (revisão semestral).
+#  Ao salvar (commit), o robô roda sozinho e baixa o histórico dos novos.
+# =====================================================================
+
+configuracao:
+  titulo: "Painel de Fundos"
+  subtitulo: "Rentabilidade com base nos informes diários da CVM"
+  anos_historico: 5          # quantos anos de histórico baixar para fundos novos
+  dias_alerta_defasagem: 7   # avisa se a última cota tiver mais de N dias corridos
+
+fundos:
+  # cnpj:       CNPJ da CLASSE (pode ser com ou sem pontuação)
+  # nome:       nome que aparece no site
+  # categoria:  usado nos filtros (ex.: Renda Fixa, Crédito Privado, Multimercado, Ações, Previdência)
+  # subclasse:  opcional — só preencha se o fundo tiver subclasses na CVM (campo ID_SUBCLASSE)
+  # ativo:      false esconde o fundo do site sem apagar o histórico
+
+  - cnpj: "00.000.000/0001-01"
+    nome: "Exemplo Renda Fixa DI"
+    categoria: "Renda Fixa"
+    ativo: true
+
+  - cnpj: "00.000.000/0001-02"
+    nome: "Exemplo Crédito Privado"
+    categoria: "Crédito Privado"
+    ativo: true
+
+  - cnpj: "00.000.000/0001-03"
+    nome: "Exemplo Multimercado Macro"
+    categoria: "Multimercado"
+    ativo: true
+
+  - cnpj: "00.000.000/0001-04"
+    nome: "Exemplo Ações Livre"
+    categoria: "Ações"
+    ativo: true
