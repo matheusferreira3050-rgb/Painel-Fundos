@@ -1,38 +1,186 @@
 # =====================================================================
-#  LISTA DE FUNDOS DO PAINEL
+#  LISTA DE FUNDOS DO PAINEL — Crédito Privado: Espelho e Itaú Asset
 #  Edite este arquivo para incluir/remover fundos (revisão semestral).
-#  Ao salvar (commit), o robô roda sozinho e baixa o histórico dos novos.
+#  Ao salvar (Commit changes), o robô roda sozinho e baixa o histórico dos novos.
 # =====================================================================
 
 configuracao:
-  titulo: "Painel de Fundos"
+  titulo: "Crédito Privado — Espelho e Itaú Asset"
   subtitulo: "Rentabilidade com base nos informes diários da CVM"
-  anos_historico: 5          # quantos anos de histórico baixar para fundos novos
-  dias_alerta_defasagem: 7   # avisa se a última cota tiver mais de N dias corridos
+  anos_historico: 5
+  dias_alerta_defasagem: 7
 
 fundos:
-  # cnpj:       CNPJ da CLASSE (pode ser com ou sem pontuação)
-  # nome:       nome que aparece no site
-  # categoria:  usado nos filtros (ex.: Renda Fixa, Crédito Privado, Multimercado, Ações, Previdência)
-  # subclasse:  opcional — só preencha se o fundo tiver subclasses na CVM (campo ID_SUBCLASSE)
-  # ativo:      false esconde o fundo do site sem apagar o histórico
-
-  - cnpj: "00.000.000/0001-01"
-    nome: "Exemplo Renda Fixa DI"
-    categoria: "Renda Fixa"
+  - cnpj: "48.084.411/0001-39"   # FY 56281
+    nome: "Absolute Atenas Seleção Renda Fixa Crédito Privado"
+    categoria: "Renda Fixa CP"
+    distribuicao: "FoF"
     ativo: true
 
-  - cnpj: "00.000.000/0001-02"
-    nome: "Exemplo Crédito Privado"
-    categoria: "Crédito Privado"
+  - cnpj: "48.094.354/0001-79"   # FY 56283
+    nome: "Absolute Creta Seleção Renda Fixa Crédito Privado"
+    categoria: "Renda Fixa CP"
+    distribuicao: "FoF"
     ativo: true
 
-  - cnpj: "00.000.000/0001-03"
-    nome: "Exemplo Multimercado Macro"
-    categoria: "Multimercado"
+  - cnpj: "55.686.350/0001-45"   # FY 57504
+    nome: "Absolute Delfos Seleção"
+    categoria: "Renda Fixa CP"
+    distribuicao: "FoF"
     ativo: true
 
-  - cnpj: "00.000.000/0001-04"
-    nome: "Exemplo Ações Livre"
-    categoria: "Ações"
+  - cnpj: "57.065.462/0001-04"   # FY 57650
+    nome: "Absolute Hidra IPCA Seleção Infra Renda Fixa (Isento IRPF)"
+    categoria: "Infraestrutura / Isentos"
+    distribuicao: "FoF"
+    ativo: true
+
+  - cnpj: "64.963.538/0001-84"   # FY 58915
+    nome: "Absolute Hidra Pré 2 Anos Seleção Infra RF"
+    categoria: "Infraestrutura / Isentos"
+    distribuicao: "FoF"
+    ativo: true
+
+  - cnpj: "49.706.433/0001-56"   # FY 56450
+    nome: "Absolute Hidra Seleção Infra Renda Fixa CP (Isento IRPF)"
+    categoria: "Infraestrutura / Isentos"
+    distribuicao: "FoF"
+    ativo: true
+
+  - cnpj: "42.860.699/0001-00"   # FY 55859
+    nome: "ARX Denali RF CP IU"
+    categoria: "Renda Fixa CP"
+    distribuicao: "FoF"
+    ativo: true
+
+  - cnpj: "42.698.327/0001-29"   # FY 55790
+    nome: "ARX Vinson RF CP IU"
+    categoria: "Renda Fixa CP"
+    distribuicao: "FoF"
+    ativo: true
+
+  - cnpj: "68.418.021/0001-65"   # FY 59285
+    nome: "BTG Crédito Corporativo Plus Seleção Subclasse I"
+    categoria: "Renda Fixa CP"
+    distribuicao: "FoF"
+    ativo: true
+
+  - cnpj: "57.464.330/0001-55"   # FY 57731
+    nome: "BTG Pactual Hedge Debêntures de Infra Subclasse I"
+    categoria: "Infraestrutura / Isentos"
+    distribuicao: "FoF"
+    ativo: true
+
+  - cnpj: "08.927.574/0001-11"   # FY 50246
+    nome: "BTG Pactual Hedge Renda Fixa Crédito Privado"
+    categoria: "Renda Fixa CP"
+    distribuicao: "FoF"
+    ativo: true
+
+  - cnpj: "68.358.170/0001-86"   # FY 59278
+    nome: "Capitânia Infra CDI 30"
+    categoria: "Infraestrutura / Isentos"
+    distribuicao: "FoF"
+    ativo: true
+
+  - cnpj: "55.227.365/0001-45"   # FY 57409
+    nome: "Drys Debêntures de Infraestrutura Seleção (Isento IRPF)"
+    categoria: "Infraestrutura / Isentos"
+    distribuicao: "FoF"
+    ativo: true
+
+  - cnpj: "53.390.661/0001-37"   # FY 57019
+    nome: "Equitas Shelter Seleção Renda Fixa"
+    categoria: "Renda Fixa CP"
+    distribuicao: "FoF"
+    ativo: true
+
+  - cnpj: "48.094.425/0001-33"   # FY 56285
+    nome: "Ibiuna Credit Seleção Multimercado CP"
+    categoria: "Multimercado CP"
+    distribuicao: "FoF"
+    ativo: true
+
+  - cnpj: "48.069.005/0001-05"   # FY 56265
+    nome: "Icatu Vanguarda Crédito Privado Liquidez Seleção"
+    categoria: "Renda Fixa CP"
+    distribuicao: "FoF"
+    ativo: true
+
+  - cnpj: "32.835.611/0001-46"   # FY 54138
+    nome: "Icatu Vanguarda Crédito Privado LP IU RF FIC"
+    categoria: "Renda Fixa CP"
+    distribuicao: "FoF"
+    ativo: true
+
+  - cnpj: "42.501.967/0001-05"   # FY 55626
+    nome: "Icatu Vanguarda Crédito Privado PG Multimercado"
+    categoria: "Multimercado CP"
+    distribuicao: "FoF"
+    ativo: true
+
+  - cnpj: "46.467.208/0001-16"   # FY 56081
+    nome: "Icatu Vanguarda Seleção Infraestrutura Renda Fixa"
+    categoria: "Infraestrutura / Isentos"
+    distribuicao: "FoF"
+    ativo: true
+
+  - cnpj: "52.151.185/0001-39"   # FY 56769
+    nome: "Inter Corporate Seleção Renda Fixa"
+    categoria: "Renda Fixa CP"
+    distribuicao: "FoF"
+    ativo: true
+
+  - cnpj: "42.336.900/0001-54"   # FY 55873
+    nome: "Itaú Action Debêntures Incentivadas RF CP (Isento IRPF)"
+    categoria: "Infraestrutura / Isentos"
+    distribuicao: "Itaú Asset"
+    ativo: true
+
+  - cnpj: "20.335.176/0001-01"   # FY 52663
+    nome: "Itaú Active Fix 5 Crédito Privado Renda Fixa"
+    categoria: "Renda Fixa CP"
+    distribuicao: "Itaú Asset"
+    ativo: true
+
+  - cnpj: "38.000.771/0001-51"   # FY 54901
+    nome: "Itaú Active Fix ALL Crédito Privado Renda Fixa"
+    categoria: "Renda Fixa CP"
+    distribuicao: "Itaú Asset"
+    ativo: true
+
+  - cnpj: "26.262.571/0001-98"   # FY 53030
+    nome: "Itaú Active Fix Plus Multimercado Crédito Privado"
+    categoria: "Multimercado CP"
+    distribuicao: "Itaú Asset"
+    ativo: true
+
+  - cnpj: "42.814.895/0001-48"   # FY 55754
+    nome: "Itaú CDI Mais Multimercado Crédito Privado"
+    categoria: "Multimercado CP"
+    distribuicao: "Itaú Asset"
+    ativo: true
+
+  - cnpj: "51.998.694/0001-39"   # FY 56732
+    nome: "Itaú Crédito Bancário Renda Fixa Crédito Privado"
+    categoria: "Renda Fixa CP"
+    distribuicao: "Itaú Asset"
+    ativo: true
+
+  - cnpj: "61.964.220/0001-20"   # FY 58368
+    nome: "Itaú Debêntures IMA-B Infraestrutura RF"
+    categoria: "Infraestrutura / Isentos"
+    distribuicao: "Itaú Asset"
+    ativo: true
+
+  - cnpj: "42.380.161/0001-06"   # FY 55843
+    nome: "Itaú Debêntures Incentivadas CDI RF CP (Isento IRPF)"
+    categoria: "Infraestrutura / Isentos"
+    distribuicao: "Itaú Asset"
+    ativo: true
+
+  - cnpj: "54.496.707/0001-60"   # FY 57204
+    nome: "Itaú Debêntures Incentivadas Pós-Fixado Renda Fixa (Isento IRPF)"
+    categoria: "Infraestrutura / Isentos"
+    distribuicao: "Itaú Asset"
     ativo: true
