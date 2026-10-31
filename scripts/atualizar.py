@@ -268,8 +268,9 @@ def resolver_subclasses(fundos: list[dict], cad: dict, avisos: list[str]) -> Non
         m = re.search(r"subclasse\s+([\w-]+)", f["nome"], re.I)
         escolhida = None
         if m:
-            alvo = normalizar("subclasse" + m.group(1))
-            cand = [s for s in subs if normalizar(s["nome"]).endswith(alvo)]
+            sem_acento = lambda t: unicodedata.normalize("NFKD", t).encode("ascii", "ignore").decode().upper()
+            padrao = re.compile(r"\bSUBCLASSE\s+" + re.escape(sem_acento(m.group(1))) + r"\b")
+            cand = [s for s in subs if padrao.search(sem_acento(s["nome"]))]
             if len(cand) == 1:
                 escolhida = cand[0]
         if escolhida:
@@ -743,12 +744,19 @@ def gerar_site(geral: dict, fundos: list[dict], cotas: pd.DataFrame, cdi: pd.Dat
             arq.unlink()
 
     datas = [x["ultima_data"] for x in resumo_fundos if x.get("status") in ("ok", "defasado") and x["ativo"]]
+    # CDI de referência calculado por conta própria (não depende do histórico de nenhum fundo)
+    cdi_ref = None
+    if datas and not idx.empty:
+        serie_cdi = idx[idx.index <= pd.Timestamp(max(datas))]
+        if len(serie_cdi) > 1:
+            cdi_ref = {"data": max(datas), "ret": calcular(serie_cdi, idx)["ret"]}
     resumo = {
         "titulo": geral.get("titulo", "Painel de Fundos"),
         "subtitulo": geral.get("subtitulo", ""),
         "atualizado_em": datetime.now(FUSO_BR).isoformat(timespec="minutes"),
         "data_base": max(datas) if datas else None,
         "cdi_ultima_data": None if cdi.empty else cdi["data"].max(),
+        "cdi_ref": cdi_ref,
         "aliquota_grossup": aliquota,
         "repo": os.environ.get("GITHUB_REPOSITORY", ""),
         "branch": os.environ.get("GITHUB_REF_NAME", "main"),
