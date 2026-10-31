@@ -1,9 +1,23 @@
 {
  "titulo": "Crédito Privado — Espelho e Itaú Asset",
  "subtitulo": "Rentabilidade com base nos informes diários da CVM",
- "atualizado_em": "2026-10-30T23:25-03:00",
+ "atualizado_em": "2026-10-30T23:27-03:00",
  "data_base": "2026-10-28",
  "cdi_ultima_data": "2026-10-29",
+ "cdi_ref": {
+  "data": "2026-10-28",
+  "ret": {
+   "dia": 0.00050788,
+   "mes": 0.00969396,
+   "ano": 0.11582564,
+   "m6": 0.06852363,
+   "m12": 0.14321626,
+   "m24": 0.29912116,
+   "m36": 0.44137223,
+   "m60": 0.82144623,
+   "inicio": 0.83255943
+  }
+ },
  "aliquota_grossup": 0.15,
  "repo": "matheusferreira3050-rgb/Painel-Fundos",
  "branch": "main",
@@ -652,7 +666,7 @@
   {
    "chave": "68418021000165",
    "cnpj": "68.418.021/0001-65",
-   "subclasse": null,
+   "subclasse": "MU4LW1786019908",
    "nome": "BTG Crédito Corporativo Plus Seleção Subclasse I",
    "categoria": "Renda Fixa CP",
    "distribuicao": "FoF",
@@ -666,26 +680,27 @@
     "situacao": "Em Funcionamento Normal",
     "tributacao_lp": "S",
     "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
-    "administrador": "ITAU UNIBANCO S.A."
+    "administrador": "ITAU UNIBANCO S.A.",
+    "subclasse_nome": "SUBCLASSE I BTG PACTUAL CRÉDITO CORPORATIVO PLUS SELEÇÃO FIIF EM INFRA DA CIC RF RESP LIMITADA"
    },
    "alertas": [],
    "status": "ok",
    "ultima_data": "2026-10-28",
    "inicio_historico": "2026-09-24",
-   "cota": 0.9979,
-   "pl": 997.9,
-   "cotistas": 2,
+   "cota": 0.997766,
+   "pl": 9977662.94,
+   "cotistas": 1,
    "captacao_liquida_30d": 0.0,
    "ret": {
-    "dia": 0.00222963,
-    "mes": 0.0005314,
+    "dia": 0.00222389,
+    "mes": 0.00042312,
     "ano": null,
     "m6": null,
     "m12": null,
     "m24": null,
     "m36": null,
     "m60": null,
-    "inicio": -0.0021
+    "inicio": -0.002234
    },
    "cdi": {
     "dia": 0.00050788,
@@ -699,20 +714,20 @@
     "inicio": 0.01174673
    },
    "pct_cdi": {
-    "dia": 4.39007642,
-    "mes": 0.05481742,
+    "dia": 4.37877426,
+    "mes": 0.04364821,
     "ano": null,
     "m6": null,
     "m12": null,
     "m24": null,
     "m36": null,
     "m60": null,
-    "inicio": -0.17877313
+    "inicio": -0.19018055
    },
-   "vol12": 0.0364824,
-   "mdd12": -0.00889673,
-   "mdd_total": -0.00889673,
-   "dd_atual": -0.00581824,
+   "vol12": 0.03697335,
+   "mdd12": -0.00890276,
+   "mdd_total": -0.00890276,
+   "dd_atual": -0.00583388,
    "consistencia": {
     "meses_acima_cdi": 0,
     "meses_avaliados": 0,
@@ -725,7 +740,7 @@
   {
    "chave": "57464330000155",
    "cnpj": "57.464.330/0001-55",
-   "subclasse": null,
+   "subclasse": "R77ZH1775590867",
    "nome": "BTG Pactual Hedge Debêntures de Infra Subclasse I",
    "categoria": "Infraestrutura / Isentos",
    "distribuicao": "FoF",
@@ -738,26 +753,27 @@
     "data_inicio": "2024-09-27",
     "situacao": "Em Funcionamento Normal",
     "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
-    "administrador": "ITAU UNIBANCO S.A."
+    "administrador": "ITAU UNIBANCO S.A.",
+    "subclasse_nome": "SUBCLASSE I DO BTG PACTUAL HEDGE SELEÇÃO FIF INC DEB INFRA DA CIC RF CRED PRIV ATIVO RESP LIMITADA"
    },
    "alertas": [],
    "status": "ok",
    "ultima_data": "2026-10-28",
    "inicio_historico": "2026-04-28",
-   "cota": 1.062925,
-   "pl": 10160555.72,
-   "cotistas": 56,
-   "captacao_liquida_30d": 85154.13,
+   "cota": 1.063718,
+   "pl": 10637448.83,
+   "cotistas": 1,
+   "captacao_liquida_30d": 0.0,
    "ret": {
-    "dia": 0.00258256,
-    "mes": 0.00701741,
+    "dia": 0.00273185,
+    "mes": 0.00702167,
     "ano": null,
-    "m6": 0.062925,
+    "m6": 0.063718,
     "m12": null,
     "m24": null,
     "m36": null,
     "m60": null,
-    "inicio": 0.062925
+    "inicio": 0.063718
    },
    "cdi": {
     "dia": 0.00050788,
@@ -771,26 +787,26 @@
     "inicio": 0.06852363
    },
    "pct_cdi": {
-    "dia": 5.08498713,
-    "mes": 0.72389519,
+    "dia": 5.37892602,
+    "mes": 0.72433517,
     "ano": null,
-    "m6": 0.91829642,
+    "m6": 0.92986907,
     "m12": null,
     "m24": null,
     "m36": null,
     "m60": null,
-    "inicio": 0.91829642
+    "inicio": 0.92986907
    },
-   "vol12": 0.01817975,
-   "mdd12": -0.00730867,
-   "mdd_total": -0.00730867,
-   "dd_atual": -0.00262358,
+   "vol12": 0.01828783,
+   "mdd12": -0.00746072,
+   "mdd_total": -0.00746072,
+   "dd_atual": -0.0026263,
    "consistencia": {
     "meses_acima_cdi": 3,
     "meses_avaliados": 5,
     "pior_mes": {
      "ref": "09/2026",
-     "ret": 0.00621066
+     "ret": 0.00628079
     },
     "meses_negativos": 0,
     "meses_total": 5
@@ -2183,7 +2199,7 @@
    "cota": 18.51951,
    "pl": 5283694412.64,
    "cotistas": 26961,
-   "captacao_liquida_30d": -163781167.38000003,
+   "captacao_liquida_30d": -163781167.38,
    "ret": {
     "dia": 0.0030373,
     "mes": 0.00712237,
@@ -2312,8 +2328,6 @@
   }
  ],
  "avisos": [
-  "BTG Crédito Corporativo Plus Seleção Subclasse I (68.418.021/0001-65) tem 2 subclasses na CVM: 6G3XV1786020869 = SUBCLASSE II BTG PACTUAL CRÉDITO CORPORATIVO PLUS SELEÇÃO FIIF EM INFRA DA CIC RF RESP LIMITADA; MU4LW1786019908 = SUBCLASSE I BTG PACTUAL CRÉDITO CORPORATIVO PLUS SELEÇÃO FIIF EM INFRA DA CIC RF RESP LIMITADA. Coloque o código certo no campo 'subclasse' do fundos.yaml.",
-  "BTG Pactual Hedge Debêntures de Infra Subclasse I (57.464.330/0001-55) tem 2 subclasses na CVM: LNULW1775591402 = SUBCLASSE II DO BTG PACTUAL HEDGE SELEÇÃO FIF INC DEB INFRA DA CIC RF CRED PRIV ATIVO RESP LIMITADA; R77ZH1775590867 = SUBCLASSE I DO BTG PACTUAL HEDGE SELEÇÃO FIF INC DEB INFRA DA CIC RF CRED PRIV ATIVO RESP LIMITADA. Coloque o código certo no campo 'subclasse' do fundos.yaml.",
   "Absolute Hidra IPCA Seleção Infra Renda Fixa (Isento IRPF): Sem cotas na CVM entre 03/10/2024 e 17/10/2024 (14 dias). Períodos que dependem dessas datas aparecem como “–”.",
   "Inter Corporate Seleção Renda Fixa: Sem cotas na CVM desde 06/06/2024. O fundo pode ter sido encerrado, incorporado ou mudado de CNPJ.",
   "Itaú CDI Mais Multimercado Crédito Privado: Sem cotas na CVM entre 01/08/2025 e 23/02/2026 (206 dias). Períodos que dependem dessas datas aparecem como “–”."
