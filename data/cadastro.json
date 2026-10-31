@@ -1,0 +1,373 @@
+{
+ "data": "2026-10-30",
+ "fundos": {
+  "20335176000101": {
+   "subclasses": [],
+   "denominacao": "ITAÚ ACTIVE FIX 5 RENDA FIXA CRED PRIV FIF DA CLASSE DE INVESTIMENTO EM COTAS - RESP LIMITADA",
+   "classificacao_anbima": "Renda Fixa Duração Livre Crédito Livre",
+   "classificacao": "Renda Fixa",
+   "publico_alvo": "Qualificado",
+   "data_inicio": "2024-06-20",
+   "situacao": "Em Funcionamento Normal",
+   "condominio": "Aberto",
+   "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+   "administrador": "ITAU UNIBANCO S.A."
+  },
+  "48069005000105": {
+   "subclasses": [],
+   "denominacao": "ICATU VANGUARDA CRÉDITO PRIVADO LIQUIDEZ SELEÇÃO FIF CIC RENDA FIXA LONGO PRAZO RESP LIMITADA",
+   "classificacao_anbima": "Renda Fixa Duração Livre Crédito Livre",
+   "classificacao": "Renda Fixa",
+   "publico_alvo": "Público Geral",
+   "data_inicio": "2025-06-17",
+   "situacao": "Em Funcionamento Normal",
+   "condominio": "Aberto",
+   "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+   "administrador": "ITAU UNIBANCO S.A."
+  },
+  "46467208000116": {
+   "subclasses": [],
+   "denominacao": "ICATU VANGUARDA SELEÇÃO FIC DE FUNDOS INCENTIVADOS DE INVESTIMENTO EM INFRA RF LP RESP LIMITADA",
+   "classificacao_anbima": "Renda Fixa Duração Livre Crédito Livre",
+   "classificacao": "Renda Fixa",
+   "publico_alvo": "Público Geral",
+   "data_inicio": "2025-06-17",
+   "situacao": "Em Funcionamento Normal",
+   "condominio": "Aberto",
+   "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+   "administrador": "ITAU UNIBANCO S.A."
+  },
+  "32835611000146": {
+   "subclasses": [],
+   "denominacao": "ICATU VANGUARDA CRÉDITO PRIVADO LONGO PRAZO IU FIF DA CIC RENDA FIXA RESP LIMITADA",
+   "classificacao_anbima": "Renda Fixa Duração Baixa Crédito Livre",
+   "classificacao": "Renda Fixa",
+   "publico_alvo": "Público Geral",
+   "data_inicio": "2025-06-17",
+   "situacao": "Em Funcionamento Normal",
+   "tributacao_lp": "S",
+   "condominio": "Aberto",
+   "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+   "administrador": "ITAU UNIBANCO S.A."
+  },
+  "68358170000186": {
+   "subclasses": [],
+   "denominacao": "CAPITÂNIA INFRA 30 CDI SELEÇÃO FIF INCENTIVADO EM INFRAESTRUTURA DA CIC RENDA FIXA RESP LIMITADA",
+   "classificacao_anbima": "Renda Fixa Duração Alta Crédito Livre",
+   "classificacao": "Renda Fixa",
+   "publico_alvo": "Público Geral",
+   "data_inicio": "2026-08-04",
+   "situacao": "Em Funcionamento Normal",
+   "condominio": "Aberto",
+   "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+   "administrador": "ITAU UNIBANCO S.A."
+  },
+  "42501967000105": {
+   "subclasses": [],
+   "denominacao": "ICATU VANGUARDA CRÉDITO PRIVADO PG MULTIMERCADO SELEÇÃO FIF CIC RESPONSABILIDADE LIMITADA",
+   "classificacao_anbima": "Multimercados Livre",
+   "classificacao": "Multimercado",
+   "publico_alvo": "Público Geral",
+   "data_inicio": "2025-06-17",
+   "situacao": "Em Funcionamento Normal",
+   "condominio": "Aberto",
+   "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+   "administrador": "ITAU UNIBANCO S.A."
+  },
+  "53390661000137": {
+   "subclasses": [],
+   "denominacao": "DRYS SHELTER SELEÇÃO FIF CIC RENDA FIXA CRÉDITO PRIVADO LONGO PRAZO RESP LIMITADA",
+   "classificacao_anbima": "Renda Fixa Duração Baixa Crédito Livre",
+   "classificacao": "Renda Fixa",
+   "publico_alvo": "Público Geral",
+   "data_inicio": "2024-01-05",
+   "situacao": "Em Funcionamento Normal",
+   "tributacao_lp": "S",
+   "condominio": "Aberto",
+   "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+   "administrador": "ITAU UNIBANCO S.A."
+  },
+  "26262571000198": {
+   "subclasses": [],
+   "denominacao": "ITAÚ MULTIMERCADO CRÉDITO PRIVADO ACTIVE FIX PLUS FIF DA CIC RESP LIMITADA",
+   "classificacao_anbima": "Multimercados Livre",
+   "classificacao": "Multimercado",
+   "publico_alvo": "Qualificado",
+   "data_inicio": "2025-04-04",
+   "situacao": "Em Funcionamento Normal",
+   "tributacao_lp": "S",
+   "condominio": "Aberto",
+   "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+   "administrador": "ITAU UNIBANCO S.A."
+  },
+  "68418021000165": {
+   "subclasses": [
+    {
+     "id": "6G3XV1786020869",
+     "nome": "SUBCLASSE II BTG PACTUAL CRÉDITO CORPORATIVO PLUS SELEÇÃO FIIF EM INFRA DA CIC RF RESP LIMITADA",
+     "situacao": "Em Funcionamento Normal"
+    },
+    {
+     "id": "MU4LW1786019908",
+     "nome": "SUBCLASSE I BTG PACTUAL CRÉDITO CORPORATIVO PLUS SELEÇÃO FIIF EM INFRA DA CIC RF RESP LIMITADA",
+     "situacao": "Em Funcionamento Normal"
+    }
+   ],
+   "denominacao": "BTG PACTUAL CRÉDITO CORPORATIVO PLUS SELEÇÃO FIIF EM INFRA DA CIC RENDA FIXA RESP LIMITADA",
+   "classificacao_anbima": "Renda Fixa Duração Livre Crédito Livre",
+   "classificacao": "Renda Fixa",
+   "data_inicio": "2026-08-06",
+   "situacao": "Em Funcionamento Normal",
+   "tributacao_lp": "S",
+   "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+   "administrador": "ITAU UNIBANCO S.A."
+  },
+  "57464330000155": {
+   "subclasses": [
+    {
+     "id": "LNULW1775591402",
+     "nome": "SUBCLASSE II DO BTG PACTUAL HEDGE SELEÇÃO FIF INC DEB INFRA DA CIC RF CRED PRIV ATIVO RESP LIMITADA",
+     "situacao": "Em Funcionamento Normal"
+    },
+    {
+     "id": "R77ZH1775590867",
+     "nome": "SUBCLASSE I DO BTG PACTUAL HEDGE SELEÇÃO FIF INC DEB INFRA DA CIC RF CRED PRIV ATIVO RESP LIMITADA",
+     "situacao": "Em Funcionamento Normal"
+    }
+   ],
+   "denominacao": "BTG PACTUAL HEDGE SELEÇÃO FIF INCENTIVADO EM DEB DE INFRA DA CIC RF CRED PRIV ATIVO LP RESP LIMITADA",
+   "classificacao_anbima": "Renda Fixa Duração Livre Crédito Livre",
+   "classificacao": "Renda Fixa",
+   "data_inicio": "2024-09-27",
+   "situacao": "Em Funcionamento Normal",
+   "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+   "administrador": "ITAU UNIBANCO S.A."
+  },
+  "55227365000145": {
+   "subclasses": [],
+   "denominacao": "DRYS DEBENTURES DE INF SELECAO FUNDO DE INV FIN DA CLASSE DE INV EM COTAS RF CRED PRIV RESP LIMITADA",
+   "classificacao_anbima": "Renda Fixa Duração Livre Crédito Livre",
+   "classificacao": "Renda Fixa",
+   "publico_alvo": "Público Geral",
+   "data_inicio": "2024-05-22",
+   "situacao": "Em Funcionamento Normal",
+   "condominio": "Aberto",
+   "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+   "administrador": "ITAU UNIBANCO S.A."
+  },
+  "42336900000154": {
+   "subclasses": [],
+   "denominacao": "ITAÚ ACTION DEB INCENTIVADAS FIF INCENTIVADO INFRA CIC RF CRED PRIV LP - RESP LIMITADA",
+   "classificacao_anbima": "Renda Fixa Duração Livre Crédito Livre",
+   "classificacao": "Renda Fixa",
+   "publico_alvo": "Público Geral",
+   "data_inicio": "2024-03-25",
+   "situacao": "Em Funcionamento Normal",
+   "condominio": "Aberto",
+   "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+   "administrador": "ITAU UNIBANCO S.A."
+  },
+  "51998694000139": {
+   "subclasses": [],
+   "denominacao": "ITAÚ CRÉDITO BANCÁRIO RENDA FIXA CRÉDITO PRIVADO FIF DA CIC RESP LIMITADA",
+   "classificacao_anbima": "Renda Fixa Duração Média Grau de Invest.",
+   "classificacao": "Renda Fixa",
+   "publico_alvo": "Público Geral",
+   "data_inicio": "2024-07-26",
+   "situacao": "Em Funcionamento Normal",
+   "condominio": "Aberto",
+   "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+   "administrador": "ITAU UNIBANCO S.A."
+  },
+  "38000771000151": {
+   "subclasses": [],
+   "denominacao": "ITAÚ ACTIVE FIX ALL RENDA FIXA CRÉDITO PRIVADO LONGO PRAZO FIF DA CIC RESP LIMITADA",
+   "classificacao_anbima": "Renda Fixa Duração Livre Crédito Livre",
+   "classificacao": "Renda Fixa",
+   "publico_alvo": "Público Geral",
+   "data_inicio": "2025-04-02",
+   "situacao": "Em Funcionamento Normal",
+   "tributacao_lp": "S",
+   "condominio": "Aberto",
+   "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+   "administrador": "ITAU UNIBANCO S.A."
+  },
+  "52151185000139": {
+   "subclasses": [],
+   "taxa_adm": "0.25",
+   "taxa_perf": "0",
+   "gestor": "ITAÚ INVESTMENT SOLUTIONS S.A.",
+   "administrador": "ITAU UNIBANCO S.A.",
+   "classificacao": "Renda Fixa",
+   "publico_alvo": "Público Geral"
+  },
+  "48094425000133": {
+   "subclasses": [],
+   "denominacao": "IBIUNA CREDIT SELEÇÃO FIF CIC MULTIMERCADO CRÉDITO PRIVADO RESP LIMITADA",
+   "classificacao_anbima": "Multimercados Juros e Moedas",
+   "classificacao": "Multimercado",
+   "publico_alvo": "Público Geral",
+   "data_inicio": "2025-06-17",
+   "situacao": "Em Funcionamento Normal",
+   "condominio": "Aberto",
+   "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+   "administrador": "ITAU UNIBANCO S.A."
+  },
+  "48084411000139": {
+   "subclasses": [],
+   "denominacao": "ABSOLUTE ATENAS SELEÇÃO FIF DA CIC RENDA FIXA CRÉDITO PRIVADO RESPONSABILIDADE LIMITADA",
+   "classificacao_anbima": "Renda Fixa Duração Baixa Grau de Invest.",
+   "classificacao": "Renda Fixa",
+   "publico_alvo": "Público Geral",
+   "data_inicio": "2025-06-16",
+   "situacao": "Em Funcionamento Normal",
+   "condominio": "Aberto",
+   "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+   "administrador": "ITAU UNIBANCO S.A."
+  },
+  "54496707000160": {
+   "subclasses": [],
+   "denominacao": "ITAÚ DEB INC PÓS-FIXADO FUNDO INCENTIVADO DE INVEST FIN EM INFRA  CIC RF CRED PRIV RESP LIMITADA",
+   "classificacao_anbima": "Renda Fixa Duração Livre Crédito Livre",
+   "classificacao": "Renda Fixa",
+   "publico_alvo": "Público Geral",
+   "data_inicio": "2024-03-27",
+   "situacao": "Em Funcionamento Normal",
+   "condominio": "Aberto",
+   "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+   "administrador": "ITAU UNIBANCO S.A."
+  },
+  "42814895000148": {
+   "subclasses": [],
+   "denominacao": "ITAÚ CDI MAIS RENDA FIXA CRÉDITO PRIVADO FIF DA CIC RESP LIMITADA",
+   "classificacao_anbima": "Renda Fixa Duração Livre Grau de Invest.",
+   "classificacao": "Renda Fixa",
+   "publico_alvo": "Qualificado",
+   "data_inicio": "2026-02-23",
+   "situacao": "Em Funcionamento Normal",
+   "condominio": "Aberto",
+   "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+   "administrador": "ITAU UNIBANCO S.A."
+  },
+  "49706433000156": {
+   "subclasses": [],
+   "denominacao": "ABSOLUTE HIDRA SELEÇÃO CDI FIF DA CIC INCENTIVADOS DE INV EM INFRA RF CRÉDITO PRIVADO",
+   "classificacao_anbima": "Renda Fixa Duração Livre Grau de Invest.",
+   "classificacao": "Renda Fixa",
+   "publico_alvo": "Público Geral",
+   "data_inicio": "2024-05-29",
+   "situacao": "Em Funcionamento Normal",
+   "condominio": "Aberto",
+   "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+   "administrador": "ITAU UNIBANCO S.A."
+  },
+  "42380161000106": {
+   "subclasses": [],
+   "denominacao": "ITAÚ DEBÊNTURES INCENTIVADAS CDI FIF EM INFRA CIC RF CRÉD PRIV - RESP LIMITADA",
+   "classificacao_anbima": "Renda Fixa Duração Livre Crédito Livre",
+   "classificacao": "Renda Fixa",
+   "publico_alvo": "Público Geral",
+   "data_inicio": "2024-03-18",
+   "situacao": "Em Funcionamento Normal",
+   "condominio": "Aberto",
+   "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+   "administrador": "ITAU UNIBANCO S.A."
+  },
+  "61964220000120": {
+   "subclasses": [],
+   "denominacao": "ITAÚ DEBÊNTURES INCENTIVADAS IMA-B II FIF INCENTIVADO EM INFRA DA CIC RF CRED PRIV RESP LIMITADA",
+   "classificacao_anbima": "Renda Fixa Duração Livre Crédito Livre",
+   "classificacao": "Renda Fixa",
+   "publico_alvo": "Público Geral",
+   "data_inicio": "2025-07-29",
+   "situacao": "Em Funcionamento Normal",
+   "condominio": "Aberto",
+   "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+   "administrador": "ITAU UNIBANCO S.A."
+  },
+  "42698327000129": {
+   "subclasses": [],
+   "denominacao": "ARX VINSON RENDA FIXA CRÉDITO PRIVADO IU FIF DA CLASSE DE INVESTIMENTO EM COTAS RESP LIMITADA",
+   "classificacao_anbima": "Renda Fixa Duração Baixa Grau de Invest.",
+   "classificacao": "Renda Fixa",
+   "publico_alvo": "Público Geral",
+   "data_inicio": "2025-05-23",
+   "situacao": "Em Funcionamento Normal",
+   "condominio": "Aberto",
+   "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+   "administrador": "ITAU UNIBANCO S.A."
+  },
+  "08927574000111": {
+   "subclasses": [],
+   "denominacao": "ITAÚ BTG PACTUAL HEDGE FIF CIC RENDA FIXA CRÉDITO PRIVADO RESP LIMITADA",
+   "classificacao_anbima": "Renda Fixa Duração Livre Grau de Invest.",
+   "classificacao": "Renda Fixa",
+   "publico_alvo": "Público Geral",
+   "data_inicio": "2025-05-26",
+   "situacao": "Em Funcionamento Normal",
+   "condominio": "Aberto",
+   "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+   "administrador": "ITAU UNIBANCO S.A."
+  },
+  "42860699000100": {
+   "subclasses": [],
+   "denominacao": "ARX DENALI RENDA FIXA CRÉDITO PRIVADO IU FIF DA CIC RESPONSABILIDADE LIMITADA",
+   "classificacao_anbima": "Renda Fixa Duração Baixa Grau de Invest.",
+   "classificacao": "Renda Fixa",
+   "publico_alvo": "Público Geral",
+   "data_inicio": "2025-05-23",
+   "situacao": "Em Funcionamento Normal",
+   "condominio": "Aberto",
+   "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+   "administrador": "ITAU UNIBANCO S.A."
+  },
+  "64963538000184": {
+   "subclasses": [],
+   "denominacao": "ABSOLUTE HIDRA PRÉ 2 ANOS SELEÇÃO FIIF EM INFRA DA CIC RF CRED PRIV RESP LIMITADA",
+   "classificacao_anbima": "Renda Fixa Duração Livre Grau de Invest.",
+   "classificacao": "Renda Fixa",
+   "publico_alvo": "Público Geral",
+   "data_inicio": "2026-02-05",
+   "situacao": "Em Funcionamento Normal",
+   "condominio": "Aberto",
+   "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+   "administrador": "ITAU UNIBANCO S.A."
+  },
+  "48094354000179": {
+   "subclasses": [],
+   "denominacao": "ABSOLUTE CRETA SELEÇÃO FIF CIC RENDA FIXA CRÉDITO PRIVADO RESPONSABILIDADE LIMITADA",
+   "classificacao_anbima": "Renda Fixa Duração Baixa Grau de Invest.",
+   "classificacao": "Renda Fixa",
+   "publico_alvo": "Público Geral",
+   "data_inicio": "2025-04-28",
+   "situacao": "Em Funcionamento Normal",
+   "condominio": "Aberto",
+   "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+   "administrador": "ITAU UNIBANCO S.A."
+  },
+  "55686350000145": {
+   "subclasses": [],
+   "denominacao": "ABSOLUTE DELFOS SELEÇÃO FUNDO DE INVESTIMENTO FINANCEIRO DA CIC MULT CRÉD PRIV LP RESP LIMITADA",
+   "classificacao_anbima": "Multimercados Livre",
+   "classificacao": "Multimercado",
+   "publico_alvo": "Público Geral",
+   "data_inicio": "2024-06-26",
+   "situacao": "Em Funcionamento Normal",
+   "condominio": "Aberto",
+   "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+   "administrador": "ITAU UNIBANCO S.A."
+  },
+  "57065462000104": {
+   "subclasses": [],
+   "denominacao": "ABSOLUTE HIDRA IPCA SELEÇÃO FIF INCENTIVADO EM INFRAESTRUTURA DA CIC RENDA FIXA CRÉD PRIV",
+   "classificacao_anbima": "Renda Fixa Duração Livre Crédito Livre",
+   "classificacao": "Renda Fixa",
+   "publico_alvo": "Público Geral",
+   "data_inicio": "2024-08-29",
+   "situacao": "Em Funcionamento Normal",
+   "condominio": "Aberto",
+   "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+   "administrador": "ITAU UNIBANCO S.A."
+  }
+ }
+}

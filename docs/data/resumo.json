@@ -1,9 +1,10 @@
 {
  "titulo": "Crédito Privado — Espelho e Itaú Asset",
  "subtitulo": "Rentabilidade com base nos informes diários da CVM",
- "atualizado_em": "2026-10-30T22:17-03:00",
+ "atualizado_em": "2026-10-30T22:52-03:00",
  "data_base": "2026-10-28",
  "cdi_ultima_data": "2026-10-29",
+ "aliquota_grossup": 0.15,
  "repo": "matheusferreira3050-rgb/Painel-Fundos",
  "branch": "main",
  "fundos": [
@@ -13,7 +14,21 @@
    "subclasse": null,
    "nome": "Absolute Atenas Seleção Renda Fixa Crédito Privado",
    "categoria": "Renda Fixa CP",
+   "distribuicao": "FoF",
    "ativo": true,
+   "isento_ir": false,
+   "cadastro": {
+    "denominacao": "ABSOLUTE ATENAS SELEÇÃO FIF DA CIC RENDA FIXA CRÉDITO PRIVADO RESPONSABILIDADE LIMITADA",
+    "classificacao_anbima": "Renda Fixa Duração Baixa Grau de Invest.",
+    "classificacao": "Renda Fixa",
+    "publico_alvo": "Público Geral",
+    "data_inicio": "2025-06-16",
+    "situacao": "Em Funcionamento Normal",
+    "condominio": "Aberto",
+    "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+    "administrador": "ITAU UNIBANCO S.A."
+   },
+   "alertas": [],
    "status": "ok",
    "ultima_data": "2026-10-28",
    "inicio_historico": "2023-03-01",
@@ -57,7 +72,18 @@
    "vol12": 0.00243754,
    "mdd12": -0.00143507,
    "mdd_total": -0.00186119,
-   "dd_atual": 0.0
+   "dd_atual": 0.0,
+   "consistencia": {
+    "meses_acima_cdi": 12,
+    "meses_avaliados": 24,
+    "pior_mes": {
+     "ref": "02/2026",
+     "ret": 0.00731604
+    },
+    "meses_negativos": 0,
+    "meses_total": 43
+   },
+   "lacunas": []
   },
   {
    "chave": "48094354000179",
@@ -65,7 +91,21 @@
    "subclasse": null,
    "nome": "Absolute Creta Seleção Renda Fixa Crédito Privado",
    "categoria": "Renda Fixa CP",
+   "distribuicao": "FoF",
    "ativo": true,
+   "isento_ir": false,
+   "cadastro": {
+    "denominacao": "ABSOLUTE CRETA SELEÇÃO FIF CIC RENDA FIXA CRÉDITO PRIVADO RESPONSABILIDADE LIMITADA",
+    "classificacao_anbima": "Renda Fixa Duração Baixa Grau de Invest.",
+    "classificacao": "Renda Fixa",
+    "publico_alvo": "Público Geral",
+    "data_inicio": "2025-04-28",
+    "situacao": "Em Funcionamento Normal",
+    "condominio": "Aberto",
+    "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+    "administrador": "ITAU UNIBANCO S.A."
+   },
+   "alertas": [],
    "status": "ok",
    "ultima_data": "2026-10-28",
    "inicio_historico": "2023-03-01",
@@ -109,7 +149,18 @@
    "vol12": 0.00539212,
    "mdd12": -0.00354568,
    "mdd_total": -0.00361549,
-   "dd_atual": 0.0
+   "dd_atual": 0.0,
+   "consistencia": {
+    "meses_acima_cdi": 15,
+    "meses_avaliados": 24,
+    "pior_mes": {
+     "ref": "02/2026",
+     "ret": 0.00388276
+    },
+    "meses_negativos": 0,
+    "meses_total": 43
+   },
+   "lacunas": []
   },
   {
    "chave": "55686350000145",
@@ -117,7 +168,21 @@
    "subclasse": null,
    "nome": "Absolute Delfos Seleção",
    "categoria": "Renda Fixa CP",
+   "distribuicao": "FoF",
    "ativo": true,
+   "isento_ir": false,
+   "cadastro": {
+    "denominacao": "ABSOLUTE DELFOS SELEÇÃO FUNDO DE INVESTIMENTO FINANCEIRO DA CIC MULT CRÉD PRIV LP RESP LIMITADA",
+    "classificacao_anbima": "Multimercados Livre",
+    "classificacao": "Multimercado",
+    "publico_alvo": "Público Geral",
+    "data_inicio": "2024-06-26",
+    "situacao": "Em Funcionamento Normal",
+    "condominio": "Aberto",
+    "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+    "administrador": "ITAU UNIBANCO S.A."
+   },
+   "alertas": [],
    "status": "ok",
    "ultima_data": "2026-10-28",
    "inicio_historico": "2025-04-16",
@@ -161,7 +226,18 @@
    "vol12": 0.00504698,
    "mdd12": -0.00147644,
    "mdd_total": -0.00147644,
-   "dd_atual": -0.00034532
+   "dd_atual": -0.00034532,
+   "consistencia": {
+    "meses_acima_cdi": 8,
+    "meses_avaliados": 17,
+    "pior_mes": {
+     "ref": "04/2026",
+     "ret": 0.00726115
+    },
+    "meses_negativos": 0,
+    "meses_total": 17
+   },
+   "lacunas": []
   },
   {
    "chave": "57065462000104",
@@ -169,7 +245,30 @@
    "subclasse": null,
    "nome": "Absolute Hidra IPCA Seleção Infra Renda Fixa (Isento IRPF)",
    "categoria": "Infraestrutura / Isentos",
+   "distribuicao": "FoF",
    "ativo": true,
+   "isento_ir": true,
+   "cadastro": {
+    "denominacao": "ABSOLUTE HIDRA IPCA SELEÇÃO FIF INCENTIVADO EM INFRAESTRUTURA DA CIC RENDA FIXA CRÉD PRIV",
+    "classificacao_anbima": "Renda Fixa Duração Livre Crédito Livre",
+    "classificacao": "Renda Fixa",
+    "publico_alvo": "Público Geral",
+    "data_inicio": "2024-08-29",
+    "situacao": "Em Funcionamento Normal",
+    "condominio": "Aberto",
+    "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+    "administrador": "ITAU UNIBANCO S.A."
+   },
+   "alertas": [
+    {
+     "tipo": "atencao",
+     "texto": "Sem cotas na CVM entre 03/10/2024 e 17/10/2024 (14 dias). Períodos que dependem dessas datas aparecem como “–”."
+    },
+    {
+     "tipo": "info",
+     "texto": "Variação de -1.28% em 26/10/2026, junto com outros 8 fundos da lista (movimento de mercado)."
+    }
+   ],
    "status": "ok",
    "ultima_data": "2026-10-28",
    "inicio_historico": "2024-09-25",
@@ -213,7 +312,24 @@
    "vol12": 0.02256963,
    "mdd12": -0.01291681,
    "mdd_total": -0.01813535,
-   "dd_atual": -0.01071732
+   "dd_atual": -0.01071732,
+   "consistencia": {
+    "meses_acima_cdi": 7,
+    "meses_avaliados": 24,
+    "pior_mes": {
+     "ref": "12/2024",
+     "ret": -0.00833659
+    },
+    "meses_negativos": 2,
+    "meses_total": 24
+   },
+   "lacunas": [
+    {
+     "de": "2024-10-03",
+     "ate": "2024-10-17",
+     "dias": 14
+    }
+   ]
   },
   {
    "chave": "64963538000184",
@@ -221,7 +337,26 @@
    "subclasse": null,
    "nome": "Absolute Hidra Pré 2 Anos Seleção Infra RF",
    "categoria": "Infraestrutura / Isentos",
+   "distribuicao": "FoF",
    "ativo": true,
+   "isento_ir": false,
+   "cadastro": {
+    "denominacao": "ABSOLUTE HIDRA PRÉ 2 ANOS SELEÇÃO FIIF EM INFRA DA CIC RF CRED PRIV RESP LIMITADA",
+    "classificacao_anbima": "Renda Fixa Duração Livre Grau de Invest.",
+    "classificacao": "Renda Fixa",
+    "publico_alvo": "Público Geral",
+    "data_inicio": "2026-02-05",
+    "situacao": "Em Funcionamento Normal",
+    "condominio": "Aberto",
+    "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+    "administrador": "ITAU UNIBANCO S.A."
+   },
+   "alertas": [
+    {
+     "tipo": "info",
+     "texto": "Variação de -3.68% em 26/10/2026, junto com outros 8 fundos da lista (movimento de mercado)."
+    }
+   ],
    "status": "ok",
    "ultima_data": "2026-10-28",
    "inicio_historico": "2026-02-13",
@@ -265,7 +400,18 @@
    "vol12": 0.06418031,
    "mdd12": -0.04106768,
    "mdd_total": -0.04106768,
-   "dd_atual": -0.03192192
+   "dd_atual": -0.03192192,
+   "consistencia": {
+    "meses_acima_cdi": 0,
+    "meses_avaliados": 7,
+    "pior_mes": {
+     "ref": "03/2026",
+     "ret": -0.00990962
+    },
+    "meses_negativos": 1,
+    "meses_total": 7
+   },
+   "lacunas": []
   },
   {
    "chave": "49706433000156",
@@ -273,7 +419,26 @@
    "subclasse": null,
    "nome": "Absolute Hidra Seleção Infra Renda Fixa CP (Isento IRPF)",
    "categoria": "Infraestrutura / Isentos",
+   "distribuicao": "FoF",
    "ativo": true,
+   "isento_ir": true,
+   "cadastro": {
+    "denominacao": "ABSOLUTE HIDRA SELEÇÃO CDI FIF DA CIC INCENTIVADOS DE INV EM INFRA RF CRÉDITO PRIVADO",
+    "classificacao_anbima": "Renda Fixa Duração Livre Grau de Invest.",
+    "classificacao": "Renda Fixa",
+    "publico_alvo": "Público Geral",
+    "data_inicio": "2024-05-29",
+    "situacao": "Em Funcionamento Normal",
+    "condominio": "Aberto",
+    "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+    "administrador": "ITAU UNIBANCO S.A."
+   },
+   "alertas": [
+    {
+     "tipo": "info",
+     "texto": "Variação de +1.07% em 26/10/2026, junto com outros 2 fundos da lista (movimento de mercado)."
+    }
+   ],
    "status": "ok",
    "ultima_data": "2026-10-28",
    "inicio_historico": "2024-04-25",
@@ -317,7 +482,18 @@
    "vol12": 0.01920573,
    "mdd12": -0.0172812,
    "mdd_total": -0.0172812,
-   "dd_atual": -0.00124515
+   "dd_atual": -0.00124515,
+   "consistencia": {
+    "meses_acima_cdi": 10,
+    "meses_avaliados": 24,
+    "pior_mes": {
+     "ref": "04/2026",
+     "ret": -0.00780806
+    },
+    "meses_negativos": 3,
+    "meses_total": 29
+   },
+   "lacunas": []
   },
   {
    "chave": "42860699000100",
@@ -325,7 +501,21 @@
    "subclasse": null,
    "nome": "ARX Denali RF CP IU",
    "categoria": "Renda Fixa CP",
+   "distribuicao": "FoF",
    "ativo": true,
+   "isento_ir": false,
+   "cadastro": {
+    "denominacao": "ARX DENALI RENDA FIXA CRÉDITO PRIVADO IU FIF DA CIC RESPONSABILIDADE LIMITADA",
+    "classificacao_anbima": "Renda Fixa Duração Baixa Grau de Invest.",
+    "classificacao": "Renda Fixa",
+    "publico_alvo": "Público Geral",
+    "data_inicio": "2025-05-23",
+    "situacao": "Em Funcionamento Normal",
+    "condominio": "Aberto",
+    "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+    "administrador": "ITAU UNIBANCO S.A."
+   },
+   "alertas": [],
    "status": "ok",
    "ultima_data": "2026-10-28",
    "inicio_historico": "2021-11-22",
@@ -369,7 +559,18 @@
    "vol12": 0.00312794,
    "mdd12": -0.00092346,
    "mdd_total": -0.00402926,
-   "dd_atual": -0.00092346
+   "dd_atual": -0.00092346,
+   "consistencia": {
+    "meses_acima_cdi": 15,
+    "meses_avaliados": 24,
+    "pior_mes": {
+     "ref": "02/2023",
+     "ret": 0.00429803
+    },
+    "meses_negativos": 0,
+    "meses_total": 58
+   },
+   "lacunas": []
   },
   {
    "chave": "42698327000129",
@@ -377,7 +578,21 @@
    "subclasse": null,
    "nome": "ARX Vinson RF CP IU",
    "categoria": "Renda Fixa CP",
+   "distribuicao": "FoF",
    "ativo": true,
+   "isento_ir": false,
+   "cadastro": {
+    "denominacao": "ARX VINSON RENDA FIXA CRÉDITO PRIVADO IU FIF DA CLASSE DE INVESTIMENTO EM COTAS RESP LIMITADA",
+    "classificacao_anbima": "Renda Fixa Duração Baixa Grau de Invest.",
+    "classificacao": "Renda Fixa",
+    "publico_alvo": "Público Geral",
+    "data_inicio": "2025-05-23",
+    "situacao": "Em Funcionamento Normal",
+    "condominio": "Aberto",
+    "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+    "administrador": "ITAU UNIBANCO S.A."
+   },
+   "alertas": [],
    "status": "ok",
    "ultima_data": "2026-10-28",
    "inicio_historico": "2021-11-10",
@@ -421,7 +636,18 @@
    "vol12": 0.00493658,
    "mdd12": -0.00223069,
    "mdd_total": -0.00675991,
-   "dd_atual": -0.00223069
+   "dd_atual": -0.00223069,
+   "consistencia": {
+    "meses_acima_cdi": 13,
+    "meses_avaliados": 24,
+    "pior_mes": {
+     "ref": "02/2023",
+     "ret": 0.0006135
+    },
+    "meses_negativos": 0,
+    "meses_total": 58
+   },
+   "lacunas": []
   },
   {
    "chave": "68418021000165",
@@ -429,7 +655,20 @@
    "subclasse": null,
    "nome": "BTG Crédito Corporativo Plus Seleção Subclasse I",
    "categoria": "Renda Fixa CP",
+   "distribuicao": "FoF",
    "ativo": true,
+   "isento_ir": false,
+   "cadastro": {
+    "denominacao": "BTG PACTUAL CRÉDITO CORPORATIVO PLUS SELEÇÃO FIIF EM INFRA DA CIC RENDA FIXA RESP LIMITADA",
+    "classificacao_anbima": "Renda Fixa Duração Livre Crédito Livre",
+    "classificacao": "Renda Fixa",
+    "data_inicio": "2026-08-06",
+    "situacao": "Em Funcionamento Normal",
+    "tributacao_lp": "S",
+    "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+    "administrador": "ITAU UNIBANCO S.A."
+   },
+   "alertas": [],
    "status": "ok",
    "ultima_data": "2026-10-28",
    "inicio_historico": "2026-09-24",
@@ -473,7 +712,15 @@
    "vol12": 0.0364824,
    "mdd12": -0.00889673,
    "mdd_total": -0.00889673,
-   "dd_atual": -0.00581824
+   "dd_atual": -0.00581824,
+   "consistencia": {
+    "meses_acima_cdi": 0,
+    "meses_avaliados": 0,
+    "pior_mes": null,
+    "meses_negativos": 0,
+    "meses_total": 0
+   },
+   "lacunas": []
   },
   {
    "chave": "57464330000155",
@@ -481,7 +728,19 @@
    "subclasse": null,
    "nome": "BTG Pactual Hedge Debêntures de Infra Subclasse I",
    "categoria": "Infraestrutura / Isentos",
+   "distribuicao": "FoF",
    "ativo": true,
+   "isento_ir": false,
+   "cadastro": {
+    "denominacao": "BTG PACTUAL HEDGE SELEÇÃO FIF INCENTIVADO EM DEB DE INFRA DA CIC RF CRED PRIV ATIVO LP RESP LIMITADA",
+    "classificacao_anbima": "Renda Fixa Duração Livre Crédito Livre",
+    "classificacao": "Renda Fixa",
+    "data_inicio": "2024-09-27",
+    "situacao": "Em Funcionamento Normal",
+    "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+    "administrador": "ITAU UNIBANCO S.A."
+   },
+   "alertas": [],
    "status": "ok",
    "ultima_data": "2026-10-28",
    "inicio_historico": "2026-04-28",
@@ -525,7 +784,18 @@
    "vol12": 0.01817975,
    "mdd12": -0.00730867,
    "mdd_total": -0.00730867,
-   "dd_atual": -0.00262358
+   "dd_atual": -0.00262358,
+   "consistencia": {
+    "meses_acima_cdi": 3,
+    "meses_avaliados": 5,
+    "pior_mes": {
+     "ref": "09/2026",
+     "ret": 0.00621066
+    },
+    "meses_negativos": 0,
+    "meses_total": 5
+   },
+   "lacunas": []
   },
   {
    "chave": "08927574000111",
@@ -533,7 +803,21 @@
    "subclasse": null,
    "nome": "BTG Pactual Hedge Renda Fixa Crédito Privado",
    "categoria": "Renda Fixa CP",
+   "distribuicao": "FoF",
    "ativo": true,
+   "isento_ir": false,
+   "cadastro": {
+    "denominacao": "ITAÚ BTG PACTUAL HEDGE FIF CIC RENDA FIXA CRÉDITO PRIVADO RESP LIMITADA",
+    "classificacao_anbima": "Renda Fixa Duração Livre Grau de Invest.",
+    "classificacao": "Renda Fixa",
+    "publico_alvo": "Público Geral",
+    "data_inicio": "2025-05-26",
+    "situacao": "Em Funcionamento Normal",
+    "condominio": "Aberto",
+    "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+    "administrador": "ITAU UNIBANCO S.A."
+   },
+   "alertas": [],
    "status": "ok",
    "ultima_data": "2026-10-28",
    "inicio_historico": "2021-10-01",
@@ -577,7 +861,18 @@
    "vol12": 0.01526215,
    "mdd12": -0.00796627,
    "mdd_total": -0.01345166,
-   "dd_atual": -0.0072175
+   "dd_atual": -0.0072175,
+   "consistencia": {
+    "meses_acima_cdi": 10,
+    "meses_avaliados": 24,
+    "pior_mes": {
+     "ref": "10/2021",
+     "ret": -0.00074838
+    },
+    "meses_negativos": 1,
+    "meses_total": 60
+   },
+   "lacunas": []
   },
   {
    "chave": "68358170000186",
@@ -585,7 +880,21 @@
    "subclasse": null,
    "nome": "Capitânia Infra CDI 30",
    "categoria": "Infraestrutura / Isentos",
+   "distribuicao": "FoF",
    "ativo": true,
+   "isento_ir": false,
+   "cadastro": {
+    "denominacao": "CAPITÂNIA INFRA 30 CDI SELEÇÃO FIF INCENTIVADO EM INFRAESTRUTURA DA CIC RENDA FIXA RESP LIMITADA",
+    "classificacao_anbima": "Renda Fixa Duração Alta Crédito Livre",
+    "classificacao": "Renda Fixa",
+    "publico_alvo": "Público Geral",
+    "data_inicio": "2026-08-04",
+    "situacao": "Em Funcionamento Normal",
+    "condominio": "Aberto",
+    "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+    "administrador": "ITAU UNIBANCO S.A."
+   },
+   "alertas": [],
    "status": "ok",
    "ultima_data": "2026-10-28",
    "inicio_historico": "2026-09-11",
@@ -629,7 +938,15 @@
    "vol12": 0.02592172,
    "mdd12": -0.00470803,
    "mdd_total": -0.00470803,
-   "dd_atual": 0.0
+   "dd_atual": 0.0,
+   "consistencia": {
+    "meses_acima_cdi": 0,
+    "meses_avaliados": 0,
+    "pior_mes": null,
+    "meses_negativos": 0,
+    "meses_total": 0
+   },
+   "lacunas": []
   },
   {
    "chave": "55227365000145",
@@ -637,7 +954,30 @@
    "subclasse": null,
    "nome": "Drys Debêntures de Infraestrutura Seleção (Isento IRPF)",
    "categoria": "Infraestrutura / Isentos",
+   "distribuicao": "FoF",
    "ativo": true,
+   "isento_ir": true,
+   "cadastro": {
+    "denominacao": "DRYS DEBENTURES DE INF SELECAO FUNDO DE INV FIN DA CLASSE DE INV EM COTAS RF CRED PRIV RESP LIMITADA",
+    "classificacao_anbima": "Renda Fixa Duração Livre Crédito Livre",
+    "classificacao": "Renda Fixa",
+    "publico_alvo": "Público Geral",
+    "data_inicio": "2024-05-22",
+    "situacao": "Em Funcionamento Normal",
+    "condominio": "Aberto",
+    "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+    "administrador": "ITAU UNIBANCO S.A."
+   },
+   "alertas": [
+    {
+     "tipo": "info",
+     "texto": "Variação de +1.90% em 05/10/2026, junto com outros 5 fundos da lista (movimento de mercado)."
+    },
+    {
+     "tipo": "info",
+     "texto": "Variação de -4.56% em 26/10/2026, junto com outros 8 fundos da lista (movimento de mercado)."
+    }
+   ],
    "status": "ok",
    "ultima_data": "2026-10-28",
    "inicio_historico": "2024-06-21",
@@ -681,7 +1021,18 @@
    "vol12": 0.06312421,
    "mdd12": -0.05197345,
    "mdd_total": -0.05197345,
-   "dd_atual": -0.04243446
+   "dd_atual": -0.04243446,
+   "consistencia": {
+    "meses_acima_cdi": 7,
+    "meses_avaliados": 24,
+    "pior_mes": {
+     "ref": "12/2024",
+     "ret": -0.02130109
+    },
+    "meses_negativos": 8,
+    "meses_total": 27
+   },
+   "lacunas": []
   },
   {
    "chave": "53390661000137",
@@ -689,7 +1040,22 @@
    "subclasse": null,
    "nome": "Equitas Shelter Seleção Renda Fixa",
    "categoria": "Renda Fixa CP",
+   "distribuicao": "FoF",
    "ativo": true,
+   "isento_ir": false,
+   "cadastro": {
+    "denominacao": "DRYS SHELTER SELEÇÃO FIF CIC RENDA FIXA CRÉDITO PRIVADO LONGO PRAZO RESP LIMITADA",
+    "classificacao_anbima": "Renda Fixa Duração Baixa Crédito Livre",
+    "classificacao": "Renda Fixa",
+    "publico_alvo": "Público Geral",
+    "data_inicio": "2024-01-05",
+    "situacao": "Em Funcionamento Normal",
+    "tributacao_lp": "S",
+    "condominio": "Aberto",
+    "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+    "administrador": "ITAU UNIBANCO S.A."
+   },
+   "alertas": [],
    "status": "ok",
    "ultima_data": "2026-10-28",
    "inicio_historico": "2024-01-30",
@@ -733,7 +1099,18 @@
    "vol12": 0.00368666,
    "mdd12": -0.00157768,
    "mdd_total": -0.00157768,
-   "dd_atual": 0.0
+   "dd_atual": 0.0,
+   "consistencia": {
+    "meses_acima_cdi": 12,
+    "meses_avaliados": 24,
+    "pior_mes": {
+     "ref": "12/2024",
+     "ret": 0.00626803
+    },
+    "meses_negativos": 0,
+    "meses_total": 32
+   },
+   "lacunas": []
   },
   {
    "chave": "48094425000133",
@@ -741,7 +1118,21 @@
    "subclasse": null,
    "nome": "Ibiuna Credit Seleção Multimercado CP",
    "categoria": "Multimercado CP",
+   "distribuicao": "FoF",
    "ativo": true,
+   "isento_ir": false,
+   "cadastro": {
+    "denominacao": "IBIUNA CREDIT SELEÇÃO FIF CIC MULTIMERCADO CRÉDITO PRIVADO RESP LIMITADA",
+    "classificacao_anbima": "Multimercados Juros e Moedas",
+    "classificacao": "Multimercado",
+    "publico_alvo": "Público Geral",
+    "data_inicio": "2025-06-17",
+    "situacao": "Em Funcionamento Normal",
+    "condominio": "Aberto",
+    "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+    "administrador": "ITAU UNIBANCO S.A."
+   },
+   "alertas": [],
    "status": "ok",
    "ultima_data": "2026-10-28",
    "inicio_historico": "2023-03-13",
@@ -785,7 +1176,18 @@
    "vol12": 0.00578409,
    "mdd12": -0.00106572,
    "mdd_total": -0.0063805,
-   "dd_atual": 0.0
+   "dd_atual": 0.0,
+   "consistencia": {
+    "meses_acima_cdi": 14,
+    "meses_avaliados": 24,
+    "pior_mes": {
+     "ref": "11/2023",
+     "ret": 0.00243936
+    },
+    "meses_negativos": 0,
+    "meses_total": 42
+   },
+   "lacunas": []
   },
   {
    "chave": "48069005000105",
@@ -793,7 +1195,21 @@
    "subclasse": null,
    "nome": "Icatu Vanguarda Crédito Privado Liquidez Seleção",
    "categoria": "Renda Fixa CP",
+   "distribuicao": "FoF",
    "ativo": true,
+   "isento_ir": false,
+   "cadastro": {
+    "denominacao": "ICATU VANGUARDA CRÉDITO PRIVADO LIQUIDEZ SELEÇÃO FIF CIC RENDA FIXA LONGO PRAZO RESP LIMITADA",
+    "classificacao_anbima": "Renda Fixa Duração Livre Crédito Livre",
+    "classificacao": "Renda Fixa",
+    "publico_alvo": "Público Geral",
+    "data_inicio": "2025-06-17",
+    "situacao": "Em Funcionamento Normal",
+    "condominio": "Aberto",
+    "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+    "administrador": "ITAU UNIBANCO S.A."
+   },
+   "alertas": [],
    "status": "ok",
    "ultima_data": "2026-10-28",
    "inicio_historico": "2022-12-28",
@@ -837,7 +1253,18 @@
    "vol12": 0.00246171,
    "mdd12": -0.00023093,
    "mdd_total": -0.01724609,
-   "dd_atual": 0.0
+   "dd_atual": 0.0,
+   "consistencia": {
+    "meses_acima_cdi": 14,
+    "meses_avaliados": 24,
+    "pior_mes": {
+     "ref": "01/2023",
+     "ret": -0.00644953
+    },
+    "meses_negativos": 1,
+    "meses_total": 45
+   },
+   "lacunas": []
   },
   {
    "chave": "32835611000146",
@@ -845,7 +1272,22 @@
    "subclasse": null,
    "nome": "Icatu Vanguarda Crédito Privado LP IU RF FIC",
    "categoria": "Renda Fixa CP",
+   "distribuicao": "FoF",
    "ativo": true,
+   "isento_ir": false,
+   "cadastro": {
+    "denominacao": "ICATU VANGUARDA CRÉDITO PRIVADO LONGO PRAZO IU FIF DA CIC RENDA FIXA RESP LIMITADA",
+    "classificacao_anbima": "Renda Fixa Duração Baixa Crédito Livre",
+    "classificacao": "Renda Fixa",
+    "publico_alvo": "Público Geral",
+    "data_inicio": "2025-06-17",
+    "situacao": "Em Funcionamento Normal",
+    "tributacao_lp": "S",
+    "condominio": "Aberto",
+    "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+    "administrador": "ITAU UNIBANCO S.A."
+   },
+   "alertas": [],
    "status": "ok",
    "ultima_data": "2026-10-28",
    "inicio_historico": "2021-10-01",
@@ -889,7 +1331,18 @@
    "vol12": 0.00622467,
    "mdd12": -0.00290381,
    "mdd_total": -0.00940043,
-   "dd_atual": -0.00290381
+   "dd_atual": -0.00290381,
+   "consistencia": {
+    "meses_acima_cdi": 15,
+    "meses_avaliados": 24,
+    "pior_mes": {
+     "ref": "01/2023",
+     "ret": 0.00019157
+    },
+    "meses_negativos": 0,
+    "meses_total": 60
+   },
+   "lacunas": []
   },
   {
    "chave": "42501967000105",
@@ -897,7 +1350,21 @@
    "subclasse": null,
    "nome": "Icatu Vanguarda Crédito Privado PG Multimercado",
    "categoria": "Multimercado CP",
+   "distribuicao": "FoF",
    "ativo": true,
+   "isento_ir": false,
+   "cadastro": {
+    "denominacao": "ICATU VANGUARDA CRÉDITO PRIVADO PG MULTIMERCADO SELEÇÃO FIF CIC RESPONSABILIDADE LIMITADA",
+    "classificacao_anbima": "Multimercados Livre",
+    "classificacao": "Multimercado",
+    "publico_alvo": "Público Geral",
+    "data_inicio": "2025-06-17",
+    "situacao": "Em Funcionamento Normal",
+    "condominio": "Aberto",
+    "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+    "administrador": "ITAU UNIBANCO S.A."
+   },
+   "alertas": [],
    "status": "ok",
    "ultima_data": "2026-10-28",
    "inicio_historico": "2021-10-01",
@@ -941,7 +1408,18 @@
    "vol12": 0.00750112,
    "mdd12": -0.00248711,
    "mdd_total": -0.0277572,
-   "dd_atual": -0.0023846
+   "dd_atual": -0.0023846,
+   "consistencia": {
+    "meses_acima_cdi": 13,
+    "meses_avaliados": 24,
+    "pior_mes": {
+     "ref": "01/2023",
+     "ret": -0.01547557
+    },
+    "meses_negativos": 1,
+    "meses_total": 60
+   },
+   "lacunas": []
   },
   {
    "chave": "46467208000116",
@@ -949,7 +1427,26 @@
    "subclasse": null,
    "nome": "Icatu Vanguarda Seleção Infraestrutura Renda Fixa",
    "categoria": "Infraestrutura / Isentos",
+   "distribuicao": "FoF",
    "ativo": true,
+   "isento_ir": false,
+   "cadastro": {
+    "denominacao": "ICATU VANGUARDA SELEÇÃO FIC DE FUNDOS INCENTIVADOS DE INVESTIMENTO EM INFRA RF LP RESP LIMITADA",
+    "classificacao_anbima": "Renda Fixa Duração Livre Crédito Livre",
+    "classificacao": "Renda Fixa",
+    "publico_alvo": "Público Geral",
+    "data_inicio": "2025-06-17",
+    "situacao": "Em Funcionamento Normal",
+    "condominio": "Aberto",
+    "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+    "administrador": "ITAU UNIBANCO S.A."
+   },
+   "alertas": [
+    {
+     "tipo": "info",
+     "texto": "Variação de -1.38% em 26/10/2026, junto com outros 8 fundos da lista (movimento de mercado)."
+    }
+   ],
    "status": "ok",
    "ultima_data": "2026-10-28",
    "inicio_historico": "2023-03-14",
@@ -993,7 +1490,18 @@
    "vol12": 0.02648408,
    "mdd12": -0.01556203,
    "mdd_total": -0.02329753,
-   "dd_atual": -0.0148912
+   "dd_atual": -0.0148912,
+   "consistencia": {
+    "meses_acima_cdi": 8,
+    "meses_avaliados": 24,
+    "pior_mes": {
+     "ref": "12/2024",
+     "ret": -0.00819612
+    },
+    "meses_negativos": 6,
+    "meses_total": 42
+   },
+   "lacunas": []
   },
   {
    "chave": "52151185000139",
@@ -1001,8 +1509,24 @@
    "subclasse": null,
    "nome": "Inter Corporate Seleção Renda Fixa",
    "categoria": "Renda Fixa CP",
+   "distribuicao": "FoF",
    "ativo": true,
-   "status": "defasado",
+   "isento_ir": false,
+   "cadastro": {
+    "taxa_adm": "0.25",
+    "taxa_perf": "0",
+    "gestor": "ITAÚ INVESTMENT SOLUTIONS S.A.",
+    "administrador": "ITAU UNIBANCO S.A.",
+    "classificacao": "Renda Fixa",
+    "publico_alvo": "Público Geral"
+   },
+   "alertas": [
+    {
+     "tipo": "erro",
+     "texto": "Sem cotas na CVM desde 06/06/2024. O fundo pode ter sido encerrado, incorporado ou mudado de CNPJ."
+    }
+   ],
+   "status": "sem_dados_recentes",
    "ultima_data": "2024-06-06",
    "inicio_historico": "2023-09-28",
    "cota": 1.063685,
@@ -1045,7 +1569,18 @@
    "vol12": 0.00326248,
    "mdd12": -0.00377068,
    "mdd_total": -0.00377068,
-   "dd_atual": -0.00377068
+   "dd_atual": -0.00377068,
+   "consistencia": {
+    "meses_acima_cdi": 1,
+    "meses_avaliados": 8,
+    "pior_mes": {
+     "ref": "05/2024",
+     "ret": 0.00206906
+    },
+    "meses_negativos": 0,
+    "meses_total": 8
+   },
+   "lacunas": []
   },
   {
    "chave": "42336900000154",
@@ -1053,7 +1588,34 @@
    "subclasse": null,
    "nome": "Itaú Action Debêntures Incentivadas RF CP (Isento IRPF)",
    "categoria": "Infraestrutura / Isentos",
+   "distribuicao": "Itaú Asset",
    "ativo": true,
+   "isento_ir": true,
+   "cadastro": {
+    "denominacao": "ITAÚ ACTION DEB INCENTIVADAS FIF INCENTIVADO INFRA CIC RF CRED PRIV LP - RESP LIMITADA",
+    "classificacao_anbima": "Renda Fixa Duração Livre Crédito Livre",
+    "classificacao": "Renda Fixa",
+    "publico_alvo": "Público Geral",
+    "data_inicio": "2024-03-25",
+    "situacao": "Em Funcionamento Normal",
+    "condominio": "Aberto",
+    "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+    "administrador": "ITAU UNIBANCO S.A."
+   },
+   "alertas": [
+    {
+     "tipo": "info",
+     "texto": "Variação de +5.09% em 05/10/2026, junto com outros 5 fundos da lista (movimento de mercado)."
+    },
+    {
+     "tipo": "info",
+     "texto": "Variação de -18.36% em 26/10/2026, junto com outros 8 fundos da lista (movimento de mercado)."
+    },
+    {
+     "tipo": "info",
+     "texto": "Variação de +3.79% em 27/10/2026, junto com outros 3 fundos da lista (movimento de mercado)."
+    }
+   ],
    "status": "ok",
    "ultima_data": "2026-10-28",
    "inicio_historico": "2021-12-30",
@@ -1097,7 +1659,18 @@
    "vol12": 0.23248171,
    "mdd12": -0.19038791,
    "mdd_total": -0.19038791,
-   "dd_atual": -0.15892866
+   "dd_atual": -0.15892866,
+   "consistencia": {
+    "meses_acima_cdi": 13,
+    "meses_avaliados": 24,
+    "pior_mes": {
+     "ref": "04/2024",
+     "ret": -0.03385299
+    },
+    "meses_negativos": 15,
+    "meses_total": 57
+   },
+   "lacunas": []
   },
   {
    "chave": "20335176000101",
@@ -1105,7 +1678,21 @@
    "subclasse": null,
    "nome": "Itaú Active Fix 5 Crédito Privado Renda Fixa",
    "categoria": "Renda Fixa CP",
+   "distribuicao": "Itaú Asset",
    "ativo": true,
+   "isento_ir": false,
+   "cadastro": {
+    "denominacao": "ITAÚ ACTIVE FIX 5 RENDA FIXA CRED PRIV FIF DA CLASSE DE INVESTIMENTO EM COTAS - RESP LIMITADA",
+    "classificacao_anbima": "Renda Fixa Duração Livre Crédito Livre",
+    "classificacao": "Renda Fixa",
+    "publico_alvo": "Qualificado",
+    "data_inicio": "2024-06-20",
+    "situacao": "Em Funcionamento Normal",
+    "condominio": "Aberto",
+    "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+    "administrador": "ITAU UNIBANCO S.A."
+   },
+   "alertas": [],
    "status": "ok",
    "ultima_data": "2026-10-28",
    "inicio_historico": "2021-10-01",
@@ -1149,7 +1736,18 @@
    "vol12": 0.00355134,
    "mdd12": -0.00152235,
    "mdd_total": -0.01448677,
-   "dd_atual": 0.0
+   "dd_atual": 0.0,
+   "consistencia": {
+    "meses_acima_cdi": 17,
+    "meses_avaliados": 24,
+    "pior_mes": {
+     "ref": "01/2023",
+     "ret": -0.00564331
+    },
+    "meses_negativos": 1,
+    "meses_total": 60
+   },
+   "lacunas": []
   },
   {
    "chave": "38000771000151",
@@ -1157,7 +1755,22 @@
    "subclasse": null,
    "nome": "Itaú Active Fix ALL Crédito Privado Renda Fixa",
    "categoria": "Renda Fixa CP",
+   "distribuicao": "Itaú Asset",
    "ativo": true,
+   "isento_ir": false,
+   "cadastro": {
+    "denominacao": "ITAÚ ACTIVE FIX ALL RENDA FIXA CRÉDITO PRIVADO LONGO PRAZO FIF DA CIC RESP LIMITADA",
+    "classificacao_anbima": "Renda Fixa Duração Livre Crédito Livre",
+    "classificacao": "Renda Fixa",
+    "publico_alvo": "Público Geral",
+    "data_inicio": "2025-04-02",
+    "situacao": "Em Funcionamento Normal",
+    "tributacao_lp": "S",
+    "condominio": "Aberto",
+    "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+    "administrador": "ITAU UNIBANCO S.A."
+   },
+   "alertas": [],
    "status": "ok",
    "ultima_data": "2026-10-28",
    "inicio_historico": "2021-10-01",
@@ -1201,7 +1814,18 @@
    "vol12": 0.00457871,
    "mdd12": -0.00190298,
    "mdd_total": -0.01423238,
-   "dd_atual": -0.00017243
+   "dd_atual": -0.00017243,
+   "consistencia": {
+    "meses_acima_cdi": 16,
+    "meses_avaliados": 24,
+    "pior_mes": {
+     "ref": "01/2023",
+     "ret": -0.00560661
+    },
+    "meses_negativos": 1,
+    "meses_total": 60
+   },
+   "lacunas": []
   },
   {
    "chave": "26262571000198",
@@ -1209,7 +1833,22 @@
    "subclasse": null,
    "nome": "Itaú Active Fix Plus Multimercado Crédito Privado",
    "categoria": "Multimercado CP",
+   "distribuicao": "Itaú Asset",
    "ativo": true,
+   "isento_ir": false,
+   "cadastro": {
+    "denominacao": "ITAÚ MULTIMERCADO CRÉDITO PRIVADO ACTIVE FIX PLUS FIF DA CIC RESP LIMITADA",
+    "classificacao_anbima": "Multimercados Livre",
+    "classificacao": "Multimercado",
+    "publico_alvo": "Qualificado",
+    "data_inicio": "2025-04-04",
+    "situacao": "Em Funcionamento Normal",
+    "tributacao_lp": "S",
+    "condominio": "Aberto",
+    "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+    "administrador": "ITAU UNIBANCO S.A."
+   },
+   "alertas": [],
    "status": "ok",
    "ultima_data": "2026-10-28",
    "inicio_historico": "2021-10-01",
@@ -1253,7 +1892,18 @@
    "vol12": 0.00472577,
    "mdd12": -0.00275458,
    "mdd_total": -0.0215301,
-   "dd_atual": -0.00010384
+   "dd_atual": -0.00010384,
+   "consistencia": {
+    "meses_acima_cdi": 16,
+    "meses_avaliados": 24,
+    "pior_mes": {
+     "ref": "01/2023",
+     "ret": -0.01192848
+    },
+    "meses_negativos": 1,
+    "meses_total": 60
+   },
+   "lacunas": []
   },
   {
    "chave": "42814895000148",
@@ -1261,7 +1911,26 @@
    "subclasse": null,
    "nome": "Itaú CDI Mais Multimercado Crédito Privado",
    "categoria": "Multimercado CP",
+   "distribuicao": "Itaú Asset",
    "ativo": true,
+   "isento_ir": false,
+   "cadastro": {
+    "denominacao": "ITAÚ CDI MAIS RENDA FIXA CRÉDITO PRIVADO FIF DA CIC RESP LIMITADA",
+    "classificacao_anbima": "Renda Fixa Duração Livre Grau de Invest.",
+    "classificacao": "Renda Fixa",
+    "publico_alvo": "Qualificado",
+    "data_inicio": "2026-02-23",
+    "situacao": "Em Funcionamento Normal",
+    "condominio": "Aberto",
+    "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+    "administrador": "ITAU UNIBANCO S.A."
+   },
+   "alertas": [
+    {
+     "tipo": "atencao",
+     "texto": "Sem cotas na CVM entre 01/08/2025 e 23/02/2026 (206 dias). Períodos que dependem dessas datas aparecem como “–”."
+    }
+   ],
    "status": "ok",
    "ultima_data": "2026-10-28",
    "inicio_historico": "2023-05-31",
@@ -1272,9 +1941,9 @@
    "ret": {
     "dia": 0.0005163,
     "mes": 0.00987235,
-    "ano": 0.18668377,
+    "ano": null,
     "m6": 0.06978134,
-    "m12": 0.18668377,
+    "m12": null,
     "m24": 0.30561265,
     "m36": 0.45262763,
     "m60": null,
@@ -1283,9 +1952,9 @@
    "cdi": {
     "dia": 0.00050788,
     "mes": 0.00969396,
-    "ano": 0.18295716,
+    "ano": null,
     "m6": 0.06852363,
-    "m12": 0.18295716,
+    "m12": null,
     "m24": 0.29912116,
     "m36": 0.44137223,
     "m60": null,
@@ -1294,9 +1963,9 @@
    "pct_cdi": {
     "dia": 1.01657284,
     "mes": 1.01840275,
-    "ano": 1.02036874,
+    "ano": null,
     "m6": 1.01835441,
-    "m12": 1.02036874,
+    "m12": null,
     "m24": 1.02170186,
     "m36": 1.02550094,
     "m60": null,
@@ -1305,7 +1974,24 @@
    "vol12": 0.00024257,
    "mdd12": 0.0,
    "mdd_total": 0.0,
-   "dd_atual": 0.0
+   "dd_atual": 0.0,
+   "consistencia": {
+    "meses_acima_cdi": 24,
+    "meses_avaliados": 24,
+    "pior_mes": {
+     "ref": "11/2024",
+     "ret": 0.00809019
+    },
+    "meses_negativos": 0,
+    "meses_total": 33
+   },
+   "lacunas": [
+    {
+     "de": "2025-08-01",
+     "ate": "2026-02-23",
+     "dias": 206
+    }
+   ]
   },
   {
    "chave": "51998694000139",
@@ -1313,7 +1999,21 @@
    "subclasse": null,
    "nome": "Itaú Crédito Bancário Renda Fixa Crédito Privado",
    "categoria": "Renda Fixa CP",
+   "distribuicao": "Itaú Asset",
    "ativo": true,
+   "isento_ir": false,
+   "cadastro": {
+    "denominacao": "ITAÚ CRÉDITO BANCÁRIO RENDA FIXA CRÉDITO PRIVADO FIF DA CIC RESP LIMITADA",
+    "classificacao_anbima": "Renda Fixa Duração Média Grau de Invest.",
+    "classificacao": "Renda Fixa",
+    "publico_alvo": "Público Geral",
+    "data_inicio": "2024-07-26",
+    "situacao": "Em Funcionamento Normal",
+    "condominio": "Aberto",
+    "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+    "administrador": "ITAU UNIBANCO S.A."
+   },
+   "alertas": [],
    "status": "ok",
    "ultima_data": "2026-10-28",
    "inicio_historico": "2023-08-31",
@@ -1357,7 +2057,18 @@
    "vol12": 0.00034366,
    "mdd12": 0.0,
    "mdd_total": 0.0,
-   "dd_atual": 0.0
+   "dd_atual": 0.0,
+   "consistencia": {
+    "meses_acima_cdi": 16,
+    "meses_avaliados": 24,
+    "pior_mes": {
+     "ref": "06/2024",
+     "ret": 0.00838785
+    },
+    "meses_negativos": 0,
+    "meses_total": 37
+   },
+   "lacunas": []
   },
   {
    "chave": "61964220000120",
@@ -1365,7 +2076,30 @@
    "subclasse": null,
    "nome": "Itaú Debêntures IMA-B Infraestrutura RF",
    "categoria": "Infraestrutura / Isentos",
+   "distribuicao": "Itaú Asset",
    "ativo": true,
+   "isento_ir": false,
+   "cadastro": {
+    "denominacao": "ITAÚ DEBÊNTURES INCENTIVADAS IMA-B II FIF INCENTIVADO EM INFRA DA CIC RF CRED PRIV RESP LIMITADA",
+    "classificacao_anbima": "Renda Fixa Duração Livre Crédito Livre",
+    "classificacao": "Renda Fixa",
+    "publico_alvo": "Público Geral",
+    "data_inicio": "2025-07-29",
+    "situacao": "Em Funcionamento Normal",
+    "condominio": "Aberto",
+    "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+    "administrador": "ITAU UNIBANCO S.A."
+   },
+   "alertas": [
+    {
+     "tipo": "info",
+     "texto": "Variação de +3.37% em 05/10/2026, junto com outros 5 fundos da lista (movimento de mercado)."
+    },
+    {
+     "tipo": "info",
+     "texto": "Variação de -8.00% em 26/10/2026, junto com outros 8 fundos da lista (movimento de mercado)."
+    }
+   ],
    "status": "ok",
    "ultima_data": "2026-10-28",
    "inicio_historico": "2025-08-20",
@@ -1409,7 +2143,18 @@
    "vol12": 0.10801339,
    "mdd12": -0.07999661,
    "mdd_total": -0.07999661,
-   "dd_atual": -0.05869778
+   "dd_atual": -0.05869778,
+   "consistencia": {
+    "meses_acima_cdi": 5,
+    "meses_avaliados": 13,
+    "pior_mes": {
+     "ref": "03/2026",
+     "ret": -0.00758506
+    },
+    "meses_negativos": 2,
+    "meses_total": 13
+   },
+   "lacunas": []
   },
   {
    "chave": "42380161000106",
@@ -1417,14 +2162,28 @@
    "subclasse": null,
    "nome": "Itaú Debêntures Incentivadas CDI RF CP (Isento IRPF)",
    "categoria": "Infraestrutura / Isentos",
+   "distribuicao": "Itaú Asset",
    "ativo": true,
+   "isento_ir": true,
+   "cadastro": {
+    "denominacao": "ITAÚ DEBÊNTURES INCENTIVADAS CDI FIF EM INFRA CIC RF CRÉD PRIV - RESP LIMITADA",
+    "classificacao_anbima": "Renda Fixa Duração Livre Crédito Livre",
+    "classificacao": "Renda Fixa",
+    "publico_alvo": "Público Geral",
+    "data_inicio": "2024-03-18",
+    "situacao": "Em Funcionamento Normal",
+    "condominio": "Aberto",
+    "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+    "administrador": "ITAU UNIBANCO S.A."
+   },
+   "alertas": [],
    "status": "ok",
    "ultima_data": "2026-10-28",
    "inicio_historico": "2021-10-29",
    "cota": 18.51951,
    "pl": 5283694412.64,
    "cotistas": 26961,
-   "captacao_liquida_30d": -163781167.38,
+   "captacao_liquida_30d": -163781167.38000003,
    "ret": {
     "dia": 0.0030373,
     "mes": 0.00712237,
@@ -1461,7 +2220,18 @@
    "vol12": 0.01931055,
    "mdd12": -0.02431514,
    "mdd_total": -0.02431514,
-   "dd_atual": -0.00747532
+   "dd_atual": -0.00747532,
+   "consistencia": {
+    "meses_acima_cdi": 11,
+    "meses_avaliados": 24,
+    "pior_mes": {
+     "ref": "09/2026",
+     "ret": -0.01352342
+    },
+    "meses_negativos": 5,
+    "meses_total": 59
+   },
+   "lacunas": []
   },
   {
    "chave": "54496707000160",
@@ -1469,7 +2239,21 @@
    "subclasse": null,
    "nome": "Itaú Debêntures Incentivadas Pós-Fixado Renda Fixa (Isento IRPF)",
    "categoria": "Infraestrutura / Isentos",
+   "distribuicao": "Itaú Asset",
    "ativo": true,
+   "isento_ir": true,
+   "cadastro": {
+    "denominacao": "ITAÚ DEB INC PÓS-FIXADO FUNDO INCENTIVADO DE INVEST FIN EM INFRA  CIC RF CRED PRIV RESP LIMITADA",
+    "classificacao_anbima": "Renda Fixa Duração Livre Crédito Livre",
+    "classificacao": "Renda Fixa",
+    "publico_alvo": "Público Geral",
+    "data_inicio": "2024-03-27",
+    "situacao": "Em Funcionamento Normal",
+    "condominio": "Aberto",
+    "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+    "administrador": "ITAU UNIBANCO S.A."
+   },
+   "alertas": [],
    "status": "ok",
    "ultima_data": "2026-10-28",
    "inicio_historico": "2024-04-01",
@@ -1513,12 +2297,25 @@
    "vol12": 0.02049711,
    "mdd12": -0.02600989,
    "mdd_total": -0.02600989,
-   "dd_atual": -0.00717408
+   "dd_atual": -0.00717408,
+   "consistencia": {
+    "meses_acima_cdi": 11,
+    "meses_avaliados": 24,
+    "pior_mes": {
+     "ref": "09/2026",
+     "ret": -0.01379515
+    },
+    "meses_negativos": 4,
+    "meses_total": 30
+   },
+   "lacunas": []
   }
  ],
  "avisos": [
-  "BTG Pactual Hedge Debêntures de Infra Subclasse I (57.464.330/0001-55) tem subclasses na CVM ['LNULW1775591402', 'R77ZH1775590867']; usando 'LNULW1775591402'. Defina 'subclasse' no fundos.yaml para escolher.",
-  "BTG Crédito Corporativo Plus Seleção Subclasse I (68.418.021/0001-65) tem subclasses na CVM ['6G3XV1786020869', 'MU4LW1786019908']; usando '6G3XV1786020869'. Defina 'subclasse' no fundos.yaml para escolher.",
-  "Inter Corporate Seleção Renda Fixa: última cota em 06/06/2024 (876 dias atrás)."
+  "BTG Crédito Corporativo Plus Seleção Subclasse I (68.418.021/0001-65) tem 2 subclasses na CVM: 6G3XV1786020869 = SUBCLASSE II BTG PACTUAL CRÉDITO CORPORATIVO PLUS SELEÇÃO FIIF EM INFRA DA CIC RF RESP LIMITADA; MU4LW1786019908 = SUBCLASSE I BTG PACTUAL CRÉDITO CORPORATIVO PLUS SELEÇÃO FIIF EM INFRA DA CIC RF RESP LIMITADA. Coloque o código certo no campo 'subclasse' do fundos.yaml.",
+  "BTG Pactual Hedge Debêntures de Infra Subclasse I (57.464.330/0001-55) tem 2 subclasses na CVM: LNULW1775591402 = SUBCLASSE II DO BTG PACTUAL HEDGE SELEÇÃO FIF INC DEB INFRA DA CIC RF CRED PRIV ATIVO RESP LIMITADA; R77ZH1775590867 = SUBCLASSE I DO BTG PACTUAL HEDGE SELEÇÃO FIF INC DEB INFRA DA CIC RF CRED PRIV ATIVO RESP LIMITADA. Coloque o código certo no campo 'subclasse' do fundos.yaml.",
+  "Absolute Hidra IPCA Seleção Infra Renda Fixa (Isento IRPF): Sem cotas na CVM entre 03/10/2024 e 17/10/2024 (14 dias). Períodos que dependem dessas datas aparecem como “–”.",
+  "Inter Corporate Seleção Renda Fixa: Sem cotas na CVM desde 06/06/2024. O fundo pode ter sido encerrado, incorporado ou mudado de CNPJ.",
+  "Itaú CDI Mais Multimercado Crédito Privado: Sem cotas na CVM entre 01/08/2025 e 23/02/2026 (206 dias). Períodos que dependem dessas datas aparecem como “–”."
  ]
 }
