@@ -1,207 +1,3859 @@
 # =====================================================================
-#  LISTA DE FUNDOS DO PAINEL — Crédito Privado: Espelho e Itaú Asset
-#  Edite este arquivo para incluir/remover fundos (revisão semestral).
+#  LISTA DE FUNDOS DO PAINEL — Plataforma Itaú
+#  Edite este arquivo para incluir/remover fundos.
 #  Ao salvar (Commit changes), o robô roda sozinho e baixa o histórico dos novos.
 # =====================================================================
 
 configuracao:
-  titulo: "Crédito Privado — Espelho e Itaú Asset"
+  titulo: "Fundos Itaú — Rentabilidade"
   subtitulo: "Rentabilidade com base nos informes diários da CVM"
   anos_historico: 5
   dias_alerta_defasagem: 7  # avisa se a última cota tiver mais de N dias corridos
   aliquota_grossup: 0.15    # IR usado no gross-up dos fundos isentos (15% = acima de 2 anos)
 
 # Campos de cada fundo:
-#   cnpj, nome, categoria, distribuicao   → obrigatórios/recomendados
-#   isento_ir: true                        → fundo isento de IR para PF (habilita o gross-up)
-#   subclasse: "CODIGO"                    → só se a CVM listar mais de uma subclasse (veja a aba Fundos)
-#   ativo: false                           → esconde do site sem apagar o histórico
-#   Opcionais (aparecem no detalhe do fundo e prevalecem sobre o cadastro da CVM):
+#   cnpj, nome, categoria, distribuicao, status   → vêm da planilha da plataforma
+#   isento_ir: true          → fundo isento de IR para PF (habilita o gross-up)
+#   subclasse: "CODIGO"      → só se a CVM listar mais de uma subclasse (veja a aba Fundos)
+#   ativo: false             → esconde do site sem apagar o histórico
+#   Opcionais (aparecem no detalhe do fundo):
 #   taxa_adm: "0,80% a.a."   taxa_perf: "20% do que exceder o CDI"
-#   resgate: "D+30"          aplicacao_minima: "R$ 1.000"   gestor: "..."   observacao: "..."
+#   resgate: "D+30"          aplicacao_minima: "R$ 1.000"   observacao: "..."
 
 fundos:
-  - cnpj: "48.084.411/0001-39"   # FY 56281
-    nome: "Absolute Atenas Seleção Renda Fixa Crédito Privado"
-    categoria: "Renda Fixa CP"
-    distribuicao: "FoF"
-    ativo: true
-
-  - cnpj: "48.094.354/0001-79"   # FY 56283
-    nome: "Absolute Creta Seleção Renda Fixa Crédito Privado"
-    categoria: "Renda Fixa CP"
-    distribuicao: "FoF"
-    ativo: true
-
-  - cnpj: "55.686.350/0001-45"   # FY 57504
-    nome: "Absolute Delfos Seleção"
-    categoria: "Renda Fixa CP"
-    distribuicao: "FoF"
-    ativo: true
-
-  - cnpj: "57.065.462/0001-04"   # FY 57650
-    nome: "Absolute Hidra IPCA Seleção Infra Renda Fixa (Isento IRPF)"
-    categoria: "Infraestrutura / Isentos"
-    distribuicao: "FoF"
-    isento_ir: true
-    ativo: true
-
-  - cnpj: "64.963.538/0001-84"   # FY 58915
-    nome: "Absolute Hidra Pré 2 Anos Seleção Infra RF"
-    categoria: "Infraestrutura / Isentos"
-    distribuicao: "FoF"
-    isento_ir: false   # CONFIRMAR: se for isento (Lei 12.431), troque para true
-    ativo: true
-
-  - cnpj: "49.706.433/0001-56"   # FY 56450
-    nome: "Absolute Hidra Seleção Infra Renda Fixa CP (Isento IRPF)"
-    categoria: "Infraestrutura / Isentos"
-    distribuicao: "FoF"
-    isento_ir: true
-    ativo: true
-
-  - cnpj: "42.860.699/0001-00"   # FY 55859
-    nome: "ARX Denali RF CP IU"
-    categoria: "Renda Fixa CP"
-    distribuicao: "FoF"
-    ativo: true
-
-  - cnpj: "42.698.327/0001-29"   # FY 55790
-    nome: "ARX Vinson RF CP IU"
-    categoria: "Renda Fixa CP"
-    distribuicao: "FoF"
-    ativo: true
-
-  - cnpj: "68.418.021/0001-65"   # FY 59285
-    nome: "BTG Crédito Corporativo Plus Seleção Subclasse I"
-    categoria: "Renda Fixa CP"
-    distribuicao: "FoF"
-    ativo: true
-
-  - cnpj: "57.464.330/0001-55"   # FY 57731
-    nome: "BTG Pactual Hedge Debêntures de Infra Subclasse I"
-    categoria: "Infraestrutura / Isentos"
-    distribuicao: "FoF"
-    isento_ir: false   # CONFIRMAR: se for isento (Lei 12.431), troque para true
-    ativo: true
-
-  - cnpj: "08.927.574/0001-11"   # FY 50246
-    nome: "BTG Pactual Hedge Renda Fixa Crédito Privado"
-    categoria: "Renda Fixa CP"
-    distribuicao: "FoF"
-    ativo: true
-
-  - cnpj: "68.358.170/0001-86"   # FY 59278
-    nome: "Capitânia Infra CDI 30"
-    categoria: "Infraestrutura / Isentos"
-    distribuicao: "FoF"
-    isento_ir: false   # CONFIRMAR: se for isento (Lei 12.431), troque para true
-    ativo: true
-
-  - cnpj: "55.227.365/0001-45"   # FY 57409
-    nome: "Drys Debêntures de Infraestrutura Seleção (Isento IRPF)"
-    categoria: "Infraestrutura / Isentos"
-    distribuicao: "FoF"
-    isento_ir: true
-    ativo: true
-
-  - cnpj: "53.390.661/0001-37"   # FY 57019
-    nome: "Equitas Shelter Seleção Renda Fixa"
-    categoria: "Renda Fixa CP"
-    distribuicao: "FoF"
-    ativo: true
-
-  - cnpj: "48.094.425/0001-33"   # FY 56285
-    nome: "Ibiuna Credit Seleção Multimercado CP"
-    categoria: "Multimercado CP"
-    distribuicao: "FoF"
-    ativo: true
-
-  - cnpj: "48.069.005/0001-05"   # FY 56265
-    nome: "Icatu Vanguarda Crédito Privado Liquidez Seleção"
-    categoria: "Renda Fixa CP"
-    distribuicao: "FoF"
-    ativo: true
-
-  - cnpj: "32.835.611/0001-46"   # FY 54138
-    nome: "Icatu Vanguarda Crédito Privado LP IU RF FIC"
-    categoria: "Renda Fixa CP"
-    distribuicao: "FoF"
-    ativo: true
-
-  - cnpj: "42.501.967/0001-05"   # FY 55626
-    nome: "Icatu Vanguarda Crédito Privado PG Multimercado"
-    categoria: "Multimercado CP"
-    distribuicao: "FoF"
-    ativo: true
-
-  - cnpj: "46.467.208/0001-16"   # FY 56081
-    nome: "Icatu Vanguarda Seleção Infraestrutura Renda Fixa"
-    categoria: "Infraestrutura / Isentos"
-    distribuicao: "FoF"
-    isento_ir: false   # CONFIRMAR: se for isento (Lei 12.431), troque para true
-    ativo: true
-
-  - cnpj: "52.151.185/0001-39"   # FY 56769
-    nome: "Inter Corporate Seleção Renda Fixa"
-    categoria: "Renda Fixa CP"
-    distribuicao: "FoF"
-    ativo: true
-
-  - cnpj: "42.336.900/0001-54"   # FY 55873
-    nome: "Itaú Action Debêntures Incentivadas RF CP (Isento IRPF)"
-    categoria: "Infraestrutura / Isentos"
+  - cnpj: "36.347.721/0001-10"   # FY 54689
+    nome: "Itaú Index Simples Selic RF FIC FI"
+    categoria: "Renda Fixa Simples"
     distribuicao: "Itaú Asset"
-    isento_ir: true
-    ativo: true
+    status: "ABERTO"
+
+  - cnpj: "26.199.519/0001-34"   # FY 51679
+    nome: "Privilège DI"
+    categoria: "Referenciado DI"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "35.650.636/0001-63"   # FY 54488
+    nome: "Carteira Itaú de Investimento FIC MM"
+    categoria: "Alocação"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "36.346.391/0001-48"   # FY 54702
+    nome: "Carteira Itaú Internacional FIC MM IE"
+    categoria: "Alocação"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "46.467.345/0001-50"   # FY 56091
+    nome: "Carteira Itaú Asset de Investimento Moderado MM"
+    categoria: "Alocação"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "41.884.595/0001-72"   # FY 55765
+    nome: "Portfolio Itaú Multimercado"
+    categoria: "Alocação"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "41.907.811/0001-58"   # FY 55766
+    nome: "Portfolio Itaú Brasil Multimercado"
+    categoria: "Alocação"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "11.858.554/0001-40"   # FY 50907
+    nome: "Itaú Renda Fix Mix Crédito Privado"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "INIBIDO"
+
+  - cnpj: "20.335.522/0001-51"   # FY 52678
+    nome: "Itaú Diferenciado Crédito Privado LP RF"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
 
   - cnpj: "20.335.176/0001-01"   # FY 52663
     nome: "Itaú Active Fix 5 Crédito Privado Renda Fixa"
-    categoria: "Renda Fixa CP"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
     distribuicao: "Itaú Asset"
-    ativo: true
+    status: "ABERTO"
+
+  - cnpj: "34.803.938/0001-61"   # FY 54347
+    nome: "Itaú Dual MM CP"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
 
   - cnpj: "38.000.771/0001-51"   # FY 54901
     nome: "Itaú Active Fix ALL Crédito Privado Renda Fixa"
-    categoria: "Renda Fixa CP"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
     distribuicao: "Itaú Asset"
-    ativo: true
+    status: "ABERTO"
 
   - cnpj: "26.262.571/0001-98"   # FY 53030
     nome: "Itaú Active Fix Plus Multimercado Crédito Privado"
-    categoria: "Multimercado CP"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
     distribuicao: "Itaú Asset"
-    ativo: true
+    status: "INIBIDO"
 
   - cnpj: "42.814.895/0001-48"   # FY 55754
     nome: "Itaú CDI Mais Multimercado Crédito Privado"
-    categoria: "Multimercado CP"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
     distribuicao: "Itaú Asset"
-    ativo: true
+    status: "FECHADO"
 
   - cnpj: "51.998.694/0001-39"   # FY 56732
     nome: "Itaú Crédito Bancário Renda Fixa Crédito Privado"
-    categoria: "Renda Fixa CP"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
     distribuicao: "Itaú Asset"
-    ativo: true
+    status: "ABERTO"
 
-  - cnpj: "61.964.220/0001-20"   # FY 58368
-    nome: "Itaú Debêntures IMA-B Infraestrutura RF"
-    categoria: "Infraestrutura / Isentos"
+  - cnpj: "28.840.420/0001-03"   # FY 53558
+    nome: "Itaú Multimercado High Yield CP (Precision Crédito Privado)"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
     distribuicao: "Itaú Asset"
-    isento_ir: false   # CONFIRMAR: se for isento (Lei 12.431), troque para true
-    ativo: true
+    status: "ABERTO"
+
+  - cnpj: "32.292.528/0001-78"   # FY 54079
+    nome: "Itaú Precision Advanced MM Crédito Privado FIC"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "55.667.045/0001-06"   # FY 57496
+    nome: "Itaú Janeiro Infra Incentivado Renda Fixa"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
+    isento_ir: true
+
+  - cnpj: "42.263.927/0001-64"   # FY 55517
+    nome: "Itaú High Yield All Multimercado CP (Precision All Multimercado CP)"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
 
   - cnpj: "42.380.161/0001-06"   # FY 55843
     nome: "Itaú Debêntures Incentivadas CDI RF CP (Isento IRPF)"
-    categoria: "Infraestrutura / Isentos"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
     distribuicao: "Itaú Asset"
+    status: "FECHADO"
     isento_ir: true
-    ativo: true
 
   - cnpj: "54.496.707/0001-60"   # FY 57204
     nome: "Itaú Debêntures Incentivadas Pós-Fixado Renda Fixa (Isento IRPF)"
-    categoria: "Infraestrutura / Isentos"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
     distribuicao: "Itaú Asset"
+    status: "FECHADO"
     isento_ir: true
-    ativo: true
+
+  - cnpj: "61.883.434/0001-71"   # FY 58360
+    nome: "Itaú Debêntures Pós Fixado II Infraestrutura RF (Isento IRPF)"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+    isento_ir: true
+
+  - cnpj: "61.964.220/0001-20"   # FY 58368
+    nome: "Itaú Debêntures IMA-B Infraestrutura RF"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "41.994.687/0001-05"   # FY 55493
+    nome: "Itaú Debêntures Incentivadas RF CP (Isento IRPF)"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
+    isento_ir: true
+
+  - cnpj: "42.336.900/0001-54"   # FY 55873
+    nome: "Itaú Action Debêntures Incentivadas RF CP (Isento IRPF)"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+    isento_ir: true
+
+  - cnpj: "57.038.991/0001-19"   # FY 57646
+    nome: "Itaú Legend Infra Renda Fixa Crédito Privado"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
+
+  - cnpj: "42.717.960/0001-17"   # FY 55717
+    nome: "Itaú Sinfonia Multimercado Crédito Privado"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "54.278.393/0001-29"   # FY 57157
+    nome: "Itaú Sinfonia All Multimercado Crédito Privado"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "42.337.008/0001-98"   # FY 55869
+    nome: "Itaú Seleção Multifundos Crédito Privado"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "59.201.703/0001-20"   # FY 58061
+    nome: "Itaú Soneto Crédito Privado Direitos Creditórios"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
+
+  - cnpj: "61.285.889/0001-95"   # FY 59101
+    nome: "Itaú Soneto III Crédito Privado FIDC"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "67.228.771/0001-01"   # FY 59286
+    nome: "Itaú Essential FIDC Subclasse I"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "48.094.425/0001-33"   # FY 56285
+    nome: "Ibiuna Credit Seleção Multimercado CP"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "32.835.611/0001-46"   # FY 54138
+    nome: "Icatu Vanguarda Crédito Privado LP IU RF FIC"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "FoF"
+    status: "FECHADO"
+
+  - cnpj: "42.501.967/0001-05"   # FY 55626
+    nome: "Icatu Vanguarda Crédito Privado PG Multimercado"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "48.069.005/0001-05"   # FY 56265
+    nome: "Icatu Vanguarda Crédito Privado Liquidez Seleção"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "46.467.208/0001-16"   # FY 56081
+    nome: "Icatu Vanguarda Seleção Infraestrutura Renda Fixa"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "48.094.354/0001-79"   # FY 56283
+    nome: "Absolute Creta Seleção Renda Fixa Crédito Privado"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "48.084.411/0001-39"   # FY 56281
+    nome: "Absolute Atenas Seleção Renda Fixa Crédito Privado"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "55.686.350/0001-45"   # FY 57504
+    nome: "Absolute Delfos Seleção"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "49.706.433/0001-56"   # FY 56450
+    nome: "Absolute Hidra Seleção Infra Renda Fixa CP (Isento IRPF)"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "FoF"
+    status: "ABERTO"
+    isento_ir: true
+
+  - cnpj: "57.065.462/0001-04"   # FY 57650
+    nome: "Absolute Hidra IPCA Seleção Infra Renda Fixa (Isento IRPF)"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "FoF"
+    status: "ABERTO"
+    isento_ir: true
+
+  - cnpj: "64.963.538/0001-84"   # FY 58915
+    nome: "Absolute Hidra Pré 2 Anos Seleção Infra RF"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "42.698.327/0001-29"   # FY 55790
+    nome: "ARX Vinson RF CP IU"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "42.860.699/0001-00"   # FY 55859
+    nome: "ARX Denali RF CP IU"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "68.418.021/0001-65"   # FY 59285
+    nome: "BTG Crédito Corporativo Plus Seleção Subclasse I"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "57.464.330/0001-55"   # FY 57731
+    nome: "BTG Pactual Hedge Debêntures de Infra Subclasse I"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "08.927.574/0001-11"   # FY 50246
+    nome: "BTG Pactual Hedge Renda Fixa Crédito Privado"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "68.358.170/0001-86"   # FY 59278
+    nome: "Capitânia Infra CDI 30"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "53.390.661/0001-37"   # FY 57019
+    nome: "Equitas Shelter Seleção Renda Fixa"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "32.892.264/0001-93"   # FY 54169
+    nome: "JGP Corporate Plus FIFI MM CP IU"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "32.892.615/0001-66"   # FY 54170
+    nome: "JGP Select FICFI MM CP IU"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "42.698.158/0001-27"   # FY 55789
+    nome: "Kinea Andes Crédito Privado RF"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "Kinea"
+    status: "ABERTO"
+
+  - cnpj: "36.249.200/0001-20"   # FY 54660
+    nome: "Kinea Oportunidades RF Crédito Privado"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "Kinea"
+    status: "ABERTO"
+
+  - cnpj: "53.273.544/0001-93"   # FY 56988
+    nome: "Kinea Nepal Multimercado Crédito Privado"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "Kinea"
+    status: "ABERTO"
+
+  - cnpj: "52.273.393/0001-00"   # FY 56789
+    nome: "Legacy Capital Credit Seleção Multimercado"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "49.972.274/0001-31"   # FY 56469
+    nome: "Porto Seguro Ipê RF Seleção Crédito Privado"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "64.111.132/0001-73"   # FY 58810
+    nome: "SPX Seahawk Seleção Debêntures Incentivadas IPCA"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "FoF"
+    status: "ABERTO"
+    isento_ir: true
+
+  - cnpj: "42.431.531/0001-89"   # FY 55580
+    nome: "SPX Seahawk Seleção RF Crédito Privado"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "46.479.678/0001-08"   # FY 56098
+    nome: "SPX Seahawk Global Multimercado"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "62.466.700/0001-23"   # FY 58488
+    nome: "SulAmérica Crédito ESG Itaú Seleção RF"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "67.318.392/0001-02"   # FY 59188
+    nome: "SulAmérica Infra CDI Ativo Seleção FIFIC RF CP"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "50.980.211/0001-06"   # FY 56575
+    nome: "Vinland Crédito Seleção MM Crédito Privado"
+    categoria: "Crédito Privado Espelho à Itaú Asset"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "63.319.624/0001-96"   # FY 58939
+    nome: "A1 Infra CDI Ativo RF Crédito Privado"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "29.044.189/0001-04"   # FY 56700
+    nome: "AF Invest Geraes 30 Renda Fixa Crédito Privado"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "09.720.734/0001-10"   # FY 56695
+    nome: "AF Invest Renda Fixa Crédito Privado Geraes"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "44.025.131/0001-07"   # FY 56694
+    nome: "AF Horizonte Multimercado"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "60.851.421/0001-58"   # FY 58766
+    nome: "Artesanal CP 90 Ion FIDC"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "32.102.131/0001-76"   # FY 55976
+    nome: "ARX Everest Renda Fixa Crédito Privado"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "30.910.199/0001-56"   # FY 55974
+    nome: "ARX Elbrus Infra Renda Fixa (Isento IRPF)"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+    isento_ir: true
+
+  - cnpj: "37.368.116/0001-98"   # FY 55975
+    nome: "ARX Elbrus Pro Infra Renda Fixa (Isento IRPF)"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+    isento_ir: true
+
+  - cnpj: "17.627.210/0001-07"   # FY 56842
+    nome: "Atena Tapyr Renda Fixa Crédito Privado"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "31.340.838/0001-58"   # FY 56843
+    nome: "Atena Yield D30 Renda Fixa Crédito Privado"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "23.556.185/0001-10"   # FY 55951
+    nome: "AZ Quest Luce Renda Fixa Crédito Privado"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "INIBIDO"
+
+  - cnpj: "44.835.630/0001-51"   # FY 55993
+    nome: "AZ Quest Luce A Renda Fixa Crédito Privado LP"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "INIBIDO"
+
+  - cnpj: "52.279.563/0001-64"   # FY 56839
+    nome: "AZ Quest Luce II Crédito Privado Longo Prazo"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "22.100.009/0001-07"   # FY 55952
+    nome: "AZ Quest Altro Multimercado Crédito Privado"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "36.352.498/0001-07"   # FY 55953
+    nome: "AZ Quest Supra Multimercado Crédito Privado"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "25.213.405/0001-39"   # FY 55954
+    nome: "AZ Quest Deb Incentivadas MM CP (Isento IRPF)"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+    isento_ir: true
+
+  - cnpj: "19.782.311/0001-88"   # FY 56156
+    nome: "AZ Quest Valore FI RF CP"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "55.169.240/0001-06"   # FY 59228
+    nome: "Bocaina Infra 60 CDI"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "55.362.588/0001-15"   # FY 59216
+    nome: "Bocaina Infra 60 IPCA"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "35.726.300/0001-37"   # FY 57801
+    nome: "Brave 90 Direitos Creditórios I Multimercado Crédito Privado"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "41.196.241/0001-35"   # FY 56868
+    nome: "Brave 90 High Grade Multimercado Crédito Privado"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "54.485.055/0001-68"   # FY 59037
+    nome: "Brave Iron RF Crédito Privado"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "20.146.294/0001-71"   # FY 56300
+    nome: "Capitânia Premium 45 FIC FI RF CP LP"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "26.605.199/0001-75"   # FY 55946
+    nome: "Capitânia Infra 90 RF Crédito Privado (Isento IRPF)"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+    isento_ir: true
+
+  - cnpj: "13.615.411/0001-33"   # FY 55945
+    nome: "Capitânia Top Crédito Privado Renda Fixa"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "23.272.391/0001-07"   # FY 56140
+    nome: "Capitânia Radar 90 FI MM CP LP"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "11.447.136/0001-60"   # FY 55987
+    nome: "Claritas Fundo de Investimento Renda Fixa CP LP"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "35.408.329/0001-70"   # FY 55979
+    nome: "Compass Credit Selection Renda Fixa CP LP"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "36.318.479/0001-56"   # FY 56445
+    nome: "Compass Yield 30 Renda Fixa CP LP"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "36.729.755/0001-79"   # FY 58506
+    nome: "Galapagos Dragon Multimercado Crédito Privado"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "26.978.438/0001-32"   # FY 55972
+    nome: "Iridium Apollo FIC Renda Fixa Crédito Privado LP"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "28.259.415/0001-01"   # FY 55973
+    nome: "Iridium Pioneer FI Infra Renda Fixa (Isento IRPF)"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+    isento_ir: true
+
+  - cnpj: "48.359.891/0001-01"   # FY 56406
+    nome: "Iridium Titan Renda Fixa Crédito Privado"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "41.594.333/0001-73"   # FY 56047
+    nome: "JGP Debêntures Incentivadas Juros Reais MM CP (Isento IRPF)"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+    isento_ir: true
+
+  - cnpj: "54.237.051/0001-60"   # FY 57343
+    nome: "JGP Debêntures Incentivadas Juros Reais 60 (Isento IRPF)"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+    isento_ir: true
+
+  - cnpj: "42.767.750/0001-33"   # FY 55988
+    nome: "JGP Corporate FIC FI Renda Fixa CP LP"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "55.945.272/0001-56"   # FY 58910
+    nome: "Mag Renda Fixa Infraestrutura Crédito Privado"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "39.958.460/0001-62"   # FY 56913
+    nome: "MB Capital Plus Renda Fixa Crédito Privado"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "50.716.952/0001-84"   # FY 57909
+    nome: "MB Credit Advanced Multimercado Crédito Privado"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "46.098.897/0001-39"   # FY 56855
+    nome: "Occam Liquidez Renda Fixa Crédito Privado"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "47.586.648/0001-55"   # FY 56883
+    nome: "Occam Crédito Corporativo 30 Renda Fixa"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "54.344.616/0001-09"   # FY 57481
+    nome: "Occam Ativo 30 Infraestrutura Renda Fixa"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "30.178.843/0001-43"   # FY 55965
+    nome: "Plural Deb Incentivadas Hedge 30 Multi CP (Isento IRPF)"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+    isento_ir: true
+
+  - cnpj: "24.623.412/0001-46"   # FY 55966
+    nome: "Plural Deb Incentivadas 30 MM CP (Isento IRPF)"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+    isento_ir: true
+
+  - cnpj: "18.316.558/0001-46"   # FY 55964
+    nome: "Plural Crédito Corporativo II Renda Fixa CP"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "54.519.721/0001-31"   # FY 59293
+    nome: "Polígono Alpha Crédito Estruturado FIC FIDC"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "23.601.467/0001-92"   # FY 56145
+    nome: "Polo Total Credit FIC FI MM Crédito Privado"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "57.661.754/0001-00"   # FY 58940
+    nome: "Polo Crédito Corporativo FIC FIRF"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "43.164.438/0001-18"   # FY 56848
+    nome: "Polo Crédito Estruturado 90 Multimercado"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "18.719.154/0001-01"   # FY 57599
+    nome: "Porto Seguro RF Referenciado DI CP"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "50.037.999/0001-11"   # FY 57615
+    nome: "Porto Baobá Infraestrutura Renda Fixa (Isento IRPF)"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+    isento_ir: true
+
+  - cnpj: "48.969.198/0001-42"   # FY 57394
+    nome: "Riza Évora Debêntures Incentivadas Juros Ativos"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+    isento_ir: true
+
+  - cnpj: "62.280.626/0001-56"   # FY 58616
+    nome: "Riza Évora Hedge Debêntures Incentivadas"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+    isento_ir: true
+
+  - cnpj: "36.015.100/0001-39"   # FY 56966
+    nome: "Riza Daikon Multimercado Crédito Privado"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "42.260.903/0001-51"   # FY 58533
+    nome: "Riza Statheros Multimercado Crédito Privado"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "34.431.415/0001-31"   # FY 55960
+    nome: "Root Capital High Yield MM Crédito Privado"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "42.405.028/0001-59"   # FY 55958
+    nome: "Root Capital Crédito HG Plus Multimercado CP"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "44.870.150/0001-21"   # FY 56136
+    nome: "Schroder High Grade Vintage A FIC FI RF CP"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "42.287.756/0001-03"   # FY 56138
+    nome: "Schroder Premium Vintage A FIC FI RF"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "34.780.531/0001-66"   # FY 58179
+    nome: "Solis Capital Antares Light Multimercado"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "13.054.728/0001-48"   # FY 58377
+    nome: "Solis Capital Antares Crédito Privado Multimercado"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "55.318.040/0001-78"   # FY 57713
+    nome: "Solis Antares Pioneiro Direitos Creditórios"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "26.773.148/0001-52"   # FY 56129
+    nome: "Sparta Max FIC FI RF CP LP"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "44.643.192/0001-20"   # FY 56134
+    nome: "Sparta Max 60 FICFI Renda Fixa CP LP"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "14.188.162/0001-00"   # FY 56130
+    nome: "Sparta Top FIC FI RF CP LP"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "36.352.361/0001-44"   # FY 56132
+    nome: "Sparta Debêntures Incentivadas 45 FIC FI RF (Isento IRPF)"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+    isento_ir: true
+
+  - cnpj: "39.959.025/0001-52"   # FY 55977
+    nome: "Sparta Debêntures Incentivadas Inflação FIC RF (Isento IRPF)"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+    isento_ir: true
+
+  - cnpj: "50.038.992/0001-14"   # FY 57101
+    nome: "Sparta Debêntures Incentivadas Estratégico Infra (Isento IRPF)"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+    isento_ir: true
+
+  - cnpj: "38.026.926/0001-29"   # FY 55978
+    nome: "Sparta Top Inflação Renda Fixa CP LP"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "26.759.909/0001-11"   # FY 56133
+    nome: "Sparta Debêntures Incentivadas FIC RF (Isento IRPF)"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+    isento_ir: true
+
+  - cnpj: "35.816.850/0001-47"   # FY 58304
+    nome: "V8 Cash Platinum Renda Fixa Crédito Privado"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "10.326.625/0001-00"   # FY 55968
+    nome: "Valora Absolute Crédito Privado LP"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "17.313.316/0001-36"   # FY 57956
+    nome: "Valora Horizon High Yield Multimercado"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "23.729.525/0001-68"   # FY 57847
+    nome: "Valora Guardian II Multimercado Crédito Privado"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "59.657.690/0001-07"   # FY 58888
+    nome: "Valora Vanguard FIDC"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "54.851.094/0001-31"   # FY 57765
+    nome: "Verde AM Ipê Direitos Creditórios"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "47.640.954/0001-22"   # FY 58367
+    nome: "Vinland Crédito Estruturado FIDC"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "44.977.584/0001-25"   # FY 57647
+    nome: "Vox Sustentável IS Renda Fixa Crédito Privado"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "04.621.721/0001-70"   # FY 56720
+    nome: "XP Corporate Top Crédito Privado Renda Fixa"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "11.046.179/0001-34"   # FY 56721
+    nome: "XP Corporate Light Renda Fixa Crédito Privado"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "23.999.611/0001-90"   # FY 56735
+    nome: "XP Corporate Plus Multimercado Crédito Privado"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "19.657.463/0001-59"   # FY 56738
+    nome: "XP Debêntures Incentivadas Crédito Privado (Isento IRPF)"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+    isento_ir: true
+
+  - cnpj: "26.803.233/0001-16"   # FY 56759
+    nome: "XP Debêntures Incentivadas Hedge Crédito Privado (Isento IRPF)"
+    categoria: "Crédito Privado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+    isento_ir: true
+
+  - cnpj: "58.516.787/0001-29"   # FY 57922
+    nome: "Absolute Hidra CDI Plus Seleção Infra Renda Fixa (Isento IRPF)"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "FoF"
+    status: "ABERTO"
+    isento_ir: true
+
+  - cnpj: "59.645.144/0001-48"   # FY 58060
+    nome: "Ace Capital Infra Seleção Debêntures Renda Fixa"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "57.753.153/0001-27"   # FY 57794
+    nome: "ARX Hedge II CDI Seleção Infraestrutura Renda Fixa"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "62.966.751/0001-14"   # FY 58590
+    nome: "Icatu Vanguarda Seleção CDI Infra RF"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "32.972.925/0001-90"   # FY 54198
+    nome: "Itaú Global Dinâmico RF Longo Prazo FIC"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "40.498.539/0001-37"   # FY 55220
+    nome: "Itaú Optimus Renda Fixa Longo Prazo"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "37.307.534/0001-75"   # FY 54743
+    nome: "Itaú Index Pré Longo Prazo Renda Fixa"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "46.422.205/0001-66"   # FY 56056
+    nome: "Itaú Artax Renda Fixa Longo Prazo"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "39.401.219/0001-38"   # FY 55067
+    nome: "Itaú Index Pré IRF-M 1+ RF FICFI"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "68.725.675/0001-31"   # FY 59340
+    nome: "Itaú Debêntures Pré IDKA 3A RF LP Créd Priv FIC"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "52.969.671/0001-69"   # FY 56903
+    nome: "Itaú Artax Infra Incentivado RF LP - RL (Isento IRPF)"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
+    isento_ir: true
+
+  - cnpj: "58.755.276/0001-60"   # FY 57971
+    nome: "Itaú Debêntures Incentivadas CDI Mix Renda Fixa"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+    isento_ir: true
+
+  - cnpj: "58.666.203/0001-00"   # FY 57950
+    nome: "Itaú Debêntures Incentivadas IMA-B5 Mix RF"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+    isento_ir: true
+
+  - cnpj: "59.623.578/0001-47"   # FY 58057
+    nome: "Itaú Debêntures Pré Target 2029 Renda Fixa"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
+
+  - cnpj: "68.337.331/0001-55"   # FY 59270
+    nome: "Itaú Debêntures Incentivadas Juro Real Target 2032 Shift"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
+    isento_ir: true
+
+  - cnpj: "54.954.879/0001-30"   # FY 57328
+    nome: "Itaú Debêntures Incentivadas Pré Target 2030 II"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
+    isento_ir: true
+
+  - cnpj: "68.300.365/0001-75"   # FY 59268
+    nome: "Itaú Debêntures Incentivadas Pré Target Julho 2030 Shift"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
+    isento_ir: true
+
+  - cnpj: "58.639.093/0001-89"   # FY 57946
+    nome: "Itaú Global Dinâmico Infra Renda Fixa Longo Prazo"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
+
+  - cnpj: "37.307.475/0001-35"   # FY 54742
+    nome: "Itaú Index Juros Reais de Renda Fixa"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "37.307.077/0001-19"   # FY 54741
+    nome: "Itaú Index Juros Reais B5+ Renda Fixa"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "29.197.055/0001-15"   # FY 53821
+    nome: "Itaú Legend Renda Fixa Longo Prazo"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "41.907.819/0001-14"   # FY 55767
+    nome: "Itaú Macro Opportunities Renda Fixa Longo Prazo"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
+
+  - cnpj: "46.467.316/0001-99"   # FY 56089
+    nome: "Itaú Lumina Plus Renda Fixa Longo Prazo"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "51.974.730/0001-24"   # FY 56731
+    nome: "Itaú Lumina Plus Infra Debêntures Incentivadas (Isento IRPF)"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+    isento_ir: true
+
+  - cnpj: "52.151.906/0001-00"   # FY 56767
+    nome: "Itaú Lumina Soberano Renda Fixa Longo Prazo"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "53.304.657/0001-09"   # FY 56994
+    nome: "Itaú Lumina Platinum Renda Fixa Longo Prazo"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "59.773.538/0001-81"   # FY 58112
+    nome: "Itaú Pirineus III FIDC Infra"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
+
+  - cnpj: "40.815.071/0001-67"   # FY 55263
+    nome: "Itaú IPCA Action Renda Fixa"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "52.239.457/0001-57"   # FY 56783
+    nome: "Itaú Janeiro Renda Fixa Longo Prazo"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
+
+  - cnpj: "68.725.145/0001-93"   # FY 59338
+    nome: "Itaú Vitalos Renda Fixa LP – Subclasse I"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "66.918.548/0001-23"   # FY 59138
+    nome: "Itaú Seleção Kinea Atacama Renda Fixa"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "32.245.930/0001-00"   # FY 54099
+    nome: "Itaú Seleção Multifundos Renda Fixa"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "51.323.039/0001-80"   # FY 56617
+    nome: "Absolute Hiker Renda Fixa Infra Seleção (Isento IRPF)"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "FoF"
+    status: "ABERTO"
+    isento_ir: true
+
+  - cnpj: "42.814.885/0001-02"   # FY 55753
+    nome: "Absolute Hiker Renda Fixa Seleção LP"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "48.107.062/0001-23"   # FY 56291
+    nome: "Ace Capital Vantage Seleção Renda Fixa Longo Prazo"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "48.107.119/0001-94"   # FY 56294
+    nome: "BTG Pactual Explorer Renda Fixa Ativa Seleção LP"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "56.070.131/0001-08"   # FY 57559
+    nome: "BTG Pactual Crédito Corporativo Dinâmico Seleção RF"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "28.851.710/0001-44"   # FY 53565
+    nome: "Kinea Renda Fixa Absoluto Longo Prazo"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "Kinea"
+    status: "ABERTO"
+
+  - cnpj: "47.611.958/0001-82"   # FY 56206
+    nome: "Kinea Dakar Renda Fixa Longo Prazo"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "Kinea"
+    status: "ABERTO"
+
+  - cnpj: "39.303.195/0001-84"   # FY 55047
+    nome: "Kinea IPCA Dinâmico II Renda Fixa FICFI"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "Kinea"
+    status: "ABERTO"
+
+  - cnpj: "54.383.407/0001-74"   # FY 57181
+    nome: "Kinea Debêntures Incentivadas Renda Fixa"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "Kinea"
+    status: "ABERTO"
+    isento_ir: true
+
+  - cnpj: "51.250.345/0001-34"   # FY 56610
+    nome: "Legacy Capital Renda Fixa Infra Seleção (Isento IRPF)"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "FoF"
+    status: "ABERTO"
+    isento_ir: true
+
+  - cnpj: "55.228.297/0001-39"   # FY 57408
+    nome: "Legacy Capital IPCA Debêntures de Infra Seleção (Isento IRPF)"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "FoF"
+    status: "ABERTO"
+    isento_ir: true
+
+  - cnpj: "42.698.907/0001-16"   # FY 55752
+    nome: "Legacy Renda Fixa Seleção LP"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "51.250.295/0001-95"   # FY 56612
+    nome: "Legacy Capital IPCA Seleção Renda Fixa Longo Prazo"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "FoF"
+    status: "FECHADO"
+
+  - cnpj: "62.475.051/0001-27"   # FY 58474
+    nome: "Porto Paineira CDI Seleção Infra RF (Isento IRPF)"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "FoF"
+    status: "ABERTO"
+    isento_ir: true
+
+  - cnpj: "66.888.326/0001-05"   # FY 59135
+    nome: "Sparta Renda Seleção Infraestrutura Renda Fixa"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "FoF"
+    status: "FECHADO"
+
+  - cnpj: "54.094.978/0001-99"   # FY 57122
+    nome: "SPX Seahawk Seleção Infra Renda Fixa"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "59.306.031/0001-18"   # FY 58024
+    nome: "SPX Seahawk D45 Seleção Infraestrutura Renda Fixa (Isento IRPF)"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "FoF"
+    status: "FECHADO"
+    isento_ir: true
+
+  - cnpj: "54.090.484/0001-36"   # FY 57121
+    nome: "Tenax Renda Fixa Infra Seleção"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "51.225.288/0001-33"   # FY 56604
+    nome: "Vinland Renda Fixa Infra Seleção (Isento IRPF)"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "FoF"
+    status: "ABERTO"
+    isento_ir: true
+
+  - cnpj: "61.806.555/0001-10"   # FY 58343
+    nome: "Vinland Renda Fixa Ativo Seleção Longo Prazo"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "62.003.988/0001-08"   # FY 58372
+    nome: "Vinland 2 Seleção Infra Ativo RF"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "47.541.046/0001-81"   # FY 56183
+    nome: "Vinland Renda Fixa Ativo Seleção"
+    categoria: "Renda Fixa Diferenciados"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "63.446.494/0001-52"   # FY 58873
+    nome: "A1 D30 Renda Fixa Crédito Privado"
+    categoria: "Renda Fixa Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "59.591.550/0001-75"   # FY 58131
+    nome: "A1 Debêntures de Infra Renda Fixa"
+    categoria: "Renda Fixa Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "57.832.914/0001-36"   # FY 57884
+    nome: "A1 High Grade Pós Fixado Feeder 2 Renda Fixa"
+    categoria: "Renda Fixa Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "53.847.813/0001-88"   # FY 57871
+    nome: "A1 Renda Fixa Longo Prazo"
+    categoria: "Renda Fixa Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "58.770.366/0001-20"   # FY 58593
+    nome: "Atena Infra 45 Hedge Ativo RF"
+    categoria: "Renda Fixa Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "08.610.270/0001-26"   # FY 58192
+    nome: "Mapfre Renda Fixa Fundo de Investimento"
+    categoria: "Renda Fixa Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "22.681.798/0001-17"   # FY 56565
+    nome: "AZ Quest Termo Renda Fixa LP"
+    categoria: "Renda Fixa Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "58.322.530/0001-36"   # FY 57931
+    nome: "ASA Renda Fixa Ativo II"
+    categoria: "Renda Fixa Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "51.854.924/0001-96"   # FY 56844
+    nome: "ASA Alpha Juro Nominal Renda Fixa Longo Prazo"
+    categoria: "Renda Fixa Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "47.610.970/0001-72"   # FY 56950
+    nome: "Galapagos Albatroz Renda Fixa Longo Prazo"
+    categoria: "Renda Fixa Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "29.587.389/0001-03"   # FY 58796
+    nome: "JPMorgan Global Bond Opportunities"
+    categoria: "Renda Fixa Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "51.253.495/0001-00"   # FY 58336
+    nome: "Mapfre Confianza RF DI"
+    categoria: "Renda Fixa Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "17.899.612/0001-60"   # FY 56952
+    nome: "Mag Cash Renda Fixa Longo Prazo"
+    categoria: "Renda Fixa Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "50.697.486/0001-37"   # FY 57603
+    nome: "Mag High Grade Plus 30"
+    categoria: "Renda Fixa Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "57.813.684/0001-68"   # FY 58186
+    nome: "Occam Renda Fixa Infraestrutura CDI 30"
+    categoria: "Renda Fixa Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "23.565.840/0001-05"   # FY 57386
+    nome: "RB Capital Infraestrutura Renda Fixa"
+    categoria: "Renda Fixa Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "58.038.938/0001-80"   # FY 58794
+    nome: "Tivio Alt Crédito High Yield 180"
+    categoria: "Renda Fixa Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "61.020.441/0001-40"   # FY 58793
+    nome: "Tivio Alt 90 Direitos Creditórios (FY 58793)"
+    categoria: "Renda Fixa Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "58.398.452/0001-53"   # FY 58752
+    nome: "V8 Mercury RF"
+    categoria: "Renda Fixa Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "60.228.650/0001-10"   # FY 58887
+    nome: "Valora CDI Renda Fixa Infraestrutura"
+    categoria: "Renda Fixa Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "53.678.015/0001-70"   # FY 58043
+    nome: "Vinland Crédito 10 Renda Fixa"
+    categoria: "Renda Fixa Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "57.075.698/0001-21"   # FY 58006
+    nome: "Vinland Debêntures de Infra IPCA"
+    categoria: "Renda Fixa Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "57.566.553/0001-23"   # FY 57748
+    nome: "Itaú Active Fix ESG Horizonte IS Multimercado"
+    categoria: "Multimercado Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "55.036.882/0001-37"   # FY 57352
+    nome: "Itaú Alvorada Multimercado"
+    categoria: "Multimercado Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "42.698.615/0001-83"   # FY 55749
+    nome: "Itaú Artax Multimercado"
+    categoria: "Multimercado Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "42.698.666/0001-05"   # FY 55750
+    nome: "Itaú Artax Ultra Multimercado"
+    categoria: "Multimercado Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "55.499.832/0001-96"   # FY 57460
+    nome: "Itaú Artax Endurance Multimercado"
+    categoria: "Multimercado Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "05.381.809/0001-24"   # FY 50021
+    nome: "Itaú Capital Performance Fix Multimercado"
+    categoria: "Multimercado Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "INIBIDO"
+
+  - cnpj: "59.825.832/0001-90"   # FY 58082
+    nome: "Itaú Crédito Estruturado Santorini Multimercado FI"
+    categoria: "Multimercado Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "62.917.953/0001-76"   # FY 58573
+    nome: "Itaú Dual Global PVT Markets FIF Multimercado CP RL"
+    categoria: "Multimercado Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "57.644.743/0001-11"   # FY 57764
+    nome: "Itaú Fusion Eagle Multimercado"
+    categoria: "Multimercado Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "57.301.287/0001-07"   # FY 57693
+    nome: "Itaú Fusion Harpia Multimercado"
+    categoria: "Multimercado Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "03.618.256/0001-55"   # FY 40369
+    nome: "Itaú Global Dinâmico Baixa Vol Multimercado"
+    categoria: "Multimercado Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "21.407.385/0001-86"   # FY 52865
+    nome: "Itaú Global Dinâmico Multimercado"
+    categoria: "Multimercado Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "26.269.983/0001-50"   # FY 53034
+    nome: "Itaú Global Dinâmico Plus"
+    categoria: "Multimercado Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "42.299.229/0001-19"   # FY 55536
+    nome: "Itaú Global Dinâmico Ultra Multimercado"
+    categoria: "Multimercado Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "09.145.075/0001-35"   # FY 50435
+    nome: "Itaú Hedge 30 Multimercado"
+    categoria: "Multimercado Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
+
+  - cnpj: "28.075.485/0001-00"   # FY 53450
+    nome: "Itaú Hedge Plus Multimercado"
+    categoria: "Multimercado Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
+
+  - cnpj: "37.347.946/0001-39"   # FY 54753
+    nome: "Itaú Hunter Total Return Multimercado"
+    categoria: "Multimercado Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "51.973.414/0001-38"   # FY 56730
+    nome: "Itaú Index Pré IDKA 3A Alavancado MM FI"
+    categoria: "Multimercado Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "46.438.904/0001-02"   # FY 56071
+    nome: "Itaú Inflação Multiestratégia Multimercado"
+    categoria: "Multimercado Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "52.116.227/0001-09"   # FY 56757
+    nome: "Itaú Janeiro Multimercado"
+    categoria: "Multimercado Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
+
+  - cnpj: "65.205.236/0001-00"   # FY 58951
+    nome: "Itaú Janeiro Ônix Multimercado"
+    categoria: "Multimercado Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
+
+  - cnpj: "17.420.064/0001-44"   # FY 52385
+    nome: "Itaú Long And Short 30 Multimercado"
+    categoria: "Multimercado Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "36.346.343/0001-50"   # FY 54700
+    nome: "Itaú Macro Opportunities Multimercado FIC FI"
+    categoria: "Multimercado Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
+
+  - cnpj: "57.335.243/0001-06"   # FY 57708
+    nome: "Itaú Omni Multimercado"
+    categoria: "Multimercado Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "40.881.814/0001-05"   # FY 55271
+    nome: "Itaú Optimus Extreme Multimercado"
+    categoria: "Multimercado Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "67.041.805/0001-54"   # FY 59142
+    nome: "Itaú Optimus Hyperion FIFCIC MM RL"
+    categoria: "Multimercado Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "40.653.167/0001-76"   # FY 55228
+    nome: "Itaú Optimus Titan Multimercado"
+    categoria: "Multimercado Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "68.716.890/0001-76"   # FY 59336
+    nome: "Itaú Vitalos Multimercado RL – Subclasse I"
+    categoria: "Multimercado Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "22.428.807/0001-62"   # FY 52930
+    nome: "Itaú Yield Plus Multimercado"
+    categoria: "Multimercado Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
+
+  - cnpj: "05.523.348/0001-87"   # FY 41355
+    nome: "Itaú Seleção Multifundos Multimercado"
+    categoria: "Multimercado Multifundos (FoF)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "17.329.627/0001-93"   # FY 52292
+    nome: "Itaú Seleção Multifundos Plus Multimercado"
+    categoria: "Multimercado Multifundos (FoF)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "27.591.107/0001-08"   # FY 53147
+    nome: "Itaú Seleção Multifundos Discovery Multimercado"
+    categoria: "Multimercado Multifundos (FoF)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "34.803.891/0001-36"   # FY 54340
+    nome: "Itaú Seleção Multifundos Genesis Multimercado"
+    categoria: "Multimercado Multifundos (FoF)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "65.789.619/0001-72"   # FY 58989
+    nome: "Itaú Seleção Ibiuna Renda Fixa Ativo Infra"
+    categoria: "Multimercado Multifundos (FoF)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "65.938.370/0001-10"   # FY 59013
+    nome: "Itaú Seleção Ibiuna Total Return Ações"
+    categoria: "Multimercado Multifundos (FoF)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "23.731.495/0001-24"   # FY 51521
+    nome: "Itaú Fund Of Funds Orion Multimercado CP"
+    categoria: "Multimercado Multifundos (FoF)"
+    distribuicao: "FoF"
+    status: "ABERTO | Calendário"
+
+  - cnpj: "58.159.080/0001-02"   # FY 57858
+    nome: "Itaú Solutions Vega Multimercado RL"
+    categoria: "Multimercado Multifundos (FoF)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "51.820.237/0001-50"   # FY 56696
+    nome: "Itaú Multifundos Orion Ion Seleção Multimercado"
+    categoria: "Multimercado Multifundos (FoF)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "37.348.103/0001-57"   # FY 54748
+    nome: "A1 Hedge Seleção Multimercado"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "28.280.961/0001-16"   # FY 53515
+    nome: "Absolute Hedge Multimercado"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "31.024.343/0001-10"   # FY 53890
+    nome: "Absolute Vertex Seleção FIC MM"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "48.132.888/0001-42"   # FY 56313
+    nome: "Absolute Alpha Marb Seleção Multimercado"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "FECHADO"
+
+  - cnpj: "48.132.813/0001-61"   # FY 56311
+    nome: "Absolute Alpha Global Seleção Multimercado"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "FECHADO"
+
+  - cnpj: "66.181.841/0001-50"   # FY 59047
+    nome: "Ace Capital Action Seleção SCC Multimercado"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "42.379.878/0001-20"   # FY 55881
+    nome: "Ace Capital Multimercado"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "51.252.839/0001-58"   # FY 56611
+    nome: "Ace Capital Drive Seleção"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "61.169.265/0001-02"   # FY 59191
+    nome: "Ace Capital Seleção Multicenários"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "26.324.086/0001-00"   # FY 53047
+    nome: "Adam Exclusivo Seleção MM FIC FI"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "25.382.586/0001-27"   # FY 53010
+    nome: "Adam Macro Multimercado"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "28.075.078/0001-94"   # FY 53417
+    nome: "Adam Macro Strategy Multimercado"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "36.348.543/0001-41"   # FY 54671
+    nome: "Adam Advanced PVT FICFI CP IE"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO | Investone"
+
+  - cnpj: "31.008.653/0001-40"   # FY 53892
+    nome: "AZ Quest Total Return Seleção MM FIC"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "38.025.711/0001-93"   # FY 54912
+    nome: "AZ Quest Multi Max Seleção Multimercado"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "FECHADO"
+
+  - cnpj: "32.921.848/0001-40"   # FY 54185
+    nome: "Bahia AM Seleção FIC FI"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "48.053.570/0001-76"   # FY 56250
+    nome: "Bahia AM Mutá Seleção Multimercado"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "27.580.533/0001-46"   # FY 53153
+    nome: "Bahia AM Maraú Seleção FIC FI MM"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "69.309.681/0001-70"   # FY 59446
+    nome: "Bahia AM UNA Seleção Multimercado"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "42.937.346/0001-60"   # FY 55831
+    nome: "Blue Alpha Seleção Multimercado"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "FECHADO"
+
+  - cnpj: "64.514.056/0001-47"   # FY 58859
+    nome: "BTG Synergy Equity Hedge Seleção MM"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "64.611.046/0001-20"   # FY 58880
+    nome: "BTG Synergy Long Bias Seleção Ações"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "29.196.983/0001-65"   # FY 53741
+    nome: "Canvas Enduro Seleção MM FIC"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "FECHADO"
+
+  - cnpj: "31.341.374/0001-02"   # FY 53955
+    nome: "Clave Alpha Macro III Seleção FIC FIM"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "FECHADO"
+
+  - cnpj: "46.192.789/0001-20"   # FY 57569
+    nome: "Capstone Macro Seleção Multimercado"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "FECHADO"
+
+  - cnpj: "34.774.288/0001-73"   # FY 54311
+    nome: "Dahlia Total Return Seleção Multimercado"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "25.682.163/0001-22"   # FY 53014
+    nome: "Gávea Macro MM Seleção FIC FI"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "FECHADO"
+
+  - cnpj: "37.663.536/0001-05"   # FY 54809
+    nome: "Giant Darius Seleção Multimercado"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "FECHADO"
+
+  - cnpj: "37.348.037/0001-15"   # FY 54750
+    nome: "Genoa Capital Radar Seleção Multimercado"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "63.310.241/0001-57"   # FY 58647
+    nome: "Genoa Capital Sagres Seleção MM"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "22.428.762/0001-26"   # FY 52928
+    nome: "Ibiuna Hedge Multimercado"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "42.282.089/0001-76"   # FY 55832
+    nome: "Ibiuna Hedge STR Multimercado Seleção"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "28.077.900/0001-56"   # FY 53443
+    nome: "Ibiuna Long Short Stls Seleção FIC FI MM"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "67.317.886/0001-72"   # FY 59187
+    nome: "Icatu Vanguarda Seleção Dinâmico CDI IU MM RL"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "53.738.716/0001-57"   # FY 57055
+    nome: "Icatu Vanguarda Seleção Igaraté Long Biased"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "35.364.125/0001-85"   # FY 54430
+    nome: "Itaú Kinea Apolo FIC MM"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "Kinea"
+    status: "ABERTO"
+
+  - cnpj: "42.860.588/0001-01"   # FY 58226
+    nome: "Itaú Kinea Ártemis Multimercado IE"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "Kinea"
+    status: "ABERTO | Calendário"
+
+  - cnpj: "23.731.781/0001-90"   # FY 51544
+    nome: "Itaú Kinea Chronos Multimercado"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "Kinea"
+    status: "ABERTO"
+
+  - cnpj: "31.238.370/0001-95"   # FY 53942
+    nome: "Itaú Kinea Atlas Multimercado"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "Kinea"
+    status: "ABERTO"
+
+  - cnpj: "63.758.732/0001-65"   # FY 58720
+    nome: "Itaú Paragon Seleção MM"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "67.623.586/0001-11"   # FY 59205
+    nome: "Itaú Seleção Kapitalo NW3 Plus"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "67.750.488/0001-45"   # FY 59218
+    nome: "Itaú Seleção Kapitalo Strata Low Vol"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "67.749.975/0001-98"   # FY 59219
+    nome: "Itaú Seleção Tenax Global Equities Multistrategy"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "66.790.277/0001-73"   # FY 59123
+    nome: "Itaú Seleção Verde AM TAU FIFCIC Multimercado CP"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "57.653.905/0001-88"   # FY 57767
+    nome: "Itaú Solutions Rigel Multimercado"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "67.623.600/0001-87"   # FY 59200
+    nome: "JGP Equity Hedge Seleção MM"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "17.420.140/0001-11"   # FY 52369
+    nome: "JGP Max Multimercado"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "31.820.924/0001-68"   # FY 53097
+    nome: "JGP Strategy Seleção FICFI"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "37.555.151/0001-16"   # FY 54785
+    nome: "Kapitalo Seleção Multimercado"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "48.133.182/0001-03"   # FY 56316
+    nome: "Kapitalo High Vol Seleção Multimercado"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "26.386.658/0001-77"   # FY 53092
+    nome: "Kapitalo Kappa Seleção FIC Multi"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "40.692.052/0001-90"   # FY 55237
+    nome: "Kapitalo K10 Seleção Multimercado"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "41.163.578/0001-46"   # FY 55328
+    nome: "Kapitalo Zeta Seleção"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "48.068.979/0001-66"   # FY 56263
+    nome: "Kapitalo Zeta Meridia Seleção Multimercado"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "48.132.908/0001-85"   # FY 56314
+    nome: "Kapitalo Alpha Global Seleção Multimercado"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "FECHADO"
+
+  - cnpj: "66.917.820/0001-50"   # FY 59137
+    nome: "Kinea Urano Seleção Multimercado"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "Kinea"
+    status: "ABERTO"
+
+  - cnpj: "31.341.469/0001-18"   # FY 53953
+    nome: "Legacy Capital Seleção FIC FIM"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "54.953.009/0001-46"   # FY 57334
+    nome: "Legacy Capital V10 Seleção Multimercado"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "49.559.798/0001-03"   # FY 56443
+    nome: "Mar Absoluto Seleção Multimercado"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "41.326.338/0001-15"   # FY 55391
+    nome: "Moat Capital Long Bias Multimercado Seleção"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "28.851.732/0001-04"   # FY 53569
+    nome: "Neo Multi Estratégia 30 Seleção FIC FIM"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "42.754.313/0001-85"   # FY 55825
+    nome: "Neo Provectus I Seleção Multimercado"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "66.230.768/0001-60"   # FY 59050
+    nome: "Neo Vitale I Seleção SCC FIFCIC Multimercado RL"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "35.822.770/0001-02"   # FY 54559
+    nome: "Occam Retorno Absoluto Seleção FIC FIM"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "37.348.061/0001-54"   # FY 54752
+    nome: "Oceana Long Bias Seleção Multimercado"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "51.752.331/0001-19"   # FY 56676
+    nome: "Quantitas Mallorca Seleção Multimercado"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "59.779.613/0001-11"   # FY 58068
+    nome: "Santa Fé Aquarius Seleção Multimercado"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "60.916.614/0001-40"   # FY 58234
+    nome: "SPX Raptor Seleção MM CP"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "28.851.728/0001-46"   # FY 53568
+    nome: "SPX Nimitz Seleção FIC FIM"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "25.306.783/0001-67"   # FY 53181
+    nome: "Trust Macro Multimercado"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "36.350.666/0001-17"   # FY 54668
+    nome: "Trust Long Bias Seleção Multimercado"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "42.699.005/0001-02"   # FY 55773
+    nome: "Tenax Total Return Seleção Multimercado"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "31.024.283/0001-35"   # FY 53887
+    nome: "Verde 60 MM Seleção FIC MM"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "36.249.245/0001-02"   # FY 54658
+    nome: "Vinland Macro Seleção Multimercado"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "41.734.805/0001-46"   # FY 55422
+    nome: "Vinland Macro Plus Multimercado Seleção"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "66.299.960/0001-02"   # FY 59060
+    nome: "Vinland Plus Seleção SCC Multimercado"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "63.458.367/0001-73"   # FY 58676
+    nome: "Vinland Long Short Seleção MM"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "59.150.192/0001-65"   # FY 58007
+    nome: "Vista Macro Absoluto Seleção Multimercado"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "41.342.624/0001-74"   # FY 55394
+    nome: "Vista Hedge Multimercado Seleção"
+    categoria: "Multimercado de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "21.983.042/0001-60"   # FY 58379
+    nome: "Absolute Alpha Global Multimercado"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "52.304.477/0001-64"   # FY 57335
+    nome: "Alpha Key Long Short Multimercado"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "09.620.860/0001-00"   # FY 55998
+    nome: "Angá Portfólio Fundo de Investimento Multimercado"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "34.172.497/0001-47"   # FY 56653
+    nome: "Armor Axe Multimercado"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "44.613.740/0001-79"   # FY 56666
+    nome: "Armor Sword Multimercado"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "09.625.909/0001-00"   # FY 56521
+    nome: "Artesanal D+2 MM"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "06.041.290/0001-06"   # FY 56067
+    nome: "ARX Extra FIC FIM"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "17.414.721/0001-40"   # FY 56068
+    nome: "ARX Macro FIC FIM"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "20.458.815/0001-26"   # FY 55970
+    nome: "ASA Hedge FIC FIM"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "38.597.242/0001-87"   # FY 56228
+    nome: "ASA Long Biased FIC Multimercado"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "04.455.632/0001-09"   # FY 56154
+    nome: "AZ Quest Multi FIC Multimercado"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "10.320.188/0001-09"   # FY 56650
+    nome: "AZ Quest Low Vol MM"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "61.925.599/0001-69"   # FY 58637
+    nome: "B2V Bridge MM"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "28.866.524/0001-89"   # FY 57156
+    nome: "Canvas Vector Multimercado"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "05.109.839/0001-86"   # FY 55932
+    nome: "Claritas Long Short MM"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "43.761.750/0001-99"   # FY 56066
+    nome: "Claritas Institucional FIC Multimercado"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "31.416.575/0001-13"   # FY 55980
+    nome: "Claritas Quant Multimercado FICFI"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "19.628.666/0001-17"   # FY 58667
+    nome: "Exploritas Alpha America Latina Multimercado"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "36.440.431/0001-16"   # FY 57793
+    nome: "Galapagos Evolution MM CP"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "24.592.505/0001-50"   # FY 58400
+    nome: "Gauss FICFIM"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "26.112.046/0001-96"   # FY 58797
+    nome: "JPMorgan Global Income"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "53.643.941/0001-00"   # FY 57688
+    nome: "Jubarte Migration II FIC FIM"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "13.503.226/0001-57"   # FY 56555
+    nome: "Kinitro Top MM"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "42.731.202/0001-53"   # FY 56561
+    nome: "Kinitro 30 MM"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "03.119.883/0001-41"   # FY 56351
+    nome: "JGP Hedge FIC FIM"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "54.048.344/0001-08"   # FY 58520
+    nome: "Kadima International Alpha MM"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "45.653.398/0001-01"   # FY 56872
+    nome: "Mantaro Equity Hedge FI Multimercado"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "17.002.861/0001-01"   # FY 56424
+    nome: "Mantaro LB FIC FIM"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "07.187.591/0001-05"   # FY 56193
+    nome: "Mapfre Inversion Fundo de Invest Multimercado"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "15.578.417/0001-03"   # FY 56070
+    nome: "Occam Institucional FICFI Multimercado II"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "11.403.956/0001-50"   # FY 56069
+    nome: "Occam Equity Hedge FIC FIM"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "17.164.789/0001-19"   # FY 56296
+    nome: "Occam Long & Short Plus FIC Multimercado"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "05.448.587/0001-10"   # FY 56301
+    nome: "Opportunity Total Multimercado"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "34.286.706/0001-83"   # FY 56336
+    nome: "Opportunity Total Evolution Multimercado"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "00.947.958/0001-94"   # FY 56302
+    nome: "Opportunity Market Multimercado"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "36.046.327/0001-41"   # FY 58263
+    nome: "Pátria Moneda Latam Corporate Credit MM"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "31.594.537/0001-50"   # FY 56232
+    nome: "Parcitas Hedge Fundo de Investimento em Cotas MM"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "07.013.315/0001-12"   # FY 56144
+    nome: "Polo Norte I Long Short FIC FIM"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "28.911.549/0001-57"   # FY 56001
+    nome: "Real Investor Multimercado"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "46.962.243/0001-01"   # FY 57393
+    nome: "Riza Travos Long Bias Multimercado"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "40.575.693/0001-65"   # FY 56517
+    nome: "Távola Equity Hedge 15 Multimercado"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "50.955.280/0001-60"   # FY 56599
+    nome: "Távola Equity Hedge 5 Multimercado"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "39.354.762/0001-21"   # FY 58270
+    nome: "V8 Speedway Long Short Multimercado"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "63.733.556/0001-07"   # FY 58795
+    nome: "Verde AM Beta 60 II Ações"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "40.905.462/0001-72"   # FY 56607
+    nome: "Vista Multiestratégia D60 Multimercado"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "41.978.534/0001-74"   # FY 58934
+    nome: "WHG RF Dinâmico"
+    categoria: "Multimercado Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "49.929.457/0001-74"   # FY 56467
+    nome: "Itaú Index Bitcoin USD FIC FIA"
+    categoria: "Criptomoedas"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "45.604.985/0001-00"   # FY 57695
+    nome: "Hashdex Crypto Selection FIC FIM"
+    categoria: "Criptomoedas"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "40.212.940/0001-69"   # FY 56164
+    nome: "Hashdex Crypto Top Performers FIC FI MM IE"
+    categoria: "Criptomoedas"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "47.612.274/0001-03"   # FY 56337
+    nome: "Hashdex Crypto Dinâmico Long Biased MM"
+    categoria: "Criptomoedas"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "33.736.845/0001-07"   # FY 57754
+    nome: "Hashdex 100 Nasdaq Crypto Index MM"
+    categoria: "Criptomoedas"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "35.088.108/0001-62"   # FY 56822
+    nome: "Hashdex 40 Nasdaq Crypto Index MM"
+    categoria: "Criptomoedas"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "33.736.873/0001-16"   # FY 56821
+    nome: "Hashdex 20 Nasdaq Crypto Index MM"
+    categoria: "Criptomoedas"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "29.236.318/0001-58"   # FY 56005
+    nome: "BLP Digital 100 Multimercado Invest. no Exterior"
+    categoria: "Criptomoedas"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "42.870.532/0001-20"   # FY 56004
+    nome: "BLP Digital 40 Fundo de Investimento Multimercado"
+    categoria: "Criptomoedas"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "21.065.857/0001-60"   # FY 56003
+    nome: "BLP Digital 20 Fundo de Investimentos Multimercado"
+    categoria: "Criptomoedas"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "28.280.864/0001-23"   # FY 53541
+    nome: "Itaú Seleção Multifundos Global Alpha IE"
+    categoria: "Internacional sem Variação Cambial"
+    distribuicao: "FoF"
+    status: "ABERTO | Calendário"
+
+  - cnpj: "36.249.317/0001-03"   # FY 54651
+    nome: "Itaú Index US Tech IE FICFIA"
+    categoria: "Internacional sem Variação Cambial"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO | Calendário"
+
+  - cnpj: "56.093.011/0001-18"   # FY 57566
+    nome: "Itaú Global Equity Solution Hedged Ações"
+    categoria: "Internacional sem Variação Cambial"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO | Calendário"
+
+  - cnpj: "37.306.536/0001-40"   # FY 54736
+    nome: "Itaú Index Ações Estratégia S&P 500"
+    categoria: "Internacional sem Variação Cambial"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO | Calendário"
+
+  - cnpj: "39.413.178/0001-08"   # FY 55061
+    nome: "JP Value Hedge BDR Nível I Seleção Ações"
+    categoria: "Internacional sem Variação Cambial"
+    distribuicao: "FoF"
+    status: "ABERTO | Calendário"
+
+  - cnpj: "41.326.368/0001-21"   # FY 55393
+    nome: "JP Morgan Global Macro Opportunities BRL Seleção"
+    categoria: "Internacional sem Variação Cambial"
+    distribuicao: "FoF"
+    status: "ABERTO | Calendário"
+
+  - cnpj: "61.425.858/0001-92"   # FY 58933
+    nome: "MAG Global Bonds II Multimercado"
+    categoria: "Internacional sem Variação Cambial"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "41.994.525/0001-77"   # FY 55463
+    nome: "Schroder Contour Tech L&S BRL Seleção Multimercado"
+    categoria: "Internacional sem Variação Cambial"
+    distribuicao: "FoF"
+    status: "FECHADO"
+
+  - cnpj: "26.470.473/0001-46"   # FY 53115
+    nome: "PIMCO Income Seleção FIC FI MM IE"
+    categoria: "Internacional sem Variação Cambial"
+    distribuicao: "FoF"
+    status: "ABERTO | Calendário"
+
+  - cnpj: "51.101.184/0001-17"   # FY 56585
+    nome: "Nordea Alpha 15 BRL Seleção IE"
+    categoria: "Internacional sem Variação Cambial"
+    distribuicao: "FoF"
+    status: "ABERTO | Calendário"
+
+  - cnpj: "42.399.185/0001-07"   # FY 55847
+    nome: "Oaktree Global Credit BRL Seleção FIC FIM IE"
+    categoria: "Internacional sem Variação Cambial"
+    distribuicao: "FoF"
+    status: "ABERTO | Calendário"
+
+  - cnpj: "28.140.746/0001-10"   # FY 53456
+    nome: "Western Asset Macro OPPS Seleção FIC FI MM IE"
+    categoria: "Internacional sem Variação Cambial"
+    distribuicao: "FoF"
+    status: "ABERTO | Calendário"
+
+  - cnpj: "41.088.640/0001-82"   # FY 56977
+    nome: "Compass Ninety One Global Franchise BRL Ações"
+    categoria: "Internacional sem Variação Cambial Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "32.102.192/0001-33"   # FY 55937
+    nome: "Geo Empresas Globais em Reais Ações"
+    categoria: "Internacional sem Variação Cambial Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "35.939.779/0001-90"   # FY 58709
+    nome: "JP Atlas BRL Ações"
+    categoria: "Internacional sem Variação Cambial Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "46.351.969/0001-08"   # FY 56790
+    nome: "Opportunity Global Equity Real Ações BDR Nível I"
+    categoria: "Internacional sem Variação Cambial Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "37.013.129/0001-44"   # FY 57714
+    nome: "Verde AM Mundi Ações Globais Seleção"
+    categoria: "Internacional sem Variação Cambial Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "10.500.884/0001-05"   # FY 55999
+    nome: "Real Investor BDR Nível I FIC FIA"
+    categoria: "Internacional sem Variação Cambial Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "23.066.595/0001-83"   # FY 52955
+    nome: "Itaú Seleção Multifundos Global Allocation IE"
+    categoria: "Internacional com Variação Cambial"
+    distribuicao: "FoF"
+    status: "ABERTO | Calendário"
+
+  - cnpj: "35.415.852/0001-24"   # FY 57984
+    nome: "Itaú Seleção Multifundos Global Equities USD"
+    categoria: "Internacional com Variação Cambial"
+    distribuicao: "FoF"
+    status: "ABERTO | Calendário"
+
+  - cnpj: "41.124.628/0001-86"   # FY 55315
+    nome: "Itaú Megatrends Ações FX IE"
+    categoria: "Internacional com Variação Cambial"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO | Calendário"
+
+  - cnpj: "37.231.262/0001-77"   # FY 54732
+    nome: "Founders Multifundos Global Alpha USD"
+    categoria: "Internacional com Variação Cambial"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "37.760.167/0001-60"   # FY 54860
+    nome: "PIMCO Income USD Seleção"
+    categoria: "Internacional com Variação Cambial"
+    distribuicao: "FoF"
+    status: "ABERTO | Calendário"
+
+  - cnpj: "41.287.719/0001-32"   # FY 55383
+    nome: "Dahlia Global Allocation MM Seleção FICFI"
+    categoria: "Internacional com Variação Cambial"
+    distribuicao: "FoF"
+    status: "ABERTO | Calendário"
+
+  - cnpj: "39.518.559/0001-43"   # FY 55087
+    nome: "BlackRock Global Unconstrained Equity USD"
+    categoria: "Internacional com Variação Cambial"
+    distribuicao: "FoF"
+    status: "INIBIDO"
+
+  - cnpj: "41.249.600/0001-75"   # FY 55375
+    nome: "BlackRock Global Unconstrained Ações USD"
+    categoria: "Internacional com Variação Cambial"
+    distribuicao: "FoF"
+    status: "ABERTO | Calendário"
+
+  - cnpj: "42.698.112/0001-08"   # FY 55788
+    nome: "BlackRock Next Generation Technology"
+    categoria: "Internacional com Variação Cambial"
+    distribuicao: "FoF"
+    status: "ABERTO | Calendário"
+
+  - cnpj: "41.326.314/0001-66"   # FY 55390
+    nome: "JP Morgan China USD Seleção Ações"
+    categoria: "Internacional com Variação Cambial"
+    distribuicao: "FoF"
+    status: "ABERTO | Calendário"
+
+  - cnpj: "37.663.456/0001-41"   # FY 54806
+    nome: "Morgan US Advantage Equity USD Seleção"
+    categoria: "Internacional com Variação Cambial"
+    distribuicao: "FoF"
+    status: "ABERTO | Calendário"
+
+  - cnpj: "41.272.854/0001-04"   # FY 55379
+    nome: "Morgan Stanley Global Brands USD Seleção Ações"
+    categoria: "Internacional com Variação Cambial"
+    distribuicao: "FoF"
+    status: "ABERTO | Calendário"
+
+  - cnpj: "41.326.350/0001-20"   # FY 55392
+    nome: "JP Morgan Global Macro Opportunities USD Seleção"
+    categoria: "Internacional com Variação Cambial"
+    distribuicao: "FoF"
+    status: "ABERTO | Calendário"
+
+  - cnpj: "39.518.636/0001-65"   # FY 55088
+    nome: "Verde AM Mundi Ações Globais Seleção"
+    categoria: "Internacional com Variação Cambial"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "36.348.138/0001-23"   # FY 54684
+    nome: "Itaú Tesouro Americano USD 10 Anos FICFI MM"
+    categoria: "Internacional com Variação Cambial"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "61.452.703/0001-45"   # FY 58298
+    nome: "Itaú Cash Enhanced USD Multimercado"
+    categoria: "Internacional com Variação Cambial"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "23.731.351/0001-78"   # FY 51516
+    nome: "Itaú Financial Bonds Crédito Privado Multimercado"
+    categoria: "Internacional com Variação Cambial"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO | Calendário"
+
+  - cnpj: "37.231.455/0001-28"   # FY 54730
+    nome: "Itaú Index Inflação Americana Renda Fixa USD FIC"
+    categoria: "Internacional com Variação Cambial"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO | Calendário"
+
+  - cnpj: "35.412.094/0001-90"   # FY 54708
+    nome: "Itaú Index Crédito High Yield Americano RF USD IE"
+    categoria: "Internacional com Variação Cambial"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO | Calendário"
+
+  - cnpj: "40.526.664/0001-03"   # FY 55209
+    nome: "Itaú Index China Tech Ações CNY HKD IE"
+    categoria: "Internacional com Variação Cambial"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO | Calendário"
+
+  - cnpj: "36.249.328/0001-93"   # FY 54649
+    nome: "Itaú Index Ações Globais FX IE FICFI"
+    categoria: "Internacional com Variação Cambial"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO | Calendário"
+
+  - cnpj: "36.249.300/0001-56"   # FY 54634
+    nome: "Itaú Index Ações Europa EUR IE FICFI"
+    categoria: "Internacional com Variação Cambial"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO | Calendário"
+
+  - cnpj: "36.249.375/0001-37"   # FY 54633
+    nome: "Itaú Index Ações Emergentes FX IE FICFI"
+    categoria: "Internacional com Variação Cambial"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO | Calendário"
+
+  - cnpj: "36.249.379/0001-15"   # FY 54632
+    nome: "Itaú Index Multimercado S&P500 USD FICFI"
+    categoria: "Internacional com Variação Cambial"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "36.249.291/0001-01"   # FY 54635
+    nome: "Itaú Index Ações Japão JPY IE FICFI"
+    categoria: "Internacional com Variação Cambial"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO | Calendário"
+
+  - cnpj: "37.306.507/0001-88"   # FY 54735
+    nome: "Itaú BDR Nível 1 Ações"
+    categoria: "Internacional com Variação Cambial"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO | Calendário"
+
+  - cnpj: "40.978.416/0001-01"   # FY 55292
+    nome: "Itaú Index Blockchain Ações FX IE"
+    categoria: "Internacional com Variação Cambial"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO | Calendário"
+
+  - cnpj: "28.075.532/0001-07"   # FY 55936
+    nome: "Geo Empresas Globais em Dólares Ações"
+    categoria: "Internacional com Variação Cambial Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "12.082.452/0001-49"   # FY 55345
+    nome: "IP Participações IPG Ações BDR Nível I"
+    categoria: "Internacional com Variação Cambial Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "46.352.768/0001-25"   # FY 56812
+    nome: "Opportunity Global Equity Dolar Ações BDR Nível I"
+    categoria: "Internacional com Variação Cambial Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "35.939.847/0001-10"   # FY 55944
+    nome: "IP Atlas USD FIA IE"
+    categoria: "Internacional com Variação Cambial Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "18.628.905/0001-76"   # FY 56353
+    nome: "JGP Health Care Ações Investimento no Exterior"
+    categoria: "Internacional com Variação Cambial Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "06.258.544/0001-34"   # FY 41534
+    nome: "Itaú Ações Dividendos Ações"
+    categoria: "Renda Variável Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "35.492.361/0001-87"   # FY 54713
+    nome: "Itaú Ações Asgard"
+    categoria: "Renda Variável Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "16.718.302/0001-30"   # FY 52201
+    nome: "Itaú Ações Momento 30"
+    categoria: "Renda Variável Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "37.514.937/0001-95"   # FY 54771
+    nome: "Itaú Ações Momento IQ"
+    categoria: "Renda Variável Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "53.935.306/0001-04"   # FY 57081
+    nome: "Itaú Inflation Equity Opportunities Multimercado"
+    categoria: "Renda Variável Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "20.335.511/0001-71"   # FY 52677
+    nome: "Itaú Ações Phoenix"
+    categoria: "Renda Variável Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "INIBIDO"
+
+  - cnpj: "35.495.706/0001-56"   # FY 54458
+    nome: "Itaú Ações Sirius FIC"
+    categoria: "Renda Variável Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
+
+  - cnpj: "24.571.992/0001-75"   # FY 59392
+    nome: "Itaú Dunamis Fundo de Ações"
+    categoria: "Renda Variável Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "52.798.293/0001-06"   # FY 56864
+    nome: "Itaú Hunter Long Only Ações"
+    categoria: "Renda Variável Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "69.084.795/0001-60"   # FY 59415
+    nome: "Itaú Inteligência Artificial e Tecnologia FIA"
+    categoria: "Renda Variável Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "32.246.546/0001-13"   # FY 54107
+    nome: "Itaú Olimpo Fundo de Ações"
+    categoria: "Renda Variável Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "46.479.577/0001-29"   # FY 56095
+    nome: "Itaú Optimus Long Bias Multimercado"
+    categoria: "Renda Variável Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "63.340.876/0001-05"   # FY 58658
+    nome: "Itaú Optimus Long Short MM"
+    categoria: "Renda Variável Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "35.110.510/0001-04"   # FY 54355
+    nome: "Itaú Smart Ações Brasil 50 FICFIA"
+    categoria: "Renda Variável Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "35.191.056/0001-55"   # FY 54356
+    nome: "Itaú Smart Ações Low Vol FIC"
+    categoria: "Renda Variável Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "01.063.897/0001-65"   # FY 50106
+    nome: "Itaú Small Cap Valuation Fundo de Ações"
+    categoria: "Renda Variável Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "69.780.203/0001-44"   # FY 59502
+    nome: "Itaú Solano Mira Ações Subclasse 1"
+    categoria: "Renda Variável Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "56.954.817/0001-53"   # FY 57640
+    nome: "Itaú US Tech USD Ações"
+    categoria: "Renda Variável Itaú Asset"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "38.267.929/0001-54"   # FY 54977
+    nome: "Itaú Index Petrobras Ações FICFI"
+    categoria: "Renda Variável Itaú Asset Indexados"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "42.519.896/0001-60"   # FY 55642
+    nome: "Itaú Eletrobras Ações FICFI"
+    categoria: "Renda Variável Itaú Asset Indexados"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "36.348.176/0001-86"   # FY 54683
+    nome: "Itaú Index Ações Ibovespa"
+    categoria: "Renda Variável Itaú Asset Indexados"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "36.347.678/0001-92"   # FY 54688
+    nome: "Itaú Index Itaú Unibanco Ações FIC"
+    categoria: "Renda Variável Itaú Asset Indexados"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "36.348.109/0001-61"   # FY 54694
+    nome: "Itaú Index Ações Small Cap FICFI"
+    categoria: "Renda Variável Itaú Asset Indexados"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "36.384.289/0001-37"   # FY 54689
+    nome: "Itaú Index Vale Ações"
+    categoria: "Renda Variável Itaú Asset Indexados"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "55.390.412/0001-77"   # FY 57432
+    nome: "Itaú Soberano Ações FIF RL"
+    categoria: "Renda Variável Itaú Asset Indexados"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "04.348.384/0001-99"   # FY 51071
+    nome: "Itaú Seleção Multifundos Fundo de Ações"
+    categoria: "Renda Variável Multifundos"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "27.580.503/0001-30"   # FY 53150
+    nome: "Itaú Seleção Long Bias Fundo de Ações"
+    categoria: "Renda Variável Multifundos"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "31.391.191/0001-93"   # FY 53979
+    nome: "Itaú Seleção Multifundos Genesis Fundo de Ações"
+    categoria: "Renda Variável Multifundos"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "35.488.313/0001-15"   # FY 54451
+    nome: "Itaú Seleção Multifundos Plus Ações FICFI"
+    categoria: "Renda Variável Multifundos"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "36.348.392/0001-21"   # FY 54675
+    nome: "Itaú Seleção Multifundos Aquila Ações"
+    categoria: "Renda Variável Multifundos"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "42.814.955/0001-22"   # FY 55759
+    nome: "Absoluto Pace Seleção FIC FIA"
+    categoria: "Renda Variável de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "FECHADO"
+
+  - cnpj: "48.107.032/0001-17"   # FY 56289
+    nome: "Ace Capital Absoluto Seleção Ações"
+    categoria: "Renda Variável de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "39.322.561/0001-42"   # FY 55050
+    nome: "Apex Ações Seleção FICFI"
+    categoria: "Renda Variável de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "51.829.951/0001-09"   # FY 56698
+    nome: "Arbor Seleção Ações BDR Nível I"
+    categoria: "Renda Variável de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "FECHADO"
+
+  - cnpj: "43.551.296/0001-41"   # FY 56044
+    nome: "Atit Seleção Ações"
+    categoria: "Renda Variável de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "FECHADO"
+
+  - cnpj: "32.139.841/0001-70"   # FY 54043
+    nome: "Bahia AM Valuation Seleção FIC FIA"
+    categoria: "Renda Variável de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "54.784.279/0001-70"   # FY 57278
+    nome: "BB Ações Agro Seleção"
+    categoria: "Renda Variável de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "31.933.918/0001-17"   # FY 54114
+    nome: "Brasil Capital 30 Seleção FIC FIA"
+    categoria: "Renda Variável de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "40.694.524/0001-44"   # FY 55238
+    nome: "Constellation IQ Seleção FIC FIA"
+    categoria: "Renda Variável de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "42.860.743/0001-81"   # FY 55830
+    nome: "Dyn Cou Seleção Ações (Dynamo Cougar)"
+    categoria: "Renda Variável de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "FECHADO"
+
+  - cnpj: "32.665.773/0001-83"   # FY 54126
+    nome: "Equitas Selection Seleção FIC FIA"
+    categoria: "Renda Variável de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "52.237.908/0001-17"   # FY 56784
+    nome: "Genoa Capital Arpa Seleção Multimercado"
+    categoria: "Renda Variável de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "49.618.018/0001-40"   # FY 56444
+    nome: "Ibiuna Equities 30 Seleção Ações"
+    categoria: "Renda Variável de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "49.618.243/0001-87"   # FY 56453
+    nome: "Ibiuna Long Biased Seleção Multimercado"
+    categoria: "Renda Variável de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "40.345.870/0001-17"   # FY 55189
+    nome: "Indie Ações Seleção FIC FI"
+    categoria: "Renda Variável de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "FECHADO"
+
+  - cnpj: "26.277.746/0001-30"   # FY 53072
+    nome: "JGP Equity Explorer 30 Seleção FIC FIA"
+    categoria: "Renda Variável de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "37.555.105/0001-17"   # FY 54783
+    nome: "JGP Long Only Seleção"
+    categoria: "Renda Variável de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "32.905.802/0001-37"   # FY 54175
+    nome: "Kapitalo Tarkus Seleção FIC FIA"
+    categoria: "Renda Variável de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "35.495.418/0001-00"   # FY 54452
+    nome: "Kinea Gama FICFIA"
+    categoria: "Renda Variável de Parceiros (incluindo Kinea)"
+    distribuicao: "Kinea"
+    status: "ABERTO"
+
+  - cnpj: "63.360.433/0001-78"   # FY 58659
+    nome: "Miyron Valor Seleção Ações"
+    categoria: "Renda Variável de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "35.727.535/0001-43"   # FY 54521
+    nome: "Navi Cruise Seleção FICFIA"
+    categoria: "Renda Variável de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "32.292.537/0001-69"   # FY 54086
+    nome: "Neo Navitas Seleção FIC FIA"
+    categoria: "Renda Variável de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "48.068.992/0001-15"   # FY 56264
+    nome: "Norte Long Bias Seleção Multimercado"
+    categoria: "Renda Variável de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "FECHADO"
+
+  - cnpj: "38.015.697/0001-47"   # FY 54911
+    nome: "Occam Seleção Ações"
+    categoria: "Renda Variável de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "FECHADO"
+
+  - cnpj: "64.632.380/0001-60"   # FY 58878
+    nome: "Oceana Selection Seleção Ações"
+    categoria: "Renda Variável de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "35.363.737/0001-53"   # FY 54412
+    nome: "Mantaro Capital Ações Seleção FIC FIA"
+    categoria: "Renda Variável de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "57.305.986/0001-25"   # FY 57692
+    nome: "Portolan Equity BRL Seleção"
+    categoria: "Renda Variável de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "36.249.269/0001-53"   # FY 54638
+    nome: "Sharp Equity Value Seleção FIC FIA"
+    categoria: "Renda Variável de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "40.209.167/0001-81"   # FY 55174
+    nome: "Sharp Long Biased Seleção Ações"
+    categoria: "Renda Variável de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "31.216.976/0001-20"   # FY 53948
+    nome: "SPX Falcon Seleção FIC FIA"
+    categoria: "Renda Variável de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "FECHADO"
+
+  - cnpj: "47.545.030/0001-47"   # FY 56184
+    nome: "SPX Falcon 2 Seleção Ações"
+    categoria: "Renda Variável de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "FECHADO"
+
+  - cnpj: "58.528.770/0001-91"   # FY 57930
+    nome: "SPX Patriot Seleção Ações"
+    categoria: "Renda Variável de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "62.993.168/0001-00"   # FY 58579
+    nome: "SPX Summit Macro Long Short Seleção"
+    categoria: "Renda Variável de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "42.754.302/0001-03"   # FY 55997
+    nome: "Tenax Ações Seleção"
+    categoria: "Renda Variável de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "25.306.800/0001-66"   # FY 53182
+    nome: "Trust Valor Seleção FIC FIA"
+    categoria: "Renda Variável de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "51.926.360/0001-50"   # FY 56710
+    nome: "TB Seleção Ações BDR Nível I"
+    categoria: "Renda Variável de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "39.303.192/0001-40"   # FY 55046
+    nome: "Vinci Mosaico Seleção FICFIA"
+    categoria: "Renda Variável de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "39.642.728/0001-52"   # FY 55118
+    nome: "Verde AM Long Bias Seleções"
+    categoria: "Renda Variável de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "32.265.518/0001-43"   # FY 54097
+    nome: "Moat Capital Seleção FIC FIA"
+    categoria: "Renda Variável de Parceiros (incluindo Kinea)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "11.209.172/0001-96"   # FY 57358
+    nome: "AF Invest Minas Ações"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "03.168.062/0001-03"   # FY 55344
+    nome: "ARX Income"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "10.237.480/0001-62"   # FY 55592
+    nome: "ARX Long Term"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "36.352.721/0001-08"   # FY 56114
+    nome: "Alpha Key Institucional FIC FIA"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "34.839.385/0001-05"   # FY 56113
+    nome: "Alpha Key FIC FIA"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "17.249.227/0001-78"   # FY 56385
+    nome: "Athena Total Return FIC FIA"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "23.186.344/0001-32"   # FY 56386
+    nome: "Athena Total Return II FIC FIA"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "17.397.804/0001-79"   # FY 56298
+    nome: "Apex Infinity 8 Long-Biased FIC FIA"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "48.038.196/0001-30"   # FY 56955
+    nome: "AZ Quest Azimut Equity Allocation Trend"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "36.499.625/0001-97"   # FY 56776
+    nome: "AZ Quest Bayes Long Biased Multimercado"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "46.929.688/0001-90"   # FY 56781
+    nome: "AZ Quest Bayes Long Short Multimercado"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "11.392.165/0001-72"   # FY 57534
+    nome: "AZ Quest Small Mid Caps Ações"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "41.153.284/0001-33"   # FY 56554
+    nome: "Springs Total Return Multimercado"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "49.726.793/0001-10"   # FY 56627
+    nome: "Springs Equity Hedge Multimercado"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "35.725.802/0001-43"   # FY 56771
+    nome: "Exploritas Latam Ações"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "07.187.517/0001-80"   # FY 56446
+    nome: "SPA EAC FIC FIA - BDR Nível I"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "38.954.217/0001-03"   # FY 56498
+    nome: "Pátria Long Biased Multimercado"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "12.845.796/0001-62"   # FY 56383
+    nome: "Kadima Equities FIC FIA"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "13.974.750/0001-06"   # FY 55594
+    nome: "AZ Quest Top Long Bias"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "11.977.794/0001-64"   # FY 56382
+    nome: "BTG Pactual Absoluto Institucional FIC FIA"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "09.120.774/0001-20"   # FY 56381
+    nome: "BTG Pactual Absoluto FIC FIA"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "14.799.785/0001-19"   # FY 56384
+    nome: "BTG Pactual Absoluto LS FIC Ações"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "09.290.813/0001-38"   # FY 56197
+    nome: "BTG Pactual Dividendos Fundo de Quotas Ações"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "34.286.544/0001-83"   # FY 55984
+    nome: "Claritas Long Bias FICFI Multimercado"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "52.265.150/0001-20"   # FY 59300
+    nome: "Subclasse II Fama Latam Climate Turnaround Ações"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "21.917.184/0001-29"   # FY 56234
+    nome: "Forpus Ações Fundo de Investimento em Cotas FIA"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "02.895.694/0001-06"   # FY 55595
+    nome: "Franklin Valor e Liquidez FVL Ações"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "09.143.435/0001-60"   # FY 56538
+    nome: "GTI Dimona Brasil Fundo de Investimento em Ações"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "35.717.650/0001-37"   # FY 56233
+    nome: "GTI Nimrod Fundo de Investimentos em Ações"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "24.623.392/0001-03"   # FY 57641
+    nome: "Guepardo Long Bias Multimercado"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "08.830.947/0001-31"   # FY 56387
+    nome: "Guepardo Institucional Ações"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "07.317.588/0001-50"   # FY 55908
+    nome: "Hix Capital FIC FIA"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "22.662.135/0001-55"   # FY 56218
+    nome: "Hix Capital Institucional FIC"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "50.316.699/0001-71"   # FY 59487
+    nome: "Itaú Solana Long Bias FIFCIC Ações"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "33.378.392/0001-86"   # FY 56168
+    nome: "Kadima Long Bias FI Multimercado"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "25.213.366/0001-70"   # FY 56894
+    nome: "Kiron Ações"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "10.320.151/0001-80"   # FY 55942
+    nome: "Leblon Ações"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "26.768.800/0001-40"   # FY 56211
+    nome: "Leblon Ações II Institucional FICFIA"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "24.325.422/0001-03"   # FY 56117
+    nome: "LIS Value FIA"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "09.296.009/0001-66"   # FY 56194
+    nome: "Mapfre Fundo de Investimento em Ações"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "09.296.022/0001-15"   # FY 56195
+    nome: "Mapfre Fundo de Investimento em Ações Small"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "19.186.860/0001-90"   # FY 56152
+    nome: "Módulo I FIC FI Ações"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "06.118.222/0001-90"   # FY 56528
+    nome: "Módulo Institucional Ações BDR Nível I"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "26.587.503/0001-07"   # FY 56122
+    nome: "Nest Fundo de Investimento em Ações"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "17.703.320/0001-00"   # FY 56167
+    nome: "Nextep Global Equities PG FIC FIA - BDR Nível I"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "18.525.868/0001-70"   # FY 55943
+    nome: "Occam Long Biased MM"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "52.242.659/0001-58"   # FY 57257
+    nome: "Organon 60 Ações"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "49.984.812/0001-08"   # FY 56679
+    nome: "Organon Institucional Ações"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "40.226.121/0001-70"   # FY 57148
+    nome: "Perfin Utilities Alocadores Ações"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "27.347.332/0001-01"   # FY 56143
+    nome: "Polo Long Bias"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "26.362.460/0001-53"   # FY 56867
+    nome: "Reach Total Return Ações"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "20.468.028/0001-65"   # FY 56856
+    nome: "Reach Ações"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "32.041.623/0001-07"   # FY 56468
+    nome: "RPS Long Bias Selection D30 Ações"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "41.514.301/0001-10"   # FY 56581
+    nome: "Ryo Long Biased Multimercado"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "41.574.597/0001-65"   # FY 56753
+    nome: "Ryo Selection Ações"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "23.960.625/0001-09"   # FY 56115
+    nome: "Safari 30 MM II"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "12.282.747/0001-69"   # FY 55911
+    nome: "STK Long Bias"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "17.164.804/0001-29"   # FY 55591
+    nome: "STK Long Only FI Ações"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "17.301.119/0001-05"   # FY 55949
+    nome: "Studio 30 Ações"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "44.157.044/0001-03"   # FY 56435
+    nome: "Studio Long Bias MM"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "42.922.205/0001-74"   # FY 56675
+    nome: "Tarpon GT 90 Ações"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "34.096.196/0001-81"   # FY 56522
+    nome: "Távola Absoluto Multimercado II"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "31.132.367/0001-92"   # FY 56112
+    nome: "Versa Ações Institucional FIA"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "29.574.952/0001-09"   # FY 56111
+    nome: "Versa FII Long Biased FI Multimercado"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "37.829.310/0001-23"   # FY 57208
+    nome: "Versa Genesis Ações BDR Nível I"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "46.192.551/0001-03"   # FY 56426
+    nome: "Vinci TR FIC FIM"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "ABERTO"
+
+  - cnpj: "35.002.795/0001-51"   # FY 56893
+    nome: "Vinci Auguri Multimercado"
+    categoria: "Renda Variável Conta e Ordem"
+    distribuicao: "Conta e Ordem"
+    status: "FECHADO"
+
+  - cnpj: "41.734.846/0001-32"   # FY 55416
+    nome: "Itaú Active Fix ESG Crédito Privado Multimercado"
+    categoria: "ESG"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "37.802.039/0001-32"   # FY 54869
+    nome: "Itaú Momento ESG Ações"
+    categoria: "ESG"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "38.267.982/0001-55"   # FY 54979
+    nome: "JGP ESG Seleção Ações"
+    categoria: "ESG"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "37.306.612/0001-17"   # FY 54737
+    nome: "Itaú Index Cambial Dólar"
+    categoria: "Commodities"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "35.492.154/0001-22"   # FY 54460
+    nome: "Itaú Index Gold Multimercado"
+    categoria: "Commodities"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "37.555.088/0001-18"   # FY 54782
+    nome: "Itaú Index Gold USD Multimercado IE FICFI"
+    categoria: "Commodities"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "41.235.137/0001-02"   # FY 55363
+    nome: "Itaú Commodities FX Multimercado IE"
+    categoria: "Commodities"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "31.820.901/0001-53"   # FY 54006
+    nome: "Itaú Itubers RF Ref DI"
+    categoria: "Exclusivos para colaboradores Itaú (Itubers)"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "35.822.736/0001-20"   # FY 54561
+    nome: "Itaú Itubers Ações Dunamis"
+    categoria: "Exclusivos para colaboradores Itaú (Itubers)"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "35.822.752/0001-12"   # FY 54560
+    nome: "Itaú Itubers Global Dinâmico Plus MM"
+    categoria: "Exclusivos para colaboradores Itaú (Itubers)"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "46.422.299/0001-73"   # FY 56057
+    nome: "Itaú Itubers Global Dinâmico RF"
+    categoria: "Exclusivos para colaboradores Itaú (Itubers)"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "35.822.722/0001-06"   # FY 54562
+    nome: "Itaú Itubers Seleção Multifundos MM"
+    categoria: "Exclusivos para colaboradores Itaú (Itubers)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "53.858.453/0001-10"   # FY 57071
+    nome: "Itaú Itubers Debêntures Incentivadas CDI FIFCIC RF"
+    categoria: "Exclusivos para colaboradores Itaú (Itubers)"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+    isento_ir: true
+
+  - cnpj: "53.740.110/0001-56"   # FY 57056
+    nome: "Itaú Itubers Multifundos Áquila Ações FIF CIC - RL"
+    categoria: "Exclusivos para colaboradores Itaú (Itubers)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "53.838.692/0001-08"   # FY 57066
+    nome: "Itaú Itubers Multifundos Órion Ion FIC CIC MM CP RL"
+    categoria: "Exclusivos para colaboradores Itaú (Itubers)"
+    distribuicao: "FoF"
+    status: "ABERTO"
+
+  - cnpj: "53.878.348/0001-42"   # FY 57074
+    nome: "Itaú Itubers Artax FIF CIC MM RL"
+    categoria: "Exclusivos para colaboradores Itaú (Itubers)"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "53.879.901/0001-61"   # FY 57075
+    nome: "Itaú Itubers Kinea Dakar FIF CIC RF LP RL"
+    categoria: "Exclusivos para colaboradores Itaú (Itubers)"
+    distribuicao: "Kinea"
+    status: "ABERTO"
+
+  - cnpj: "40.345.892/0001-87"   # FY 55190
+    nome: "Itaú Itubers Carteira Itaú de Investimentos MM"
+    categoria: "Exclusivos para colaboradores Itaú (Itubers)"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "49.539.937/0001-29"   # FY 56434
+    nome: "Itaú Itubers Global Dinâmico Ultra"
+    categoria: "Exclusivos para colaboradores Itaú (Itubers)"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "64.126.883/0001-63"   # FY 58813
+    nome: "Itaú Itubers Debêntures Incentivadas IMA-B II"
+    categoria: "Exclusivos para colaboradores Itaú (Itubers)"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+    isento_ir: true
+
+  - cnpj: "59.214.022/0001-05"   # FY 58023
+    nome: "Itubers Index Multimercado Estratégia S&P 500 USD"
+    categoria: "Exclusivos para colaboradores Itaú (Itubers)"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "49.540.349/0001-05"   # FY 56438
+    nome: "Itaú Itubers Kinea IPCA Dinâmico II"
+    categoria: "Exclusivos para colaboradores Itaú (Itubers)"
+    distribuicao: "Kinea"
+    status: "ABERTO"
+
+  - cnpj: "03.859.784/0001-04"   # FY 40484
+    nome: "Itaú Petrobras FMP-FGTS"
+    categoria: "FMPs"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
+
+  - cnpj: "04.881.191/0001-07"   # FY 41078
+    nome: "Itaú Vale FMP-FGTS"
+    categoria: "FMPs"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
+
+  - cnpj: "42.520.416/0001-80"   # FY 55650
+    nome: "Itaú Eletrobras FMP-FGTS"
+    categoria: "FMPs"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
+
+  - cnpj: "04.573.850/0001-30"   # FY 40642
+    nome: "Itaú Balanceado FMP FGTS Carteira Livre"
+    categoria: "FMPs"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "49.008.400/0001-32"   # FY 56417
+    nome: "Itaú Balanceado Ativo FMP FGTS Carteira Livre"
+    categoria: "FMPs"
+    distribuicao: "Itaú Asset"
+    status: "ABERTO"
+
+  - cnpj: "32.292.555/0001-40"   # FY 54062
+    nome: "Redpoint Eventures 2 Seleção MM FICFI"
+    categoria: "Fundos Fechados"
+    distribuicao: "FoF"
+    status: "FECHADO"
+
+  - cnpj: "36.348.364/0001-04"   # FY 57797
+    nome: "Crescera Growth Capital V PVT MM FI"
+    categoria: "Fundos Fechados"
+    distribuicao: "FoF"
+    status: "FECHADO"
+
+  - cnpj: "42.431.442/0001-32"   # FY 58507
+    nome: "Astella Journey IV PVT MM FI"
+    categoria: "Fundos Fechados"
+    distribuicao: "FoF"
+    status: "FECHADO"
+
+  - cnpj: "41.681.294/0001-41"   # FY 58355
+    nome: "Kinea PE V Seleção Multimercado"
+    categoria: "Fundos Fechados"
+    distribuicao: "Kinea"
+    status: "FECHADO"
+
+  - cnpj: "59.825.229/0001-08"   # FY 58081
+    nome: "Itaú Crédito Estruturado RS FIF MM CP"
+    categoria: "Fundos Fechados"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
+
+  - cnpj: "63.051.648/0001-07"   # FY 58609
+    nome: "Itaú Debêntures Pré Target 2029 Shift (Isento IRPF)"
+    categoria: "Fundos Fechados"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
+    isento_ir: true
+
+  - cnpj: "62.283.336/0001-66"   # FY 58441
+    nome: "Itaú Debêntures Incentivadas Pré Target 2030 Shift (Isento IRPF)"
+    categoria: "Fundos Fechados"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
+    isento_ir: true
+
+  - cnpj: "56.093.218/0001-92"   # FY 57565
+    nome: "Itaú Debêntures Incentivadas Pré Target 2028 RF CP (Isento IRPF)"
+    categoria: "Fundos Fechados"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
+    isento_ir: true
+
+  - cnpj: "60.607.059/0001-74"   # FY 58190
+    nome: "Itaú Debêntures Pré Target 2029 II RF"
+    categoria: "Fundos Fechados"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
+
+  - cnpj: "42.814.797/0001-00"   # FY 55814
+    nome: "Itaú Sniper Ações FIE"
+    categoria: "Fundos Fechados"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
+
+  - cnpj: "43.551.265/0001-90"   # FY 56042
+    nome: "Private Debêntures Incentivadas Pré RF CP LP"
+    categoria: "Fundos Fechados"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
+    isento_ir: true
+
+  - cnpj: "41.287.704/0001-74"   # FY 55382
+    nome: "Itaú Rising Stars Crédito Privado MM IE"
+    categoria: "Fundos Fechados"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
+
+  - cnpj: "51.781.614/0001-99"   # FY 56684
+    nome: "Itaú Crédito Estruturado Pirineus"
+    categoria: "Fundos Fechados"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
+
+  - cnpj: "42.382.931/0001-41"   # FY 58087
+    nome: "Itaú Private Polaris I Multimercado"
+    categoria: "Fundos Fechados"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
+
+  - cnpj: "40.943.074/0001-86"   # FY 55288
+    nome: "Itaú Crédito Estruturado Agro Multimercado CP"
+    categoria: "Fundos Fechados"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
+
+  - cnpj: "41.650.014/0001-38"   # FY 55429
+    nome: "Itaú Crédito Estruturado Alpes MM CP"
+    categoria: "Fundos Fechados"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
+
+  - cnpj: "51.732.771/0001-04"   # FY 56672
+    nome: "Itaú Crédito Estruturado Alpes II FICFI MM CP"
+    categoria: "Fundos Fechados"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
+
+  - cnpj: "62.014.262/0001-62"   # FY 58404
+    nome: "Itaú Crédito Estruturado Alpes III"
+    categoria: "Fundos Fechados"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
+
+  - cnpj: "52.874.571/0001-59"   # FY 56878
+    nome: "Itaú Debêntures Incentivadas Pré Target 2028 RF (Isento IRPF)"
+    categoria: "Fundos Fechados"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
+    isento_ir: true
+
+  - cnpj: "38.904.441/0001-90"   # FY 58468
+    nome: "Itaú RK Credit Opportunity I CP MM FIC"
+    categoria: "Fundos Fechados"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
+
+  - cnpj: "46.472.095/0001-47"   # FY 56108
+    nome: "Itaú Debêntures Incentivadas Pré II 2027 RF CP (Isento IRPF)"
+    categoria: "Fundos Fechados"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
+    isento_ir: true
+
+  - cnpj: "48.133.451/0001-23"   # FY 56318
+    nome: "Itaú Debêntures Incentivadas Pré Fixado III (Isento IRPF)"
+    categoria: "Fundos Fechados"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
+    isento_ir: true
+
+  - cnpj: "46.449.403/0001-13"   # FY 56073
+    nome: "Itaú Algarve Legal Claims Crédito Privado MM FICFI"
+    categoria: "Fundos Fechados"
+    distribuicao: "Itaú Asset"
+    status: "FECHADO"
