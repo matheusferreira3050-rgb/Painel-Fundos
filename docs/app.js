@@ -12,7 +12,7 @@
   const gravar = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* sem storage */ } };
 
   const estado = {
-    resumo: null, categoria: "Todas", distribuicao: "Todas", busca: "",
+    resumo: null, categoria: "Todas", distribuicao: "Todas", situacao: "Todas", busca: "",
     ordem: { col: "m12", asc: false }, cache: {}, sel: [], gu: ler("pf_gu", false),
   };
 
@@ -79,6 +79,13 @@
 
   // ------------------------------------------------------------ tabela principal
   const visivel = (f) => f.ativo && f.ultima_data && (f.status === "ok" || f.status === "defasado");
+  const aberto = (f) => !f.status_comercial || /^ABERTO/i.test(f.status_comercial);
+  const rotuloSit = (f) => {
+    const s = (f.status_comercial || "").toUpperCase();
+    if (!s || s === "ABERTO") return "";
+    if (s.startsWith("ABERTO")) return s.split("|")[1]?.trim().toLowerCase() || "";
+    return s === "FECHADO" ? "fechado p/ aplicação" : s.toLowerCase();
+  };
   const visiveis = () => estado.resumo.fundos.filter(visivel);
 
   function montarChips() {
@@ -86,7 +93,15 @@
       $(alvo).innerHTML = ["Todas", ...valores].map((c) => `<button class="chip${c === atual ? " ativo" : ""}" data-c="${esc(c)}">${esc(c)}</button>`).join("");
       $$(alvo + " .chip").forEach((b) => b.addEventListener("click", () => { onClick(b.dataset.c); montarChips(); desenharTabela(); }));
     };
-    chips("#categorias", [...new Set(visiveis().map((f) => f.categoria))], estado.categoria, (c) => (estado.categoria = c));
+    const cats = [...new Set(visiveis().map((f) => f.categoria))];
+    if (cats.length > 8) { // muitas categorias: lista suspensa
+      const n = (c) => visiveis().filter((f) => f.categoria === c).length;
+      $("#categorias").innerHTML = `<select class="seletor" aria-label="Categoria"><option value="Todas">Todas as categorias (${visiveis().length})</option>${cats.map((c) => `<option value="${esc(c)}"${c === estado.categoria ? " selected" : ""}>${esc(c)} (${n(c)})</option>`).join("")}</select>`;
+      $("#categorias select").addEventListener("change", (e) => { estado.categoria = e.target.value; desenharTabela(); });
+    } else chips("#categorias", cats, estado.categoria, (c) => (estado.categoria = c));
+    const temSit = visiveis().some((f) => f.status_comercial);
+    $("#grupo-sit").hidden = !temSit;
+    if (temSit) chips("#situacoes", ["Abertos para aplicação", "Fechados para aplicação"], estado.situacao, (c) => (estado.situacao = c));
     const dists = [...new Set(visiveis().map((f) => f.distribuicao).filter(Boolean))];
     $("#grupo-dist").hidden = dists.length < 2;
     chips("#distribuicoes", dists, estado.distribuicao, (c) => (estado.distribuicao = c));
@@ -123,6 +138,7 @@
     let lista = visiveis().filter((f) =>
       (estado.categoria === "Todas" || f.categoria === estado.categoria) &&
       (estado.distribuicao === "Todas" || f.distribuicao === estado.distribuicao) &&
+      (estado.situacao === "Todas" || (estado.situacao === "Abertos para aplicação") === aberto(f)) &&
       (!q || f.nome.toLowerCase().includes(q) || (qd && f.cnpj.replace(/\D/g, "").includes(qd))));
     const { col, asc } = estado.ordem;
     lista.sort((a, b) => {
@@ -144,7 +160,9 @@
     $("#corpo").innerHTML = linhaCDI(lista) + lista.map((f) => {
       const marcado = estado.sel.includes(f.chave);
       const alerta = f.alertas?.some((a) => a.tipo !== "info");
-      const meta = [esc(f.categoria), f.distribuicao ? esc(f.distribuicao) : "", dataBR(f.ultima_data)].filter(Boolean).join(" · ");
+      const sit = rotuloSit(f);
+      const meta = [esc(f.categoria), f.distribuicao ? esc(f.distribuicao) : "", dataBR(f.ultima_data)].filter(Boolean).join(" · ") +
+        (sit ? ` · <span class="${aberto(f) ? "tag-info" : "tag-fechado"}">${esc(sit)}</span>` : "");
       return `<tr data-chave="${esc(f.chave)}" class="${marcado ? "sel" : ""}">
         <td class="txt fixa"><div class="cel-fundo">
           <input type="checkbox" class="ck" aria-label="Comparar ${esc(f.nome)}" ${marcado ? "checked" : ""}>
@@ -220,7 +238,7 @@
         <td class="txt">${esc(f.categoria)}</td>
         <td class="txt">${esc(f.distribuicao || "–")}</td>
         <td class="txt">${f.isento_ir ? "Isento" : "Tributado"}</td>
-        <td class="txt"><span class="selo ${st}">${f.ativo ? rot[f.status] || f.status : "Oculto"}</span></td>
+        <td class="txt"><span class="selo ${st}">${f.ativo ? rot[f.status] || f.status : "Oculto"}</span>${f.status_comercial ? `<br><span class="meta-fundo">plataforma: ${esc(f.status_comercial.toLowerCase())}</span>` : ""}</td>
         <td>${dataBR(f.ultima_data)}</td>
         <td>${dataBR(f.inicio_historico)}</td></tr>`;
     }).join("");
@@ -321,7 +339,10 @@
       ${cadHtml ? `<h3>Informações do fundo</h3><dl class="cadastro">${cadHtml}</dl><p class="nota">Fonte: cadastro da CVM. Confira taxas, prazos de resgate e condições na lâmina e no regulamento.</p>` : ""}
       <h3>Rentabilidade mês a mês</h3>
       <p class="nota">Valor de cima: fundo. Valor de baixo: % do CDI no mês. “*” = ano incompleto.</p>
-      <div class="tabela-wrap"><table class="mensal" id="mensal"></table></div>`;
+      <div class="tabela-wrap"><table class="mensal" id="mensal"></table></div>
+      <h3>Rentabilidade diária — últimos 60 dias</h3>
+      <p class="nota">Variação da cota em cada dia útil informado à CVM, comparada ao CDI do mesmo intervalo. Mais recente no topo.</p>
+      <div class="tabela-wrap"><table class="diaria" id="diaria"></table></div>`;
 
     const d = det.serie;
     const linhas = (k0) => {
@@ -339,6 +360,7 @@
       graficoLinhas($("#grafico-pl"), [{ nome: "PL", cor: "--s1", d: d.d.slice(k0), v: pl }], { dinheiro: true, area: true, altura: 150 });
     });
     desenharMensal($("#mensal"), det.mensal);
+    desenharDiaria($("#diaria"), det.serie, 60);
   }
 
   // ------------------------------------------------------------ comparação
@@ -528,6 +550,31 @@
     if (!(bruto > 0)) return 1;
     const p = Math.pow(10, Math.floor(Math.log10(bruto))), n = bruto / p;
     return (n < 1.5 ? 1 : n < 3 ? 2 : n < 7 ? 5 : 10) * p;
+  }
+
+  // ------------------------------------------------------------ tabela diária
+  function desenharDiaria(el, d, n) {
+    const ini = Math.max(1, d.d.length - n);
+    const linhas = [];
+    let acum = 1, acumCDI = 1;
+    for (let k = ini; k < d.d.length; k++) {
+      const r = d.c[k] / d.c[k - 1] - 1;
+      const c = d.i && d.i[k] != null && d.i[k - 1] != null ? d.i[k] / d.i[k - 1] - 1 : null;
+      const dias = (Date.parse(d.d[k]) - Date.parse(d.d[k - 1])) / 864e5;
+      acum *= 1 + r; if (c != null) acumCDI *= 1 + c;
+      linhas.push({ data: d.d[k], cota: d.c[k], r, c, pl: d.pl?.[k], lacuna: dias > 5 ? d.d[k - 1] : null, acum: acum - 1, acumCDI: acumCDI - 1 });
+    }
+    const cota = (v) => v.toLocaleString("pt-BR", { minimumFractionDigits: 6, maximumFractionDigits: 8 });
+    el.innerHTML = `<thead><tr><th>Data</th><th>Cota</th><th>Fundo no dia</th><th>CDI no dia</th><th>% CDI</th><th>Fundo acum.</th><th>CDI acum.</th><th>PL</th></tr></thead><tbody>` +
+      linhas.reverse().map((x) => `<tr>
+        <td>${dataBR(x.data)}${x.lacuna ? `<span class="p">desde ${dataBR(x.lacuna)}</span>` : ""}</td>
+        <td>${cota(x.cota)}</td>
+        <td class="${cls(x.r)}">${pct(x.r, 4)}</td>
+        <td>${pct(x.c, 4)}</td>
+        <td>${x.c > 0 ? pct(x.r / x.c, 0) : "–"}</td>
+        <td class="${cls(x.acum)}">${pct(x.acum)}</td>
+        <td>${pct(x.acumCDI)}</td>
+        <td>${dinheiro(x.pl)}</td></tr>`).join("") + "</tbody>";
   }
 
   // ------------------------------------------------------------ tabela mensal
