@@ -32,7 +32,8 @@ import yaml
 RAIZ = Path(__file__).resolve().parent.parent
 ARQ_CONFIG = RAIZ / "fundos.yaml"
 DIR_DADOS = RAIZ / "data"
-ARQ_COTAS = DIR_DADOS / "cotas.csv"
+ARQ_COTAS = DIR_DADOS / "cotas.csv.gz"
+ARQ_COTAS_ANTIGO = DIR_DADOS / "cotas.csv"
 ARQ_CDI = DIR_DADOS / "cdi.csv"
 ARQ_ESTADO = DIR_DADOS / "estado.json"
 ARQ_CADASTRO = DIR_DADOS / "cadastro.json"
@@ -137,6 +138,7 @@ def ler_config() -> tuple[dict, list[dict]]:
             "isento_ir": bool(item.get("isento_ir", False)),
             "manual": {k: txt(k) for k in ("gestor", "taxa_adm", "taxa_perf", "resgate",
                                           "aplicacao_minima", "observacao")},
+            "status_comercial": txt("status"),
         })
     return geral, fundos
 
@@ -276,10 +278,7 @@ def resolver_subclasses(fundos: list[dict], cad: dict, avisos: list[str]) -> Non
         if escolhida:
             f["sub_efetiva"] = escolhida["id"]
             f["sub_nome"] = escolhida["nome"]
-        elif len(subs) > 1:
-            lista = "; ".join(f"{s['id']} = {s['nome']}" for s in subs)
-            avisos.append(f"{f['nome']} ({formatar_cnpj(f['cnpj'])}) tem {len(subs)} subclasses na CVM: "
-                          f"{lista}. Coloque o código certo no campo 'subclasse' do fundos.yaml.")
+        f["subs_cad"] = {s["id"]: s["nome"] for s in subs}
 
 
 # --------------------------------------------------------------------------- informes diários
@@ -323,9 +322,12 @@ def _escolher_linhas(df: pd.DataFrame, alvo: dict, avisos: list[str]) -> pd.Data
                 if sel.empty:
                     subs = sorted(linhas["sub"].unique())
                     sel = linhas[linhas["sub"] == subs[0]]
-                    if len(subs) > 1 and not any(f["nome"] in a for a in avisos):
-                        avisos.append(f"{f['nome']} ({formatar_cnpj(cnpj)}) tem subclasses {subs} nos "
-                                      f"informes; usando '{subs[0]}'. Defina 'subclasse' no fundos.yaml.")
+                    if len(subs) > 1 and not f.get("_avisado_sub"):
+                        f["_avisado_sub"] = True
+                        nomes = f.get("subs_cad") or {}
+                        lista = "; ".join(f"{x}" + (f" = {nomes[x]}" if x in nomes else "") for x in subs)
+                        avisos.append(f"{f['nome']} ({formatar_cnpj(cnpj)}) tem {len(subs)} subclasses na CVM ({lista}); "
+                                      f"usando '{subs[0]}'. Para escolher outra, coloque o código no campo 'subclasse' do fundos.yaml.")
             if sel.empty:
                 continue
             saida.append(sel.assign(chave=f["chave"]))
@@ -376,6 +378,8 @@ def baixar_mes(ano: int, mes: int, alvo: dict, avisos: list[str]) -> pd.DataFram
 def atualizar_cotas(fundos: list[dict], anos: int, hoje: date, avisos: list[str]) -> pd.DataFrame:
     if ARQ_COTAS.exists():
         cotas = pd.read_csv(ARQ_COTAS, dtype={"chave": str})
+    elif ARQ_COTAS_ANTIGO.exists():
+        cotas = pd.read_csv(ARQ_COTAS_ANTIGO, dtype={"chave": str})
     else:
         cotas = pd.DataFrame(columns=["chave", "data", "cota", "pl", "cotistas", "captacao", "resgate"])
     estado = json.loads(ARQ_ESTADO.read_text()) if ARQ_ESTADO.exists() else {}
@@ -432,7 +436,8 @@ def atualizar_cotas(fundos: list[dict], anos: int, hoje: date, avisos: list[str]
             backfill[f["chave"]] = inicio_desejado.isoformat()
 
     DIR_DADOS.mkdir(exist_ok=True)
-    cotas.to_csv(ARQ_COTAS, index=False)
+    cotas.to_csv(ARQ_COTAS, index=False, compression="gzip")
+    ARQ_COTAS_ANTIGO.unlink(missing_ok=True)
     ARQ_ESTADO.write_text(json.dumps(estado, indent=2, ensure_ascii=False))
     log(f"Base de cotas: {len(cotas):,} linhas".replace(",", "."))
     return cotas
@@ -661,6 +666,7 @@ def gerar_site(geral: dict, fundos: list[dict], cotas: pd.DataFrame, cdi: pd.Dat
             "chave": f["chave"], "cnpj": formatar_cnpj(f["cnpj"]),
             "subclasse": f["sub_efetiva"], "nome": f["nome"], "categoria": f["categoria"],
             "distribuicao": f["distribuicao"], "ativo": f["ativo"], "isento_ir": f["isento_ir"],
+            "status_comercial": f["status_comercial"],
             "cadastro": info, "alertas": [],
         }
         if f["chave"] not in series:
@@ -716,7 +722,7 @@ def gerar_site(geral: dict, fundos: list[dict], cotas: pd.DataFrame, cdi: pd.Dat
             "pl": _r(dados["pl"].iloc[-1]),
             "cotistas": None if pd.isna(dados["cotistas"].iloc[-1]) else int(dados["cotistas"].iloc[-1]),
             "captacao_liquida_30d": _r(float((u30["captacao"].fillna(0) - u30["resgate"].fillna(0)).sum())),
-            **calcular(serie, idx), **risco(serie),
+            **{k: v for k, v in calcular(serie, idx).items() if k != "cdi"}, **risco(serie),
             "consistencia": consistencia(mensal, ultima),
             "lacunas": lac,
         })
