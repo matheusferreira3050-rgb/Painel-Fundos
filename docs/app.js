@@ -12,7 +12,7 @@
   const gravar = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* sem storage */ } };
 
   const estado = {
-    resumo: null, categoria: "Todas", distribuicao: "Todas", situacao: "Todas", busca: "",
+    resumo: null, categoria: "Todas", distribuicao: "Todas", classeCVM: "Todas", situacao: "Todas", busca: "",
     ordem: { col: "m12", asc: false }, cache: {}, sel: [], gu: ler("pf_gu", false),
   };
 
@@ -99,6 +99,9 @@
       $("#categorias").innerHTML = `<select class="seletor" aria-label="Categoria"><option value="Todas">Todas as categorias (${visiveis().length})</option>${cats.map((c) => `<option value="${esc(c)}"${c === estado.categoria ? " selected" : ""}>${esc(c)} (${n(c)})</option>`).join("")}</select>`;
       $("#categorias select").addEventListener("change", (e) => { estado.categoria = e.target.value; desenharTabela(); });
     } else chips("#categorias", cats, estado.categoria, (c) => (estado.categoria = c));
+    const classes = [...new Set(visiveis().map((f) => f.classe_cvm).filter(Boolean))].sort((a, b) => (a === "Não informada") - (b === "Não informada") || a.localeCompare(b, "pt-BR"));
+    $("#grupo-cvm").hidden = classes.length < 2;
+    if (classes.length >= 2) chips("#classes-cvm", classes, estado.classeCVM, (c) => (estado.classeCVM = c));
     const temSit = visiveis().some((f) => f.status_comercial);
     $("#grupo-sit").hidden = !temSit;
     if (temSit) chips("#situacoes", ["Abertos para aplicação", "Fechados para aplicação"], estado.situacao, (c) => (estado.situacao = c));
@@ -138,6 +141,7 @@
     let lista = visiveis().filter((f) =>
       (estado.categoria === "Todas" || f.categoria === estado.categoria) &&
       (estado.distribuicao === "Todas" || f.distribuicao === estado.distribuicao) &&
+      (estado.classeCVM === "Todas" || f.classe_cvm === estado.classeCVM) &&
       (estado.situacao === "Todas" || (estado.situacao === "Abertos para aplicação") === aberto(f)) &&
       (!q || f.nome.toLowerCase().includes(q) || (qd && f.cnpj.replace(/\D/g, "").includes(qd))));
     const { col, asc } = estado.ordem;
@@ -227,7 +231,7 @@
     const R = estado.resumo, repo = R.repo, br = R.branch || "main";
     const link = (href, txt, prim) => `<a class="botao${prim ? " primario" : ""}" href="${href}" target="_blank" rel="noopener"${repo ? "" : ' aria-disabled="true"'}>${txt}</a>`;
     if ($("#acoes-gestao")) $("#acoes-gestao").innerHTML = link(`https://github.com/${repo}/edit/${br}/fundos.yaml`, "Editar lista de fundos", true) + link(`https://github.com/${repo}/actions`, "Ver atualizações");
-    $("#avisos").innerHTML = R.avisos?.length
+    if ($("#avisos")) $("#avisos").innerHTML = R.avisos?.length
       ? `<div class="alerta"><strong>Pontos de atenção na última atualização</strong><ul>${R.avisos.map((a) => `<li>${esc(a)}</li>`).join("")}</ul></div>` : "";
     const rot = { ok: "Atualizado", defasado: "Defasado", nao_encontrado: "Não encontrado", sem_dados_recentes: "Sem dados recentes" };
     $("#corpo-fundos").innerHTML = R.fundos.map((f) => {
@@ -236,6 +240,7 @@
         <td class="txt">${esc(f.nome)}</td>
         <td class="txt mono">${esc(f.cnpj)}${f.subclasse ? `<br><span class="meta-fundo">subclasse ${esc(f.subclasse)}</span>` : ""}</td>
         <td class="txt">${esc(f.categoria)}</td>
+        <td class="txt">${esc(f.classe_cvm || "–")}</td>
         <td class="txt">${esc(f.distribuicao || "–")}</td>
         <td class="txt">${f.isento_ir ? "Isento" : "Tributado"}</td>
         <td class="txt"><span class="selo ${st}">${f.ativo ? rot[f.status] || f.status : "Oculto"}</span>${f.status_comercial ? `<br><span class="meta-fundo">plataforma: ${esc(f.status_comercial.toLowerCase())}</span>` : ""}</td>
