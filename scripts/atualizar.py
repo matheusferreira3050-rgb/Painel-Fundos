@@ -637,6 +637,22 @@ def movimentos_atipicos(series: dict[str, pd.Series]) -> dict[str, list[dict]]:
     return out
 
 
+def classe_cvm(info: dict) -> str:
+    """Classe do fundo segundo a CVM (Renda Fixa, Ações, Multimercado, Cambial...)."""
+    bruto = (info.get("classificacao") or "").strip()
+    if not bruto:
+        anb = (info.get("classificacao_anbima") or "").lower()
+        bruto = next((c for k, c in (("renda fixa", "Renda Fixa"), ("multimercado", "Multimercado"),
+                                       ("ações", "Ações"), ("acoes", "Ações"), ("cambial", "Cambial"))
+                      if k in anb), "")
+    n = normalizar(bruto)
+    for k, c in (("rendafixa", "Renda Fixa"), ("multimercado", "Multimercado"), ("acoes", "Ações"),
+                 ("cambial", "Cambial"), ("fmp", "FMP-FGTS")):
+        if k in n:
+            return c
+    return bruto or "Não informada"
+
+
 # --------------------------------------------------------------------------- saída
 def gerar_site(geral: dict, fundos: list[dict], cotas: pd.DataFrame, cdi: pd.DataFrame,
                cad: dict, hoje: date, avisos: list[str]) -> None:
@@ -667,6 +683,7 @@ def gerar_site(geral: dict, fundos: list[dict], cotas: pd.DataFrame, cdi: pd.Dat
             "subclasse": f["sub_efetiva"], "nome": f["nome"], "categoria": f["categoria"],
             "distribuicao": f["distribuicao"], "ativo": f["ativo"], "isento_ir": f["isento_ir"],
             "status_comercial": f["status_comercial"],
+            "classe_cvm": classe_cvm(info),
             "cadastro": info, "alertas": [],
         }
         if f["chave"] not in series:
