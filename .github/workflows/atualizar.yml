@@ -2,6 +2,7 @@ name: Atualizar cotas e publicar site
 
 on:
   schedule:
+    # horários em UTC (Brasília = UTC-3); o GitHub pode atrasar algumas horas
     - cron: "17 11 * * *"
     - cron: "47 22 * * *"
   push:
@@ -10,6 +11,7 @@ on:
       - "fundos.yaml"
       - "docs/**"
       - "scripts/**"
+      - ".github/workflows/**"
   workflow_dispatch:
 
 permissions:
@@ -24,7 +26,7 @@ concurrency:
 jobs:
   atualizar:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 120
     environment:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}
@@ -39,20 +41,32 @@ jobs:
       - name: Instalar dependências
         run: pip install -r requirements.txt
 
+      # A base histórica (cotas, CDI, cadastro) fica no branch "dados", sobrescrito a cada
+      # rodada. Assim o repositório não cresce a cada atualização.
+      - name: Recuperar base histórica
+        run: |
+          if git ls-remote --exit-code --heads origin dados >/dev/null; then
+            git fetch --depth 1 origin dados
+            rm -rf data && mkdir data
+            git archive FETCH_HEAD | tar -x -C data
+            echo "Base recuperada do branch dados"
+          else
+            echo "Primeira rodada com o branch dados: usando a pasta data do main"
+          fi
+
       - name: Baixar dados da CVM e do Banco Central
         run: python scripts/atualizar.py
 
-      - name: Salvar dados no repositório
+      - name: Guardar base histórica
         run: |
+          cd data
+          rm -rf .git
+          git init -q -b dados
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data docs/data
-          if git diff --staged --quiet; then
-            echo "Sem mudanças nos dados."
-          else
-            git commit -m "Atualização automática $(TZ=America/Sao_Paulo date +'%d/%m/%Y %H:%M')"
-            git push
-          fi
+          git add -A
+          git commit -q -m "Base $(TZ=America/Sao_Paulo date +'%d/%m/%Y %H:%M')"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" dados
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
